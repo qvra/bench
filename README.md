@@ -19,7 +19,7 @@ Artifacts in `bench` should provide one or more of:
 
 `bench` is not:
 - marketing theater
-- vague “faster than X” claims without method
+- vague faster-than claims without method
 - screenshots of results with no way to reproduce them
 - prestige signaling through numbers alone
 
@@ -46,6 +46,10 @@ Related routes:
 ## Publication rule
 
 No benchmark belongs here unless the method is strong enough that disagreement can become productive instead of theatrical.
+
+## First live suite
+
+- [`suites/line-count`](./suites/line-count) — reproducible comparison between `wc -l` and pure Python line counting on generated input
 
 ## Status
 

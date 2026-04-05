@@ -1,0 +1,30 @@
+dataset_rows: 200000
+method      | count  | avg_ms | stdev_ms | min_ms | max_ms | runs
+------------+--------+--------+----------+--------+--------+-----
+wc -l       | 200000 | 11.392 | 2.214    | 9.263  | 16.226 | 7   
+python-iter | 200000 | 8.804  | 0.083    | 8.662  | 8.915  | 7   
+
+{
+  "dataset_rows": 200000,
+  "dataset_path_kind": "temporary-generated",
+  "results": [
+    {
+      "method": "wc -l",
+      "count": 200000,
+      "avg_ms": 11.392,
+      "stdev_ms": 2.214,
+      "min_ms": 9.263,
+      "max_ms": 16.226,
+      "runs": 7
+    },
+    {
+      "method": "python-iter",
+      "count": 200000,
+      "avg_ms": 8.804,
+      "stdev_ms": 0.083,
+      "min_ms": 8.662,
+      "max_ms": 8.915,
+      "runs": 7
+    }
+  ]
+}
