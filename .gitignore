@@ -1,0 +1,13 @@
+.DS_Store
+dist/
+build/
+coverage/
+node_modules/
+.venv/
+venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+results/
+artifacts/
