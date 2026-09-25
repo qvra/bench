@@ -1,0 +1,18 @@
+{
+  "environment_freeze_sha256": "502c2b6fd3279e9623c9be110cb4a332bb1c93a35486e66361e7c22d523900fe",
+  "global_superiority_claim": false,
+  "implementation_sha256": "cd51eff4b0ffddbac5e96b360b305183dcf365e7eaf7a117df8bf01cff489a42",
+  "preregistration_sha256": "6952231739c4bb6dcc722af8eb59577cb59d08b39b762fdbd461aff9da233e9f",
+  "qvra_result_available": false,
+  "qvra_system_compared": false,
+  "runtime": {
+    "numpy": "2.5.3",
+    "python": "3.12.13",
+    "python_implementation": "CPython",
+    "scikit_learn": "1.9.1"
+  },
+  "schema": "qvra-native-implementation-lock/v1",
+  "sealed_test_executed": false,
+  "system_id": "qvra-native-er-v1",
+  "test_truth_consumed": false
+}
