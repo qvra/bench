@@ -1,0 +1,46 @@
+{
+  "schema": "qvra-family-2-execution-authorization/v1",
+  "benchmark": "entity-resolution-ambiguity-v1",
+  "family": 2,
+  "authorization_kind": "one-shot-nine-run-execution",
+  "scope": {
+    "benchmark_main": "44c73431941c5b866d774f99077a7b54ea2043c7",
+    "process_launcher_sha256": "d8d028d95adb463f27b5df6a5ec44ae9049b6799aae46c4b0176ca2adfd07f90",
+    "command_descriptor_sha256": "817d3e1eae8babb26eb49792b5778898793235042020c9f904cad0057e8549ac",
+    "systems": [
+      "qvra-native-er-v1",
+      "splink-4.0.17",
+      "dedupe-3.0.3"
+    ],
+    "runs_per_system": 3,
+    "total_required_raw_runs": 9
+  },
+  "execution_firewall": {
+    "truth_input_allowed": false,
+    "retuning_allowed": false,
+    "runtime_mutation_allowed": false,
+    "network_required": false,
+    "all_raw_runs_before_scoring": true,
+    "raw_outputs_hash_bound_before_truth_reveal": true
+  },
+  "one_shot_semantics": {
+    "authorization_reusable": false,
+    "partial_execution_reauthorization_allowed": false,
+    "failed_run_retention_required": true,
+    "raw_output_retention_required": true
+  },
+  "controller_binding": {
+    "execution_controller_created": false,
+    "execution_controller_sha256": null,
+    "authorization_consumable": false
+  },
+  "state": {
+    "reviewed": false,
+    "execution_authorized": false,
+    "authorization_consumed": false,
+    "raw_runs_produced": 0,
+    "system_execution": false,
+    "truth_scoring": false,
+    "quality_result_available": false
+  }
+}

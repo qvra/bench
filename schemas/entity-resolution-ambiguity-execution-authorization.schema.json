@@ -1,0 +1,179 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "qvra-family-2-execution-authorization.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "benchmark",
+    "family",
+    "authorization_kind",
+    "scope",
+    "execution_firewall",
+    "one_shot_semantics",
+    "controller_binding",
+    "state"
+  ],
+  "properties": {
+    "schema": {
+      "const": "qvra-family-2-execution-authorization/v1"
+    },
+    "benchmark": {
+      "const": "entity-resolution-ambiguity-v1"
+    },
+    "family": {
+      "const": 2
+    },
+    "authorization_kind": {
+      "const": "one-shot-nine-run-execution"
+    },
+    "scope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "benchmark_main",
+        "process_launcher_sha256",
+        "command_descriptor_sha256",
+        "systems",
+        "runs_per_system",
+        "total_required_raw_runs"
+      ],
+      "properties": {
+        "benchmark_main": {
+          "const": "44c73431941c5b866d774f99077a7b54ea2043c7"
+        },
+        "process_launcher_sha256": {
+          "const": "d8d028d95adb463f27b5df6a5ec44ae9049b6799aae46c4b0176ca2adfd07f90"
+        },
+        "command_descriptor_sha256": {
+          "const": "817d3e1eae8babb26eb49792b5778898793235042020c9f904cad0057e8549ac"
+        },
+        "systems": {
+          "const": [
+            "qvra-native-er-v1",
+            "splink-4.0.17",
+            "dedupe-3.0.3"
+          ]
+        },
+        "runs_per_system": {
+          "const": 3
+        },
+        "total_required_raw_runs": {
+          "const": 9
+        }
+      }
+    },
+    "execution_firewall": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "truth_input_allowed",
+        "retuning_allowed",
+        "runtime_mutation_allowed",
+        "network_required",
+        "all_raw_runs_before_scoring",
+        "raw_outputs_hash_bound_before_truth_reveal"
+      ],
+      "properties": {
+        "truth_input_allowed": {
+          "const": false
+        },
+        "retuning_allowed": {
+          "const": false
+        },
+        "runtime_mutation_allowed": {
+          "const": false
+        },
+        "network_required": {
+          "const": false
+        },
+        "all_raw_runs_before_scoring": {
+          "const": true
+        },
+        "raw_outputs_hash_bound_before_truth_reveal": {
+          "const": true
+        }
+      }
+    },
+    "one_shot_semantics": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "authorization_reusable",
+        "partial_execution_reauthorization_allowed",
+        "failed_run_retention_required",
+        "raw_output_retention_required"
+      ],
+      "properties": {
+        "authorization_reusable": {
+          "const": false
+        },
+        "partial_execution_reauthorization_allowed": {
+          "const": false
+        },
+        "failed_run_retention_required": {
+          "const": true
+        },
+        "raw_output_retention_required": {
+          "const": true
+        }
+      }
+    },
+    "controller_binding": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "execution_controller_created",
+        "execution_controller_sha256",
+        "authorization_consumable"
+      ],
+      "properties": {
+        "execution_controller_created": {
+          "const": false
+        },
+        "execution_controller_sha256": {
+          "type": "null"
+        },
+        "authorization_consumable": {
+          "const": false
+        }
+      }
+    },
+    "state": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "reviewed",
+        "execution_authorized",
+        "authorization_consumed",
+        "raw_runs_produced",
+        "system_execution",
+        "truth_scoring",
+        "quality_result_available"
+      ],
+      "properties": {
+        "reviewed": {
+          "const": false
+        },
+        "execution_authorized": {
+          "const": false
+        },
+        "authorization_consumed": {
+          "const": false
+        },
+        "raw_runs_produced": {
+          "const": 0
+        },
+        "system_execution": {
+          "const": false
+        },
+        "truth_scoring": {
+          "const": false
+        },
+        "quality_result_available": {
+          "const": false
+        }
+      }
+    }
+  }
+}
