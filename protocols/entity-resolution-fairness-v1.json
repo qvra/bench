@@ -1,0 +1,44 @@
+{
+  "schema": "qvra-entity-resolution-fairness/v1",
+  "suite_id": "entity-resolution-real-v1",
+  "objective": "Compare entity-resolution quality and execution characteristics under one ground-truth corpus without granting any implementation privileged scoring.",
+  "ground_truth": {
+    "generated_independently_of_challengers": true,
+    "stable_entity_ids": true,
+    "record_ids_unique": true,
+    "pair_truth_derived_from_entity_id": true
+  },
+  "shared_inputs": [
+    "same records",
+    "same fields",
+    "same ground truth",
+    "same train/test partition metadata",
+    "same scoring implementation"
+  ],
+  "reported_metrics": [
+    "pair_precision",
+    "pair_recall",
+    "pair_f1",
+    "cluster_exact_match_rate",
+    "runtime_ms",
+    "timeout",
+    "contract_validity",
+    "provenance_completeness",
+    "mutation_performed"
+  ],
+  "training_policy": {
+    "supervised_systems": "May consume only the declared training partition and training labels.",
+    "unsupervised_systems": "May configure/model using only their documented supported workflow and may not consume hidden test truth.",
+    "test_truth_hidden_from_adapter_configuration": true,
+    "training_time_reported_separately": true,
+    "inference_time_reported_separately": true
+  },
+  "forbidden": [
+    "manual tuning against test labels",
+    "challenger-specific scoring",
+    "different test records per challenger",
+    "dropping difficult records from one challenger only",
+    "reporting supervised training time as zero",
+    "feeding test ground truth into configuration"
+  ]
+}

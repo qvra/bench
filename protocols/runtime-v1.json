@@ -1,0 +1,33 @@
+{
+  "challengers": {
+    "dedupe-3.0.3": {
+      "compatibility_dependencies": {
+        "BTrees": {
+          "discovery": "empirical compatibility boundary",
+          "newest_observed_compatible": true,
+          "reason": "dedupe 3.0.3 calls IFBucket.byValue; BTrees 6.5 removed that observed API",
+          "version": "6.4"
+        }
+      },
+      "package": "dedupe",
+      "version": "3.0.3"
+    },
+    "splink-4.0.17": {
+      "package": "splink",
+      "version": "4.0.17"
+    }
+  },
+  "policy": {
+    "dependency_freeze_retained": true,
+    "isolated_virtual_environments": true,
+    "package_versions_exact": true,
+    "same_python_major_minor": true
+  },
+  "python": {
+    "executable_observed": "/opt/homebrew/opt/python@3.12/bin/python3.12",
+    "implementation": "CPython",
+    "major_minor": "3.12",
+    "observed_version": "3.12.13"
+  },
+  "schema": "qvra-runtime-policy/v1"
+}

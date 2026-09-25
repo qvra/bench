@@ -1,0 +1,56 @@
+{
+  "schema": "qvra-publication-protocol/v1",
+  "status": "PRE_EXTERNAL_EXECUTION",
+  "purpose": "Define when cross-system benchmark observations may be published as comparative evidence.",
+  "required_before_execution": [
+    "challenger_identity",
+    "challenger_version_or_commit",
+    "source_reference",
+    "adapter_hash",
+    "fixture_hash",
+    "benchmark_kernel_commit",
+    "execution_environment",
+    "repetition_policy",
+    "timeout_policy",
+    "scoring_contract"
+  ],
+  "required_per_run": [
+    "system_id",
+    "run_number",
+    "exit_code",
+    "timed_out",
+    "duration_ms",
+    "stdout_sha256",
+    "stderr_sha256",
+    "contract_valid",
+    "provenance_complete",
+    "mutation_performed"
+  ],
+  "required_for_publication": [
+    "all_scheduled_runs_retained",
+    "failed_runs_retained",
+    "raw_output_hashes_retained",
+    "aggregate_method_declared",
+    "environment_declared",
+    "fixture_bound",
+    "challenger_versions_bound",
+    "result_capsule_verified",
+    "limitations_declared"
+  ],
+  "forbidden": [
+    "discarding_failed_runs_without_declared_protocol_reason",
+    "changing_fixture_between_challengers",
+    "changing_scoring_between_challengers",
+    "granting_qvra_owned_systems_privileged_scoring",
+    "reporting_best_run_as_typical",
+    "calling_controlled_fixture_results_real_world_superiority",
+    "claiming_global_superiority_from_one_suite",
+    "claiming external comparison before external challenger execution"
+  ],
+  "claim_levels": {
+    "HARNESS_VALIDATED": "Benchmark machinery passed controlled validation only.",
+    "EXTERNAL_RUN_OBSERVED": "At least one registered external challenger executed under the protocol.",
+    "COMPARATIVE_RESULT_VERIFIED": "A complete comparative result capsule passed verification.",
+    "REPLICATED_RESULT": "The comparative result was reproduced in a separately declared execution environment."
+  }
+}
