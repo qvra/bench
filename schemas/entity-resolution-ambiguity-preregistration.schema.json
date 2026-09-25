@@ -1,0 +1,112 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "claim_policy": {
+      "type": "object"
+    },
+    "collision_model": {
+      "type": "object"
+    },
+    "corpus_acceptance": {
+      "type": "object"
+    },
+    "evaluation": {
+      "type": "object"
+    },
+    "execution_state": {
+      "required": [
+        "generator_implemented",
+        "corpus_generated",
+        "corpus_accepted",
+        "system_execution_performed",
+        "truth_scoring_performed",
+        "family_2_result_available",
+        "cross_family_result_available"
+      ],
+      "type": "object"
+    },
+    "family_relationship": {
+      "required": [
+        "family_1",
+        "family_1_results_known",
+        "family_2_distribution_frozen_after_family_1",
+        "generator_not_implemented_at_preregistration",
+        "test_truth_not_generated_at_preregistration"
+      ],
+      "type": "object"
+    },
+    "latent_identity_model": {
+      "type": "object"
+    },
+    "mutation_policy": {
+      "type": "object"
+    },
+    "population_model": {
+      "required": [
+        "seed_schedule",
+        "latent_entities",
+        "train_entities",
+        "test_entities",
+        "split_unit",
+        "split_before_record_corruption",
+        "entity_overlap_between_train_and_test",
+        "records_per_entity_distribution",
+        "public_fields",
+        "private_truth_field"
+      ],
+      "type": "object"
+    },
+    "record_generation_model": {
+      "type": "object"
+    },
+    "runtime_policy": {
+      "type": "object"
+    },
+    "sampling_invariants": {
+      "type": "object"
+    },
+    "schema": {
+      "const": "qvra-entity-resolution-ambiguity-preregistration/v1"
+    },
+    "scientific_question": {
+      "minLength": 40,
+      "type": "string"
+    },
+    "status": {
+      "const": "PREREGISTERED_NOT_IMPLEMENTED"
+    },
+    "suite_id": {
+      "const": "entity-resolution-ambiguity-v1"
+    },
+    "systems": {
+      "required": [
+        "qvra",
+        "splink",
+        "dedupe"
+      ],
+      "type": "object"
+    }
+  },
+  "required": [
+    "schema",
+    "suite_id",
+    "status",
+    "scientific_question",
+    "family_relationship",
+    "systems",
+    "population_model",
+    "latent_identity_model",
+    "collision_model",
+    "record_generation_model",
+    "sampling_invariants",
+    "corpus_acceptance",
+    "evaluation",
+    "runtime_policy",
+    "mutation_policy",
+    "claim_policy",
+    "execution_state"
+  ],
+  "title": "Entity Resolution Ambiguity v1 Preregistration",
+  "type": "object"
+}

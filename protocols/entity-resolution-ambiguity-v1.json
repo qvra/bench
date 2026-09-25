@@ -1,0 +1,202 @@
+{
+  "claim_policy": {
+    "cross_family_descriptive_analysis_after_family_2": true,
+    "family_2_result_is_suite_specific": true,
+    "global_superiority_claim": false,
+    "publication_before_governance": false,
+    "universal_generalization_claim": false
+  },
+  "collision_model": {
+    "created_before_record_corruption": true,
+    "group_types": [
+      "same_full_name",
+      "same_last_name_and_city",
+      "shared_email",
+      "near_name_same_city",
+      "multi_field_hard_negative"
+    ],
+    "hard_negative_requirement": "Some distinct latent entities must be more similar on observed fields than some records belonging to the same latent entity.",
+    "single_observed_field_global_identifier_prohibited": true
+  },
+  "corpus_acceptance": {
+    "first_seed_passing_all_invariants_must_be_used": true,
+    "performed_before_any_system_execution": true,
+    "required_checks": [
+      "train_test_entity_disjointness",
+      "public_test_label_absence",
+      "identical_full_name_negative_presence",
+      "shared_email_negative_presence",
+      "multi_field_hard_negative_presence",
+      "missingness_presence",
+      "unicode_or_transliteration_presence",
+      "contradictory_evidence_presence",
+      "nonsemantic_record_id",
+      "no_numeric_identity_shortcut"
+    ],
+    "system_performance_may_not_be_used_for_acceptance": true
+  },
+  "evaluation": {
+    "metric_kernel": "same_cluster_metric_kernel_as_family_1",
+    "primary_aggregation": "mean",
+    "primary_metrics": [
+      "pair_precision",
+      "pair_recall",
+      "pair_f1",
+      "cluster_exact_match_rate"
+    ],
+    "runs_per_system": 3,
+    "secondary_aggregation": "median",
+    "timing_is_quality_gate": false
+  },
+  "execution_state": {
+    "corpus_accepted": false,
+    "corpus_generated": false,
+    "cross_family_result_available": false,
+    "family_2_result_available": false,
+    "generator_implemented": false,
+    "system_execution_performed": false,
+    "truth_scoring_performed": false
+  },
+  "family_relationship": {
+    "family_1": "entity-resolution-real-v3",
+    "family_1_results_known": true,
+    "family_2_distribution_frozen_after_family_1": true,
+    "generator_not_implemented_at_preregistration": true,
+    "test_truth_not_generated_at_preregistration": true
+  },
+  "latent_identity_model": {
+    "email_is_not_perfect_identifier": true,
+    "email_local_part_must_not_encode_entity_id": true,
+    "entity_relocation_allowed": true,
+    "identity_generated_before_records": true,
+    "name_frequency": "zipf_like",
+    "recycled_email_allowed": true,
+    "same_city_distinct_entities_allowed": true,
+    "same_full_name_distinct_entities_allowed": true,
+    "shared_email_allowed": true
+  },
+  "mutation_policy": {
+    "dedupe_retuning": false,
+    "post_execution_generator_change": false,
+    "post_execution_metric_change": false,
+    "post_generation_distribution_change": false,
+    "qvra_retuning": false,
+    "splink_retuning": false
+  },
+  "population_model": {
+    "entity_overlap_between_train_and_test": false,
+    "latent_entities": 600,
+    "private_truth_field": "entity_id",
+    "public_fields": [
+      "record_id",
+      "first_name",
+      "last_name",
+      "city",
+      "email"
+    ],
+    "records_per_entity_distribution": {
+      "probabilities": [
+        0.15,
+        0.25,
+        0.3,
+        0.2,
+        0.1
+      ],
+      "support": [
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    "seed_schedule": [
+      20260926,
+      20260927,
+      20260928,
+      20260929,
+      20260930
+    ],
+    "split_before_record_corruption": true,
+    "split_unit": "latent_entity",
+    "test_entities": 420,
+    "train_entities": 180
+  },
+  "record_generation_model": {
+    "clean_record_generated_first": true,
+    "corruption_count_distribution": {
+      "probabilities": [
+        0.05,
+        0.2,
+        0.35,
+        0.25,
+        0.15
+      ],
+      "support": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    "corruption_operators": [
+      "character_edit",
+      "whitespace_variation",
+      "case_variation",
+      "unicode_diacritic_variation",
+      "transliteration",
+      "name_order_swap",
+      "nickname_or_short_form",
+      "field_missingness",
+      "city_change",
+      "email_change",
+      "contradictory_field_from_collision_peer"
+    ],
+    "independent_of_family_1_errors": true,
+    "independent_of_system_outputs": true,
+    "independent_of_test_truth_scoring": true,
+    "operator_selection": "seeded_stochastic"
+  },
+  "runtime_policy": {
+    "authoring_python_is_not_execution_runtime": true,
+    "execution_runtime_frozen_before_first_run": true,
+    "existing_system_environments_must_be_reproduced": true,
+    "observed_authoring_python": "3.14.3"
+  },
+  "sampling_invariants": {
+    "contradictory_evidence": true,
+    "distinct_entities_with_identical_full_names": true,
+    "every_test_entity_has_at_least_two_records": true,
+    "missing_field_records": true,
+    "multi_field_hard_negatives": true,
+    "no_entity_id_in_test_csv": true,
+    "no_numeric_identity_shortcut": true,
+    "no_truth_derived_public_feature": true,
+    "record_id_is_nonsemantic": true,
+    "shared_email_across_distinct_entities": true,
+    "unicode_or_transliteration_variants": true
+  },
+  "schema": "qvra-entity-resolution-ambiguity-preregistration/v1",
+  "scientific_question": "Does the already-frozen entity-resolution behavior generalize from entity-resolution-real-v3 to a separately generated distribution dominated by identity ambiguity, collisions, contradictory evidence, missingness and hard negatives?",
+  "status": "PREREGISTERED_NOT_IMPLEMENTED",
+  "suite_id": "entity-resolution-ambiguity-v1",
+  "systems": {
+    "dedupe": {
+      "compatibility_binding": "BTrees==6.4",
+      "retuning_allowed": false,
+      "system_id": "dedupe-3.0.3",
+      "version": "3.0.3"
+    },
+    "qvra": {
+      "implementation_sha256": "cd51eff4b0ffddbac5e96b360b305183dcf365e7eaf7a117df8bf01cff489a42",
+      "retuning_allowed": false,
+      "system_id": "qvra-native-er-v1"
+    },
+    "splink": {
+      "retuning_allowed": false,
+      "system_id": "splink-4.0.17",
+      "version": "4.0.17"
+    }
+  }
+}
