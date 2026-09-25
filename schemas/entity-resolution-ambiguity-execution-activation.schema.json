@@ -1,0 +1,278 @@
+{
+  "$id": "qvra-family-2-execution-activation.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "activation_effect": {
+      "additionalProperties": false,
+      "properties": {
+        "execution_authorized": {
+          "const": true
+        },
+        "maximum_execution_batches": {
+          "const": 1
+        },
+        "one_shot": {
+          "const": true
+        },
+        "permit_active": {
+          "const": true
+        },
+        "permit_consumable": {
+          "const": true
+        }
+      },
+      "required": [
+        "permit_active",
+        "permit_consumable",
+        "execution_authorized",
+        "one_shot",
+        "maximum_execution_batches"
+      ],
+      "type": "object"
+    },
+    "activation_kind": {
+      "const": "exact-one-shot-nine-run-execution-activation"
+    },
+    "benchmark": {
+      "const": "entity-resolution-ambiguity-v1"
+    },
+    "bindings": {
+      "additionalProperties": false,
+      "properties": {
+        "authorization_sha256": {
+          "const": "30890b1ac027caf4c3175e6c602581ad3c9e544d932435bff045884b795e5728"
+        },
+        "command_descriptor_sha256": {
+          "const": "817d3e1eae8babb26eb49792b5778898793235042020c9f904cad0057e8549ac"
+        },
+        "controller_binding_attestation_sha256": {
+          "const": "f11beabbbd55b9f36ab924fcd767e985eee3e218d70a5520047997b4e3cb6f57"
+        },
+        "controller_sha256": {
+          "const": "2b9e0026ed756468432c8d07edca9ebc49ef3b727defbc39f3b55cb9319d9661"
+        },
+        "governed_main": {
+          "const": "ecdf3a21bf857e67fb47a5f70a8463bc967a67c9"
+        },
+        "permit": {
+          "additionalProperties": false,
+          "properties": {
+            "immutable": {
+              "const": true
+            },
+            "path": {
+              "const": "protocols/entity-resolution-ambiguity-one-shot-execution-permit-v1.json"
+            },
+            "sha256": {
+              "const": "7cef4548b571940a2fe34e3a4025afe8fe632a90c4af38b9fbd00b1b5794a8d3"
+            }
+          },
+          "required": [
+            "path",
+            "sha256",
+            "immutable"
+          ],
+          "type": "object"
+        },
+        "portable_plan_sha256": {
+          "const": "df1fbeab0a2c89c16fb9530aaf4f5545d62a4dab3f44f160dacdc231a3463ac7"
+        },
+        "process_launcher_sha256": {
+          "const": "d8d028d95adb463f27b5df6a5ec44ae9049b6799aae46c4b0176ca2adfd07f90"
+        }
+      },
+      "required": [
+        "governed_main",
+        "permit",
+        "controller_binding_attestation_sha256",
+        "authorization_sha256",
+        "controller_sha256",
+        "portable_plan_sha256",
+        "process_launcher_sha256",
+        "command_descriptor_sha256"
+      ],
+      "type": "object"
+    },
+    "effectuation_firewall": {
+      "additionalProperties": false,
+      "properties": {
+        "controller_mutation_performed": {
+          "const": false
+        },
+        "execution_bridge_created": {
+          "const": false
+        },
+        "execution_bridge_required": {
+          "const": true
+        },
+        "launcher_mutation_performed": {
+          "const": false
+        },
+        "process_launch_on_artifact_creation": {
+          "const": false
+        },
+        "process_launch_on_commit": {
+          "const": false
+        },
+        "process_launch_on_merge": {
+          "const": false
+        },
+        "self_executing": {
+          "const": false
+        },
+        "subprocess_invocation": {
+          "const": false
+        }
+      },
+      "required": [
+        "self_executing",
+        "process_launch_on_artifact_creation",
+        "process_launch_on_commit",
+        "process_launch_on_merge",
+        "execution_bridge_required",
+        "execution_bridge_created",
+        "launcher_mutation_performed",
+        "controller_mutation_performed",
+        "subprocess_invocation"
+      ],
+      "type": "object"
+    },
+    "family": {
+      "const": 2
+    },
+    "governance_gate": {
+      "additionalProperties": false,
+      "properties": {
+        "activation_not_effective_before_gate_completion": {
+          "const": true
+        },
+        "exact_head_review_required": {
+          "const": true
+        },
+        "independent_review_required": {
+          "const": true
+        },
+        "mainline_merge_required": {
+          "const": true
+        }
+      },
+      "required": [
+        "independent_review_required",
+        "exact_head_review_required",
+        "mainline_merge_required",
+        "activation_not_effective_before_gate_completion"
+      ],
+      "type": "object"
+    },
+    "one_shot_semantics": {
+      "additionalProperties": false,
+      "properties": {
+        "activation_reusable": {
+          "const": false
+        },
+        "all_nine_runs_required": {
+          "const": true
+        },
+        "partial_execution_reauthorization_allowed": {
+          "const": false
+        },
+        "permit_reusable": {
+          "const": false
+        },
+        "second_activation_requires_new_artifact": {
+          "const": true
+        }
+      },
+      "required": [
+        "activation_reusable",
+        "permit_reusable",
+        "partial_execution_reauthorization_allowed",
+        "second_activation_requires_new_artifact",
+        "all_nine_runs_required"
+      ],
+      "type": "object"
+    },
+    "preexecution_state": {
+      "additionalProperties": false,
+      "properties": {
+        "activation_consumed": {
+          "const": false
+        },
+        "permit_consumed": {
+          "const": false
+        },
+        "quality_result_available": {
+          "const": false
+        },
+        "raw_runs_produced": {
+          "const": 0
+        },
+        "system_execution": {
+          "const": false
+        },
+        "truth_scoring": {
+          "const": false
+        }
+      },
+      "required": [
+        "activation_consumed",
+        "permit_consumed",
+        "raw_runs_produced",
+        "system_execution",
+        "truth_scoring",
+        "quality_result_available"
+      ],
+      "type": "object"
+    },
+    "schema": {
+      "const": "qvra-family-2-execution-activation/v1"
+    },
+    "scope": {
+      "additionalProperties": false,
+      "properties": {
+        "run_numbers": {
+          "const": [
+            1,
+            2,
+            3
+          ]
+        },
+        "runs_per_system": {
+          "const": 3
+        },
+        "systems": {
+          "const": [
+            "qvra-native-er-v1",
+            "splink-4.0.17",
+            "dedupe-3.0.3"
+          ]
+        },
+        "total_required_raw_runs": {
+          "const": 9
+        }
+      },
+      "required": [
+        "systems",
+        "runs_per_system",
+        "run_numbers",
+        "total_required_raw_runs"
+      ],
+      "type": "object"
+    }
+  },
+  "required": [
+    "schema",
+    "benchmark",
+    "family",
+    "activation_kind",
+    "bindings",
+    "scope",
+    "activation_effect",
+    "governance_gate",
+    "effectuation_firewall",
+    "one_shot_semantics",
+    "preexecution_state"
+  ],
+  "type": "object"
+}
