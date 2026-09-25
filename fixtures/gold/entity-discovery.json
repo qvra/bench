@@ -1,0 +1,11 @@
+{
+  "fixture_id": "entity-discovery-gold-v1",
+  "source": "qvra-controlled-reference-corpus",
+  "expected_items": [
+    "alpha",
+    "beta",
+    "gamma",
+    "delta",
+    "epsilon"
+  ]
+}
