@@ -1,0 +1,104 @@
+{
+  "claim_boundary": {
+    "claim_level": "SUITE_SPECIFIC_COMPARATIVE_RESULT",
+    "cross_suite_generalization": false,
+    "global_superiority_claim": false,
+    "publication_status": "UNPUBLISHED"
+  },
+  "common_metrics": [
+    "pair_precision",
+    "pair_recall",
+    "pair_f1",
+    "cluster_exact_match_rate"
+  ],
+  "comparison_sha256": "1713cdb70be7a1948a6e70f0ba169f7791a598fe06e575df9f3d5f9445a604e5",
+  "methodology": {
+    "external_results_fixed_before_qvra_implementation": true,
+    "primary_aggregation": "mean",
+    "qvra_result_fixed_before_comparison": true,
+    "runs_per_system": 3,
+    "same_corpus": true,
+    "same_metric_semantics": true,
+    "same_truth": true,
+    "secondary_aggregation": "median",
+    "system_execution_during_comparison": false
+  },
+  "schema": "qvra-three-system-comparative-capsule/v1",
+  "source_bindings": {
+    "evaluator_sha256": "11354bcdafab27ebc0173bd0ba32f234ad2f418ed2e384e2dc43f15d5d7c1f58",
+    "external_observation_sha256": "749fc76db8648a3d7ba2fd9afd0a0993e01b1776e67b3c930be0560650b3b3e3",
+    "qvra_implementation_sha256": "cd51eff4b0ffddbac5e96b360b305183dcf365e7eaf7a117df8bf01cff489a42",
+    "qvra_observation_sha256": "892c67737b3e1df81d972c56474ab53ab61765056b03f1a7b4c67b9430ff9f3c",
+    "qvra_preregistration_sha256": "6952231739c4bb6dcc722af8eb59577cb59d08b39b762fdbd461aff9da233e9f",
+    "truth_sha256": "218763de852e4b9bb27ccf052eb188e832de579ac392c36bcf51f771862ff15b"
+  },
+  "suite": "entity-resolution-real-v3",
+  "systems": {
+    "dedupe": {
+      "metrics": {
+        "cluster_exact_match_rate": {
+          "mean": 0.09142857142857143,
+          "median": 0.09142857142857143
+        },
+        "pair_f1": {
+          "mean": 0.123895595329848,
+          "median": 0.12390563389694578
+        },
+        "pair_precision": {
+          "mean": 0.06970615387471593,
+          "median": 0.0695423855963991
+        },
+        "pair_recall": {
+          "mean": 0.5568483363951827,
+          "median": 0.5578689528475199
+        }
+      },
+      "observation_form": "three-run-aggregate",
+      "runs": 3
+    },
+    "qvra-native-er-v1": {
+      "metrics": {
+        "cluster_exact_match_rate": {
+          "mean": 0.9714285714285714,
+          "median": 0.9714285714285714
+        },
+        "pair_f1": {
+          "mean": 0.9916640938561284,
+          "median": 0.9916640938561284
+        },
+        "pair_precision": {
+          "mean": 1.0,
+          "median": 1.0
+        },
+        "pair_recall": {
+          "mean": 0.9834660134721371,
+          "median": 0.9834660134721371
+        }
+      },
+      "observation_form": "three-identical-runs",
+      "runs": 3
+    },
+    "splink": {
+      "metrics": {
+        "cluster_exact_match_rate": {
+          "mean": 0.06285714285714286,
+          "median": 0.06285714285714286
+        },
+        "pair_f1": {
+          "mean": 0.24973204715969988,
+          "median": 0.24973204715969988
+        },
+        "pair_precision": {
+          "mean": 1.0,
+          "median": 1.0
+        },
+        "pair_recall": {
+          "mean": 0.14268218003674218,
+          "median": 0.14268218003674218
+        }
+      },
+      "observation_form": "three-run-aggregate",
+      "runs": 3
+    }
+  }
+}
