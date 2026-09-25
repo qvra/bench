@@ -1,0 +1,158 @@
+{
+  "benchmark_family": "entity-resolution-ambiguity-v1",
+  "benchmark_main": "63b1c6d99fb27d2af55da59fdb27b41b555eb296",
+  "parameter_policy": {
+    "binding_rule": "use_preexisting_adapter_defaults_when_no_governed_override_exists",
+    "corpus_seed_is_distinct_from_system_training_seed": true,
+    "performance_observed_before_binding": false,
+    "retuning_allowed": false
+  },
+  "policy": {
+    "adapter_import": false,
+    "descriptor_only": true,
+    "environment_resolution_complete": true,
+    "execution_capability": false,
+    "process_launch": false,
+    "raw_runs_produced": 0,
+    "retuning_allowed": false,
+    "shell_execution": false,
+    "system_execution": false,
+    "truth_input_allowed": false,
+    "truth_scoring": false
+  },
+  "runtime_binding_policy": {
+    "absolute_path_is_identity": false,
+    "benchmark_execution_network_required": false,
+    "external_runtime_identity": "logical_runtime_id_plus_pip_freeze_sha256",
+    "package_inventory_frozen_before_execution": true,
+    "runtime_mutation_after_binding_allowed": false
+  },
+  "schema": "qvra-family-2-command-descriptors/v1",
+  "systems": {
+    "dedupe-3.0.3": {
+      "adapter": "adapters/external/dedupe_v3.py",
+      "adapter_sha256": "798dce2e5ca90a9f4cf8fbe309d4c6c7aeddb415e098267975ab2c41b3da80d4",
+      "argv_template": [
+        "/Users/midiakiasat/.qvra/runtime/family-2/entity-resolution-ambiguity-v1/dedupe-3.0.3-py312-btrees-6.4/bin/python",
+        "adapters/external/dedupe_v3.py",
+        "--train",
+        "{train_csv}",
+        "--test",
+        "{test_csv}",
+        "--output",
+        "{output_json}",
+        "--threshold",
+        "0.5",
+        "--seed",
+        "20260925"
+      ],
+      "environment_resolution_required": false,
+      "forbidden_inputs": [
+        "truth.json"
+      ],
+      "frozen_parameters": {
+        "threshold": {
+          "adapter": "adapters/external/dedupe_v3.py",
+          "retuned": false,
+          "source": "adapter_argparse_default",
+          "value": 0.5
+        },
+        "training_seed": {
+          "adapter": "adapters/external/dedupe_v3.py",
+          "retuned": false,
+          "source": "adapter_argparse_default",
+          "value": 20260925
+        }
+      },
+      "python": "/Users/midiakiasat/.qvra/runtime/family-2/entity-resolution-ambiguity-v1/dedupe-3.0.3-py312-btrees-6.4/bin/python",
+      "required_inputs": [
+        "train.csv",
+        "test.csv"
+      ],
+      "runtime_binding": {
+        "environment_construction_complete": true,
+        "identity_depends_on_absolute_path": false,
+        "inventory_kind": "pip-freeze-all",
+        "inventory_sha256": "509c3b4d5b63d3d4d85f695ea23d0a459bc6b5156058f6f7ff8d1c6010648e92",
+        "isolated_virtual_environment": true,
+        "observed_python_executable": "/Users/midiakiasat/.qvra/runtime/family-2/entity-resolution-ambiguity-v1/dedupe-3.0.3-py312-btrees-6.4/bin/python",
+        "runtime_id": "dedupe-3.0.3-cpython-3.12-btrees-6.4"
+      },
+      "runtime_constraints": {
+        "BTrees": "6.4",
+        "dedupe": "3.0.3",
+        "python": "3.12"
+      }
+    },
+    "qvra-native-er-v1": {
+      "adapter": "adapters/native/qvra_er_v1.py",
+      "adapter_sha256": "cd51eff4b0ffddbac5e96b360b305183dcf365e7eaf7a117df8bf01cff489a42",
+      "argv_template": [
+        "/opt/homebrew/opt/python@3.12/bin/python3.12",
+        "adapters/native/qvra_er_v1.py",
+        "--train",
+        "{train_csv}",
+        "--test",
+        "{test_csv}",
+        "--output",
+        "{output_json}"
+      ],
+      "environment_resolution_required": false,
+      "forbidden_inputs": [
+        "truth.json"
+      ],
+      "python": "/opt/homebrew/opt/python@3.12/bin/python3.12",
+      "required_inputs": [
+        "train.csv",
+        "test.csv"
+      ],
+      "runtime_binding": {
+        "environment_construction_complete": true,
+        "external_package_environment": false,
+        "identity_depends_on_absolute_path": false,
+        "observed_python_executable": "/opt/homebrew/opt/python@3.12/bin/python3.12",
+        "runtime_id": "qvra-native-er-v1-cpython-3.12"
+      }
+    },
+    "splink-4.0.17": {
+      "adapter": "adapters/external/splink_v4.py",
+      "adapter_sha256": "8d08f2cc92dd3404c89c3e9de6e010003705b4e988905916bb05ddf39fcedf77",
+      "argv_template": [
+        "/Users/midiakiasat/.qvra/runtime/family-2/entity-resolution-ambiguity-v1/splink-4.0.17-py312/bin/python",
+        "adapters/external/splink_v4.py",
+        "--test",
+        "{test_csv}",
+        "--output",
+        "{output_json}",
+        "--threshold",
+        "0.5"
+      ],
+      "environment_resolution_required": false,
+      "forbidden_inputs": [
+        "train.csv",
+        "truth.json"
+      ],
+      "frozen_parameters": {
+        "threshold": {
+          "adapter": "adapters/external/splink_v4.py",
+          "retuned": false,
+          "source": "adapter_argparse_default",
+          "value": 0.5
+        }
+      },
+      "python": "/Users/midiakiasat/.qvra/runtime/family-2/entity-resolution-ambiguity-v1/splink-4.0.17-py312/bin/python",
+      "required_inputs": [
+        "test.csv"
+      ],
+      "runtime_binding": {
+        "environment_construction_complete": true,
+        "identity_depends_on_absolute_path": false,
+        "inventory_kind": "pip-freeze-all",
+        "inventory_sha256": "2c1a81efdf02448bbfe89c3635cd7615a082d4c1051538ce9ba571719fb27a8d",
+        "isolated_virtual_environment": true,
+        "observed_python_executable": "/Users/midiakiasat/.qvra/runtime/family-2/entity-resolution-ambiguity-v1/splink-4.0.17-py312/bin/python",
+        "runtime_id": "splink-4.0.17-cpython-3.12"
+      }
+    }
+  }
+}
