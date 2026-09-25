@@ -421,6 +421,16 @@ def canonical_plan_bytes(
             for token in run["argv"]
         ]
 
+        run["env"] = [
+            [
+                key,
+                "${PATH}"
+                if key == "PATH"
+                else value,
+            ]
+            for key, value in run["env"]
+        ]
+
     return (
         json.dumps(
             payload,
