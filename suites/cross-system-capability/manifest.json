@@ -1,0 +1,41 @@
+{
+  "schema": "qvra-suite-manifest/v1",
+  "suite_id": "cross-system-capability-v1",
+  "status": "CONTROLLED_HARNESS_VALIDATION",
+  "claim_boundary": "No external competitor superiority claim.",
+  "minimum_repetitions": 3,
+  "default_repetitions": 11,
+  "metrics": [
+    "precision",
+    "recall",
+    "f1",
+    "latency_min",
+    "latency_median",
+    "latency_p95",
+    "latency_max",
+    "contract_validity",
+    "provenance_completeness",
+    "declared_mutation",
+    "timeout"
+  ],
+  "adversarial_controls": [
+    "false_positive",
+    "false_negative",
+    "invalid_output",
+    "missing_provenance",
+    "declared_mutation",
+    "duplicate_flood",
+    "result_reordering",
+    "json_format_variation",
+    "stderr_noise",
+    "capsule_tampering"
+  ],
+  "fixture": {
+    "path": "fixtures/gold/entity-discovery.json",
+    "sha256": "14841467ec92589c4814003a1bcf9cbd172dd3608136d86e072da9bd45b2e322"
+  },
+  "result_policy": {
+    "generated_results_committed": false,
+    "reason": "Runtime and resource observations are environment-bound until a publication protocol exists."
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "fixture_id": "entity-discovery-hostile-v1",
+  "source": "qvra-controlled-hostile-corpus",
+  "expected_items": [
+    "alpha",
+    "beta",
+    "gamma",
+    "delta",
+    "epsilon"
+  ]
+}
