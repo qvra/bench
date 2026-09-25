@@ -1,0 +1,11 @@
+{
+  "comparative_capsule_sha256": "44971a09fdf560d739ae34e85f045f2eb7db2bd274aab92b4adbf2020ff92ee1",
+  "comparison_sha256": "1713cdb70be7a1948a6e70f0ba169f7791a598fe06e575df9f3d5f9445a604e5",
+  "cross_suite_generalization": false,
+  "global_superiority_claim": false,
+  "governed_main": "160452dfee7a133e78f63cf15a581672adda4e84",
+  "publication_status": "UNPUBLISHED",
+  "report": "reports/entity-resolution-benchmark-v1.md",
+  "report_sha256": "1b7087860c4a8c422dd2293d27c959fad8cc97341c1ba12f0a1a78c8a4097378",
+  "schema": "qvra-publication-report-manifest/v1"
+}
