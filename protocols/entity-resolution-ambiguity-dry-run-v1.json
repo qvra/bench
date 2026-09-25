@@ -1,0 +1,214 @@
+{
+  "benchmark_family": "entity-resolution-ambiguity-v1",
+  "benchmark_main": "f55da9d228619b8a61f3c3ea1e3a689cfe72e80d",
+  "bindings": {
+    "challenger_registry": {
+      "path": "challengers/registry.json",
+      "sha256": "b04994bce8ea16f60e1382aa3df2167e128840619a28eb565ee5d05135a9b028"
+    },
+    "execution_capsule": {
+      "path": "protocols/entity-resolution-ambiguity-execution-v1.json",
+      "sha256": "5d44ee19992fdd71a25c19ca0bb9f276ba07ea809f016068d6db6cb338610fe7"
+    },
+    "execution_plan": {
+      "path": "suites/entity-resolution-ambiguity-v1/execution_plan.py",
+      "sha256": "20a42afb7a0fc3a2ed033968f4a2cec6b00700141c47927234e5cc5233beddb3"
+    },
+    "preregistration": {
+      "path": "protocols/entity-resolution-ambiguity-v1.json",
+      "sha256": "ee642416143e4703a7000bc6a48075faff69f9fdf5f45fe4228bd71eaeb07abe"
+    },
+    "runtime_policy": {
+      "path": "protocols/runtime-v1.json",
+      "sha256": "0ae9913e36bc3109ea36f7da93219852760a8f347bc5d802aaacde313ddefced"
+    }
+  },
+  "firewall": {
+    "credentials_required": false,
+    "network_required": false,
+    "raw_outputs_hash_bound_before_truth_reveal": true,
+    "raw_runs_required_before_scoring": 9,
+    "retuning_allowed": false,
+    "truth_input_allowed": false
+  },
+  "runs": [
+    {
+      "artifacts": {
+        "output": "family-2-raw-runs/qvra-native-er-v1/run-1/output.json",
+        "stderr": "family-2-raw-runs/qvra-native-er-v1/run-1/stderr.txt",
+        "stdout": "family-2-raw-runs/qvra-native-er-v1/run-1/stdout.txt"
+      },
+      "inputs": {
+        "test": "test.csv",
+        "train": "train.csv"
+      },
+      "plan_system": "qvra-native-er-v1",
+      "run": 1,
+      "system_id": "qvra-native-er-v1"
+    },
+    {
+      "artifacts": {
+        "output": "family-2-raw-runs/qvra-native-er-v1/run-2/output.json",
+        "stderr": "family-2-raw-runs/qvra-native-er-v1/run-2/stderr.txt",
+        "stdout": "family-2-raw-runs/qvra-native-er-v1/run-2/stdout.txt"
+      },
+      "inputs": {
+        "test": "test.csv",
+        "train": "train.csv"
+      },
+      "plan_system": "qvra-native-er-v1",
+      "run": 2,
+      "system_id": "qvra-native-er-v1"
+    },
+    {
+      "artifacts": {
+        "output": "family-2-raw-runs/qvra-native-er-v1/run-3/output.json",
+        "stderr": "family-2-raw-runs/qvra-native-er-v1/run-3/stderr.txt",
+        "stdout": "family-2-raw-runs/qvra-native-er-v1/run-3/stdout.txt"
+      },
+      "inputs": {
+        "test": "test.csv",
+        "train": "train.csv"
+      },
+      "plan_system": "qvra-native-er-v1",
+      "run": 3,
+      "system_id": "qvra-native-er-v1"
+    },
+    {
+      "artifacts": {
+        "output": "family-2-raw-runs/splink/run-1/output.json",
+        "stderr": "family-2-raw-runs/splink/run-1/stderr.txt",
+        "stdout": "family-2-raw-runs/splink/run-1/stdout.txt"
+      },
+      "inputs": {
+        "test": "test.csv",
+        "train": "train.csv"
+      },
+      "plan_system": "splink",
+      "run": 1,
+      "system_id": "splink-4.0.17"
+    },
+    {
+      "artifacts": {
+        "output": "family-2-raw-runs/splink/run-2/output.json",
+        "stderr": "family-2-raw-runs/splink/run-2/stderr.txt",
+        "stdout": "family-2-raw-runs/splink/run-2/stdout.txt"
+      },
+      "inputs": {
+        "test": "test.csv",
+        "train": "train.csv"
+      },
+      "plan_system": "splink",
+      "run": 2,
+      "system_id": "splink-4.0.17"
+    },
+    {
+      "artifacts": {
+        "output": "family-2-raw-runs/splink/run-3/output.json",
+        "stderr": "family-2-raw-runs/splink/run-3/stderr.txt",
+        "stdout": "family-2-raw-runs/splink/run-3/stdout.txt"
+      },
+      "inputs": {
+        "test": "test.csv",
+        "train": "train.csv"
+      },
+      "plan_system": "splink",
+      "run": 3,
+      "system_id": "splink-4.0.17"
+    },
+    {
+      "artifacts": {
+        "output": "family-2-raw-runs/dedupe/run-1/output.json",
+        "stderr": "family-2-raw-runs/dedupe/run-1/stderr.txt",
+        "stdout": "family-2-raw-runs/dedupe/run-1/stdout.txt"
+      },
+      "inputs": {
+        "test": "test.csv",
+        "train": "train.csv"
+      },
+      "plan_system": "dedupe",
+      "run": 1,
+      "system_id": "dedupe-3.0.3"
+    },
+    {
+      "artifacts": {
+        "output": "family-2-raw-runs/dedupe/run-2/output.json",
+        "stderr": "family-2-raw-runs/dedupe/run-2/stderr.txt",
+        "stdout": "family-2-raw-runs/dedupe/run-2/stdout.txt"
+      },
+      "inputs": {
+        "test": "test.csv",
+        "train": "train.csv"
+      },
+      "plan_system": "dedupe",
+      "run": 2,
+      "system_id": "dedupe-3.0.3"
+    },
+    {
+      "artifacts": {
+        "output": "family-2-raw-runs/dedupe/run-3/output.json",
+        "stderr": "family-2-raw-runs/dedupe/run-3/stderr.txt",
+        "stdout": "family-2-raw-runs/dedupe/run-3/stdout.txt"
+      },
+      "inputs": {
+        "test": "test.csv",
+        "train": "train.csv"
+      },
+      "plan_system": "dedupe",
+      "run": 3,
+      "system_id": "dedupe-3.0.3"
+    }
+  ],
+  "runtime_policy": {
+    "dependency_freeze_retained": true,
+    "implementation": "CPython",
+    "isolated_virtual_environments": true,
+    "observed_version": "3.12.13",
+    "package_versions_exact": true,
+    "python_major_minor": "3.12",
+    "same_python_major_minor": true
+  },
+  "schema": "qvra-family-2-dry-run/v1",
+  "state": {
+    "comparison_performed": false,
+    "dry_run_only": true,
+    "execution_capability": false,
+    "quality_result_available": false,
+    "raw_runs_produced": 0,
+    "system_execution": false,
+    "truth_scoring": false
+  },
+  "systems": {
+    "dedupe-3.0.3": {
+      "adapter": "adapters/external/dedupe_v3.py",
+      "adapter_sha256": "798dce2e5ca90a9f4cf8fbe309d4c6c7aeddb415e098267975ab2c41b3da80d4",
+      "runtime": {
+        "compatibility_dependencies": {
+          "BTrees": "6.4"
+        },
+        "implementation": "CPython",
+        "package": "dedupe",
+        "package_version": "3.0.3",
+        "python_major_minor": "3.12"
+      }
+    },
+    "qvra-native-er-v1": {
+      "adapter": "adapters/native/qvra_er_v1.py",
+      "adapter_sha256": "cd51eff4b0ffddbac5e96b360b305183dcf365e7eaf7a117df8bf01cff489a42",
+      "runtime": {
+        "implementation": "CPython",
+        "python_major_minor": "3.12"
+      }
+    },
+    "splink-4.0.17": {
+      "adapter": "adapters/external/splink_v4.py",
+      "adapter_sha256": "8d08f2cc92dd3404c89c3e9de6e010003705b4e988905916bb05ddf39fcedf77",
+      "runtime": {
+        "implementation": "CPython",
+        "package": "splink",
+        "package_version": "4.0.17",
+        "python_major_minor": "3.12"
+      }
+    }
+  }
+}
