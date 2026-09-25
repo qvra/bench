@@ -1,0 +1,450 @@
+{
+  "$id": "https://qvra.dev/schemas/entity-resolution-ambiguity-dry-run.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "benchmark_family": {
+      "const": "entity-resolution-ambiguity-v1"
+    },
+    "benchmark_main": {
+      "const": "f55da9d228619b8a61f3c3ea1e3a689cfe72e80d"
+    },
+    "bindings": {
+      "additionalProperties": false,
+      "properties": {
+        "challenger_registry": {
+          "additionalProperties": false,
+          "properties": {
+            "path": {
+              "minLength": 1,
+              "type": "string"
+            },
+            "sha256": {
+              "pattern": "^[0-9a-f]{64}$",
+              "type": "string"
+            }
+          },
+          "required": [
+            "path",
+            "sha256"
+          ],
+          "type": "object"
+        },
+        "execution_capsule": {
+          "additionalProperties": false,
+          "properties": {
+            "path": {
+              "minLength": 1,
+              "type": "string"
+            },
+            "sha256": {
+              "pattern": "^[0-9a-f]{64}$",
+              "type": "string"
+            }
+          },
+          "required": [
+            "path",
+            "sha256"
+          ],
+          "type": "object"
+        },
+        "execution_plan": {
+          "additionalProperties": false,
+          "properties": {
+            "path": {
+              "minLength": 1,
+              "type": "string"
+            },
+            "sha256": {
+              "pattern": "^[0-9a-f]{64}$",
+              "type": "string"
+            }
+          },
+          "required": [
+            "path",
+            "sha256"
+          ],
+          "type": "object"
+        },
+        "preregistration": {
+          "additionalProperties": false,
+          "properties": {
+            "path": {
+              "minLength": 1,
+              "type": "string"
+            },
+            "sha256": {
+              "pattern": "^[0-9a-f]{64}$",
+              "type": "string"
+            }
+          },
+          "required": [
+            "path",
+            "sha256"
+          ],
+          "type": "object"
+        },
+        "runtime_policy": {
+          "additionalProperties": false,
+          "properties": {
+            "path": {
+              "minLength": 1,
+              "type": "string"
+            },
+            "sha256": {
+              "pattern": "^[0-9a-f]{64}$",
+              "type": "string"
+            }
+          },
+          "required": [
+            "path",
+            "sha256"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "challenger_registry",
+        "execution_capsule",
+        "execution_plan",
+        "preregistration",
+        "runtime_policy"
+      ],
+      "type": "object"
+    },
+    "firewall": {
+      "additionalProperties": false,
+      "properties": {
+        "credentials_required": {
+          "const": false
+        },
+        "network_required": {
+          "const": false
+        },
+        "raw_outputs_hash_bound_before_truth_reveal": {
+          "const": true
+        },
+        "raw_runs_required_before_scoring": {
+          "const": 9
+        },
+        "retuning_allowed": {
+          "const": false
+        },
+        "truth_input_allowed": {
+          "const": false
+        }
+      },
+      "required": [
+        "credentials_required",
+        "network_required",
+        "raw_outputs_hash_bound_before_truth_reveal",
+        "raw_runs_required_before_scoring",
+        "retuning_allowed",
+        "truth_input_allowed"
+      ],
+      "type": "object"
+    },
+    "runs": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "artifacts": {
+            "additionalProperties": false,
+            "properties": {
+              "output": {
+                "pattern": "^family-2-raw-runs/.+/run-[123]/output\\.json$",
+                "type": "string"
+              },
+              "stderr": {
+                "pattern": "^family-2-raw-runs/.+/run-[123]/stderr\\.txt$",
+                "type": "string"
+              },
+              "stdout": {
+                "pattern": "^family-2-raw-runs/.+/run-[123]/stdout\\.txt$",
+                "type": "string"
+              }
+            },
+            "required": [
+              "output",
+              "stdout",
+              "stderr"
+            ],
+            "type": "object"
+          },
+          "inputs": {
+            "additionalProperties": false,
+            "properties": {
+              "test": {
+                "const": "test.csv"
+              },
+              "train": {
+                "const": "train.csv"
+              }
+            },
+            "required": [
+              "train",
+              "test"
+            ],
+            "type": "object"
+          },
+          "plan_system": {
+            "enum": [
+              "qvra-native-er-v1",
+              "splink",
+              "dedupe"
+            ]
+          },
+          "run": {
+            "maximum": 3,
+            "minimum": 1,
+            "type": "integer"
+          },
+          "system_id": {
+            "enum": [
+              "qvra-native-er-v1",
+              "splink-4.0.17",
+              "dedupe-3.0.3"
+            ]
+          }
+        },
+        "required": [
+          "artifacts",
+          "inputs",
+          "plan_system",
+          "run",
+          "system_id"
+        ],
+        "type": "object"
+      },
+      "maxItems": 9,
+      "minItems": 9,
+      "type": "array"
+    },
+    "runtime_policy": {
+      "additionalProperties": false,
+      "properties": {
+        "dependency_freeze_retained": {
+          "const": true
+        },
+        "implementation": {
+          "const": "CPython"
+        },
+        "isolated_virtual_environments": {
+          "const": true
+        },
+        "observed_version": {
+          "const": "3.12.13"
+        },
+        "package_versions_exact": {
+          "const": true
+        },
+        "python_major_minor": {
+          "const": "3.12"
+        },
+        "same_python_major_minor": {
+          "const": true
+        }
+      },
+      "required": [
+        "dependency_freeze_retained",
+        "implementation",
+        "isolated_virtual_environments",
+        "observed_version",
+        "package_versions_exact",
+        "python_major_minor",
+        "same_python_major_minor"
+      ],
+      "type": "object"
+    },
+    "schema": {
+      "const": "qvra-family-2-dry-run/v1"
+    },
+    "state": {
+      "additionalProperties": false,
+      "properties": {
+        "comparison_performed": {
+          "const": false
+        },
+        "dry_run_only": {
+          "const": true
+        },
+        "execution_capability": {
+          "const": false
+        },
+        "quality_result_available": {
+          "const": false
+        },
+        "raw_runs_produced": {
+          "const": 0
+        },
+        "system_execution": {
+          "const": false
+        },
+        "truth_scoring": {
+          "const": false
+        }
+      },
+      "required": [
+        "comparison_performed",
+        "dry_run_only",
+        "execution_capability",
+        "quality_result_available",
+        "raw_runs_produced",
+        "system_execution",
+        "truth_scoring"
+      ],
+      "type": "object"
+    },
+    "systems": {
+      "additionalProperties": false,
+      "properties": {
+        "dedupe-3.0.3": {
+          "additionalProperties": false,
+          "properties": {
+            "adapter": {
+              "const": "adapters/external/dedupe_v3.py"
+            },
+            "adapter_sha256": {
+              "const": "798dce2e5ca90a9f4cf8fbe309d4c6c7aeddb415e098267975ab2c41b3da80d4"
+            },
+            "runtime": {
+              "additionalProperties": false,
+              "properties": {
+                "compatibility_dependencies": {
+                  "additionalProperties": false,
+                  "properties": {
+                    "BTrees": {
+                      "const": "6.4"
+                    }
+                  },
+                  "required": [
+                    "BTrees"
+                  ],
+                  "type": "object"
+                },
+                "implementation": {
+                  "const": "CPython"
+                },
+                "package": {
+                  "const": "dedupe"
+                },
+                "package_version": {
+                  "const": "3.0.3"
+                },
+                "python_major_minor": {
+                  "const": "3.12"
+                }
+              },
+              "required": [
+                "compatibility_dependencies",
+                "implementation",
+                "package",
+                "package_version",
+                "python_major_minor"
+              ],
+              "type": "object"
+            }
+          },
+          "required": [
+            "adapter",
+            "adapter_sha256",
+            "runtime"
+          ],
+          "type": "object"
+        },
+        "qvra-native-er-v1": {
+          "additionalProperties": false,
+          "properties": {
+            "adapter": {
+              "const": "adapters/native/qvra_er_v1.py"
+            },
+            "adapter_sha256": {
+              "const": "cd51eff4b0ffddbac5e96b360b305183dcf365e7eaf7a117df8bf01cff489a42"
+            },
+            "runtime": {
+              "additionalProperties": false,
+              "properties": {
+                "implementation": {
+                  "const": "CPython"
+                },
+                "python_major_minor": {
+                  "const": "3.12"
+                }
+              },
+              "required": [
+                "implementation",
+                "python_major_minor"
+              ],
+              "type": "object"
+            }
+          },
+          "required": [
+            "adapter",
+            "adapter_sha256",
+            "runtime"
+          ],
+          "type": "object"
+        },
+        "splink-4.0.17": {
+          "additionalProperties": false,
+          "properties": {
+            "adapter": {
+              "const": "adapters/external/splink_v4.py"
+            },
+            "adapter_sha256": {
+              "const": "8d08f2cc92dd3404c89c3e9de6e010003705b4e988905916bb05ddf39fcedf77"
+            },
+            "runtime": {
+              "additionalProperties": false,
+              "properties": {
+                "implementation": {
+                  "const": "CPython"
+                },
+                "package": {
+                  "const": "splink"
+                },
+                "package_version": {
+                  "const": "4.0.17"
+                },
+                "python_major_minor": {
+                  "const": "3.12"
+                }
+              },
+              "required": [
+                "implementation",
+                "package",
+                "package_version",
+                "python_major_minor"
+              ],
+              "type": "object"
+            }
+          },
+          "required": [
+            "adapter",
+            "adapter_sha256",
+            "runtime"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "qvra-native-er-v1",
+        "splink-4.0.17",
+        "dedupe-3.0.3"
+      ],
+      "type": "object"
+    }
+  },
+  "required": [
+    "benchmark_family",
+    "benchmark_main",
+    "bindings",
+    "firewall",
+    "runs",
+    "runtime_policy",
+    "schema",
+    "state",
+    "systems"
+  ],
+  "type": "object"
+}
