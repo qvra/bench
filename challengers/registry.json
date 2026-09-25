@@ -1,0 +1,73 @@
+{
+  "challengers": [
+    {
+      "adapter": {
+        "path": "adapters/external/splink_v4.py",
+        "sha256": "8d08f2cc92dd3404c89c3e9de6e010003705b4e988905916bb05ddf39fcedf77"
+      },
+      "artifact_digests": [
+        "6f1bc685c4f40ccece9d27d0efb83686944654f2ccff4a55a883dbf711c464a1",
+        "ab6f955a50a8e873a27ba43ccd34b922b0378aa213dbecbe39aa4730fb9efe00"
+      ],
+      "execution": {
+        "credentials_required": false,
+        "mutation_allowed": false,
+        "network_required": false
+      },
+      "kind": "external-open-source",
+      "source": {
+        "repository_head_observed": "473f0f7fdb19916e4dbdf1c420a1a8c0b0cf9953",
+        "repository_or_service": "moj-analytical-services/splink",
+        "upstream": true
+      },
+      "status": "REGISTERED_NOT_EXECUTED",
+      "system_id": "splink-4.0.17",
+      "version": {
+        "registry": "PyPI",
+        "registry_version": "4.0.17",
+        "strategy": "release",
+        "value": "v4.0.17"
+      }
+    },
+    {
+      "adapter": {
+        "path": "adapters/external/dedupe_v3.py",
+        "sha256": "798dce2e5ca90a9f4cf8fbe309d4c6c7aeddb415e098267975ab2c41b3da80d4"
+      },
+      "artifact_digests": [],
+      "execution": {
+        "credentials_required": false,
+        "mutation_allowed": false,
+        "network_required": false
+      },
+      "kind": "external-open-source",
+      "runtime_constraints": {
+        "BTrees": "6.4",
+        "python": "3.12"
+      },
+      "source": {
+        "repository_head_observed": "3f61e79102910bd355e920a2df7e44c14c9cb247",
+        "repository_or_service": "dedupeio/dedupe",
+        "upstream": true
+      },
+      "status": "REGISTERED_NOT_EXECUTED",
+      "system_id": "dedupe-3.0.3",
+      "version": {
+        "registry": "PyPI",
+        "registry_version": "3.0.3",
+        "strategy": "release",
+        "value": "3.0.3"
+      }
+    }
+  ],
+  "claim_boundary": "Registration does not imply execution, endorsement, equivalence, or superiority.",
+  "schema": "qvra-challenger-registry/v1",
+  "second_wave_candidates": [
+    {
+      "release": "v0.7.0",
+      "repository": "zinggAI/zingg",
+      "repository_head_observed": "9e3595a9ca9924b7a522d4eb7904542f3a53ae08",
+      "system_id": "zingg-0.7.0"
+    }
+  ]
+}

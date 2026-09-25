@@ -1,0 +1,111 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://qvra.dev/schemas/challenger-v1.json",
+  "title": "qvra external challenger",
+  "type": "object",
+  "required": [
+    "system_id",
+    "kind",
+    "source",
+    "version",
+    "adapter",
+    "execution",
+    "status"
+  ],
+  "properties": {
+    "system_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "kind": {
+      "enum": [
+        "external-open-source",
+        "external-service",
+        "qvra-owned",
+        "reference-control"
+      ]
+    },
+    "source": {
+      "type": "object",
+      "required": [
+        "repository_or_service",
+        "upstream"
+      ],
+      "properties": {
+        "repository_or_service": {
+          "type": "string",
+          "minLength": 1
+        },
+        "upstream": {
+          "type": "boolean"
+        }
+      }
+    },
+    "version": {
+      "type": "object",
+      "required": [
+        "strategy",
+        "value"
+      ],
+      "properties": {
+        "strategy": {
+          "enum": [
+            "commit",
+            "tag",
+            "release",
+            "api-version"
+          ]
+        },
+        "value": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "adapter": {
+      "type": "object",
+      "required": [
+        "path",
+        "sha256"
+      ],
+      "properties": {
+        "path": {
+          "type": "string",
+          "minLength": 1
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        }
+      }
+    },
+    "execution": {
+      "type": "object",
+      "required": [
+        "network_required",
+        "credentials_required",
+        "mutation_allowed"
+      ],
+      "properties": {
+        "network_required": {
+          "type": "boolean"
+        },
+        "credentials_required": {
+          "type": "boolean"
+        },
+        "mutation_allowed": {
+          "const": false
+        }
+      }
+    },
+    "status": {
+      "enum": [
+        "REGISTERED_NOT_EXECUTED",
+        "EXECUTED",
+        "BLOCKED",
+        "WITHDRAWN"
+      ]
+    }
+  },
+  "additionalProperties": true
+}
