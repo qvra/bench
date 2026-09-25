@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "QVRA native entity-resolution preregistration",
+  "type": "object",
+  "required": [
+    "schema",
+    "status",
+    "baseline_main",
+    "baseline_benchmark_commit",
+    "baseline_replication_capsule_sha256",
+    "system_id",
+    "task",
+    "runtime",
+    "inputs",
+    "fields",
+    "normalization",
+    "candidate_generation",
+    "pair_features",
+    "pair_model",
+    "threshold_selection",
+    "clustering",
+    "execution",
+    "primary_metrics",
+    "comparison_policy",
+    "implementation_constraints",
+    "claim_state"
+  ]
+}

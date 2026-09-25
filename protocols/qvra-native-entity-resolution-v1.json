@@ -1,0 +1,161 @@
+{
+  "schema": "qvra-native-entity-resolution-preregistration/v1",
+
+  "status": "PREREGISTERED_NOT_IMPLEMENTED",
+
+  "baseline_main": "c8b16f32e1f38cd1aff7f2ee9204f26f38c14d77",
+
+  "baseline_benchmark_commit": "d5c70a572f895e562ad96b2d14f437b097f8013f",
+
+  "baseline_replication_capsule_sha256": "5103b577150d845f3d1e3aa913774546c6d5e1e0af9d29fd29d4ef58340d0c8d",
+
+  "system_id": "qvra-native-er-v1",
+
+  "task": "entity_resolution",
+
+  "implementation_language": "python",
+
+  "runtime": {
+    "python_major_minor": "3.12",
+    "network_access_during_execution": false,
+    "external_model_api_access": false,
+    "test_truth_access": false,
+    "filesystem_mutation_outside_output": false
+  },
+
+  "inputs": {
+    "training_records": "train.csv",
+    "test_records": "test.csv",
+    "training_entity_labels_allowed": true,
+    "test_entity_labels_allowed": false,
+    "truth_json_available_to_adapter": false
+  },
+
+  "fields": [
+    "first_name",
+    "last_name",
+    "city",
+    "email"
+  ],
+
+  "normalization": {
+    "unicode": "NFKC",
+    "case": "casefold",
+    "trim_whitespace": true,
+    "collapse_internal_whitespace": true,
+    "email_casefold": true,
+    "punctuation_policy": "retain_for_similarity_except_surrounding_whitespace"
+  },
+
+  "candidate_generation": {
+    "strategy": "union_of_deterministic_blocks",
+    "blocks": [
+      "normalized_email_exact",
+      "normalized_last_name_exact",
+      "normalized_city_exact_and_first_name_initial",
+      "normalized_first_name_exact_and_normalized_last_name_prefix_3"
+    ],
+    "all_pairs_fallback": false
+  },
+
+  "pair_features": [
+    {
+      "name": "first_name_similarity",
+      "metric": "normalized_levenshtein_similarity",
+      "range": [0.0, 1.0]
+    },
+    {
+      "name": "last_name_similarity",
+      "metric": "normalized_levenshtein_similarity",
+      "range": [0.0, 1.0]
+    },
+    {
+      "name": "city_similarity",
+      "metric": "normalized_levenshtein_similarity",
+      "range": [0.0, 1.0]
+    },
+    {
+      "name": "email_similarity",
+      "metric": "normalized_levenshtein_similarity",
+      "range": [0.0, 1.0]
+    },
+    {
+      "name": "email_exact",
+      "metric": "boolean_exact",
+      "range": [0, 1]
+    }
+  ],
+
+  "pair_model": {
+    "family": "deterministic_logistic_regression",
+    "regularization": "l2",
+    "class_weight": "balanced",
+    "solver": "liblinear",
+    "random_state": 20260925,
+    "training_source": "train.csv only"
+  },
+
+  "threshold_selection": {
+    "source": "training_data_only",
+    "objective": "maximize_pair_f1",
+    "candidate_thresholds": {
+      "start": 0.05,
+      "stop": 0.95,
+      "step": 0.01
+    },
+    "tie_break": "highest_precision_then_highest_threshold",
+    "test_metric_feedback_allowed": false
+  },
+
+  "clustering": {
+    "method": "connected_components",
+    "edge_rule": "pair_probability_greater_than_or_equal_to_selected_threshold",
+    "singleton_records_retained": true
+  },
+
+  "execution": {
+    "runs": 3,
+    "seed": 20260925,
+    "corpus_entities": 500,
+    "same_corpus_as_external_baseline": true,
+    "same_evaluator_as_external_baseline": true
+  },
+
+  "primary_metrics": [
+    "pair_precision",
+    "pair_recall",
+    "pair_f1",
+    "cluster_exact_match_rate"
+  ],
+
+  "resource_metrics": [
+    "training_ms",
+    "inference_and_clustering_ms"
+  ],
+
+  "resource_metrics_are_quality_gate": false,
+
+  "comparison_policy": {
+    "report_all_primary_metrics": true,
+    "single_global_score": false,
+    "winner_label": false,
+    "global_superiority_claim_allowed": false,
+    "comparison_scope": "frozen_entity_resolution_v3_only"
+  },
+
+  "implementation_constraints": {
+    "algorithm_family_locked_before_implementation": true,
+    "feature_set_locked_before_implementation": true,
+    "candidate_generation_locked_before_implementation": true,
+    "threshold_rule_locked_before_implementation": true,
+    "clustering_rule_locked_before_implementation": true,
+    "test_truth_tuning_forbidden": true,
+    "external_baseline_retuning_forbidden": true
+  },
+
+  "claim_state": {
+    "qvra_system_compared": false,
+    "qvra_result_available": false,
+    "global_superiority_claim": false
+  }
+}
