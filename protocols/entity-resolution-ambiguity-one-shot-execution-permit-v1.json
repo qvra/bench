@@ -1,0 +1,76 @@
+{
+  "activation_boundary": {
+    "execution_authorized": false,
+    "permit_active": false,
+    "permit_consumable": false,
+    "review_required": true,
+    "self_activating": false,
+    "separate_activation_artifact_required": true
+  },
+  "benchmark": "entity-resolution-ambiguity-v1",
+  "bindings": {
+    "authorization": {
+      "immutable": true,
+      "path": "protocols/entity-resolution-ambiguity-execution-authorization-v1.json",
+      "sha256": "30890b1ac027caf4c3175e6c602581ad3c9e544d932435bff045884b795e5728"
+    },
+    "command_descriptor_sha256": "817d3e1eae8babb26eb49792b5778898793235042020c9f904cad0057e8549ac",
+    "controller": {
+      "immutable": true,
+      "path": "suites/entity-resolution-ambiguity-v1/execution_controller.py",
+      "sha256": "2b9e0026ed756468432c8d07edca9ebc49ef3b727defbc39f3b55cb9319d9661"
+    },
+    "controller_binding_attestation": {
+      "immutable": true,
+      "path": "protocols/entity-resolution-ambiguity-controller-binding-v1.json",
+      "sha256": "f11beabbbd55b9f36ab924fcd767e985eee3e218d70a5520047997b4e3cb6f57"
+    },
+    "governed_main": "dd1076a28fbb480ec4b381da77175005f4070b99",
+    "portable_plan": {
+      "immutable": true,
+      "schema": "qvra-family-2-execution-controller-plan/v1",
+      "sha256": "df1fbeab0a2c89c16fb9530aaf4f5545d62a4dab3f44f160dacdc231a3463ac7"
+    },
+    "process_launcher_sha256": "d8d028d95adb463f27b5df6a5ec44ae9049b6799aae46c4b0176ca2adfd07f90"
+  },
+  "execution_contract": {
+    "all_raw_runs_before_scoring": true,
+    "failed_run_retention_required": true,
+    "network_required": false,
+    "raw_output_retention_required": true,
+    "raw_outputs_hash_bound_before_truth_reveal": true,
+    "retuning_allowed": false,
+    "runtime_mutation_allowed": false,
+    "truth_input_allowed": false
+  },
+  "family": 2,
+  "one_shot_semantics": {
+    "partial_execution_reauthorization_allowed": false,
+    "permit_reusable": false,
+    "second_use_requires_new_permit": true,
+    "single_nine_run_batch": true
+  },
+  "permit_kind": "one-shot-nine-run-execution-permit",
+  "preexecution_state": {
+    "permit_consumed": false,
+    "quality_result_available": false,
+    "raw_runs_produced": 0,
+    "system_execution": false,
+    "truth_scoring": false
+  },
+  "schema": "qvra-family-2-one-shot-execution-permit/v1",
+  "scope": {
+    "run_numbers": [
+      1,
+      2,
+      3
+    ],
+    "runs_per_system": 3,
+    "systems": [
+      "qvra-native-er-v1",
+      "splink-4.0.17",
+      "dedupe-3.0.3"
+    ],
+    "total_required_raw_runs": 9
+  }
+}

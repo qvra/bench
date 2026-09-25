@@ -1,0 +1,292 @@
+{
+  "$id": "qvra-family-2-one-shot-execution-permit.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "activation_boundary": {
+      "additionalProperties": false,
+      "properties": {
+        "execution_authorized": {
+          "const": false
+        },
+        "permit_active": {
+          "const": false
+        },
+        "permit_consumable": {
+          "const": false
+        },
+        "review_required": {
+          "const": true
+        },
+        "self_activating": {
+          "const": false
+        },
+        "separate_activation_artifact_required": {
+          "const": true
+        }
+      },
+      "required": [
+        "review_required",
+        "separate_activation_artifact_required",
+        "self_activating",
+        "permit_active",
+        "permit_consumable",
+        "execution_authorized"
+      ],
+      "type": "object"
+    },
+    "benchmark": {
+      "const": "entity-resolution-ambiguity-v1"
+    },
+    "bindings": {
+      "additionalProperties": false,
+      "properties": {
+        "authorization": {
+          "additionalProperties": false,
+          "properties": {
+            "immutable": {
+              "const": true
+            },
+            "path": {
+              "const": "protocols/entity-resolution-ambiguity-execution-authorization-v1.json"
+            },
+            "sha256": {
+              "const": "30890b1ac027caf4c3175e6c602581ad3c9e544d932435bff045884b795e5728"
+            }
+          },
+          "required": [
+            "path",
+            "sha256",
+            "immutable"
+          ],
+          "type": "object"
+        },
+        "command_descriptor_sha256": {
+          "const": "817d3e1eae8babb26eb49792b5778898793235042020c9f904cad0057e8549ac"
+        },
+        "controller": {
+          "additionalProperties": false,
+          "properties": {
+            "immutable": {
+              "const": true
+            },
+            "path": {
+              "const": "suites/entity-resolution-ambiguity-v1/execution_controller.py"
+            },
+            "sha256": {
+              "const": "2b9e0026ed756468432c8d07edca9ebc49ef3b727defbc39f3b55cb9319d9661"
+            }
+          },
+          "required": [
+            "path",
+            "sha256",
+            "immutable"
+          ],
+          "type": "object"
+        },
+        "controller_binding_attestation": {
+          "additionalProperties": false,
+          "properties": {
+            "immutable": {
+              "const": true
+            },
+            "path": {
+              "const": "protocols/entity-resolution-ambiguity-controller-binding-v1.json"
+            },
+            "sha256": {
+              "const": "f11beabbbd55b9f36ab924fcd767e985eee3e218d70a5520047997b4e3cb6f57"
+            }
+          },
+          "required": [
+            "path",
+            "sha256",
+            "immutable"
+          ],
+          "type": "object"
+        },
+        "governed_main": {
+          "const": "dd1076a28fbb480ec4b381da77175005f4070b99"
+        },
+        "portable_plan": {
+          "additionalProperties": false,
+          "properties": {
+            "immutable": {
+              "const": true
+            },
+            "schema": {
+              "const": "qvra-family-2-execution-controller-plan/v1"
+            },
+            "sha256": {
+              "const": "df1fbeab0a2c89c16fb9530aaf4f5545d62a4dab3f44f160dacdc231a3463ac7"
+            }
+          },
+          "required": [
+            "schema",
+            "sha256",
+            "immutable"
+          ],
+          "type": "object"
+        },
+        "process_launcher_sha256": {
+          "const": "d8d028d95adb463f27b5df6a5ec44ae9049b6799aae46c4b0176ca2adfd07f90"
+        }
+      },
+      "required": [
+        "governed_main",
+        "authorization",
+        "controller_binding_attestation",
+        "controller",
+        "portable_plan",
+        "process_launcher_sha256",
+        "command_descriptor_sha256"
+      ],
+      "type": "object"
+    },
+    "execution_contract": {
+      "additionalProperties": false,
+      "properties": {
+        "all_raw_runs_before_scoring": {
+          "const": true
+        },
+        "failed_run_retention_required": {
+          "const": true
+        },
+        "network_required": {
+          "const": false
+        },
+        "raw_output_retention_required": {
+          "const": true
+        },
+        "raw_outputs_hash_bound_before_truth_reveal": {
+          "const": true
+        },
+        "retuning_allowed": {
+          "const": false
+        },
+        "runtime_mutation_allowed": {
+          "const": false
+        },
+        "truth_input_allowed": {
+          "const": false
+        }
+      },
+      "required": [
+        "truth_input_allowed",
+        "retuning_allowed",
+        "runtime_mutation_allowed",
+        "network_required",
+        "all_raw_runs_before_scoring",
+        "raw_outputs_hash_bound_before_truth_reveal",
+        "failed_run_retention_required",
+        "raw_output_retention_required"
+      ],
+      "type": "object"
+    },
+    "family": {
+      "const": 2
+    },
+    "one_shot_semantics": {
+      "additionalProperties": false,
+      "properties": {
+        "partial_execution_reauthorization_allowed": {
+          "const": false
+        },
+        "permit_reusable": {
+          "const": false
+        },
+        "second_use_requires_new_permit": {
+          "const": true
+        },
+        "single_nine_run_batch": {
+          "const": true
+        }
+      },
+      "required": [
+        "permit_reusable",
+        "partial_execution_reauthorization_allowed",
+        "single_nine_run_batch",
+        "second_use_requires_new_permit"
+      ],
+      "type": "object"
+    },
+    "permit_kind": {
+      "const": "one-shot-nine-run-execution-permit"
+    },
+    "preexecution_state": {
+      "additionalProperties": false,
+      "properties": {
+        "permit_consumed": {
+          "const": false
+        },
+        "quality_result_available": {
+          "const": false
+        },
+        "raw_runs_produced": {
+          "const": 0
+        },
+        "system_execution": {
+          "const": false
+        },
+        "truth_scoring": {
+          "const": false
+        }
+      },
+      "required": [
+        "permit_consumed",
+        "raw_runs_produced",
+        "system_execution",
+        "truth_scoring",
+        "quality_result_available"
+      ],
+      "type": "object"
+    },
+    "schema": {
+      "const": "qvra-family-2-one-shot-execution-permit/v1"
+    },
+    "scope": {
+      "additionalProperties": false,
+      "properties": {
+        "run_numbers": {
+          "const": [
+            1,
+            2,
+            3
+          ]
+        },
+        "runs_per_system": {
+          "const": 3
+        },
+        "systems": {
+          "const": [
+            "qvra-native-er-v1",
+            "splink-4.0.17",
+            "dedupe-3.0.3"
+          ]
+        },
+        "total_required_raw_runs": {
+          "const": 9
+        }
+      },
+      "required": [
+        "systems",
+        "runs_per_system",
+        "total_required_raw_runs",
+        "run_numbers"
+      ],
+      "type": "object"
+    }
+  },
+  "required": [
+    "schema",
+    "benchmark",
+    "family",
+    "permit_kind",
+    "bindings",
+    "scope",
+    "execution_contract",
+    "one_shot_semantics",
+    "activation_boundary",
+    "preexecution_state"
+  ],
+  "type": "object"
+}
