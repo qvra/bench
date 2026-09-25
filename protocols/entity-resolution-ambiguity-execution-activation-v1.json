@@ -1,0 +1,73 @@
+{
+  "activation_effect": {
+    "execution_authorized": true,
+    "maximum_execution_batches": 1,
+    "one_shot": true,
+    "permit_active": true,
+    "permit_consumable": true
+  },
+  "activation_kind": "exact-one-shot-nine-run-execution-activation",
+  "benchmark": "entity-resolution-ambiguity-v1",
+  "bindings": {
+    "authorization_sha256": "30890b1ac027caf4c3175e6c602581ad3c9e544d932435bff045884b795e5728",
+    "command_descriptor_sha256": "817d3e1eae8babb26eb49792b5778898793235042020c9f904cad0057e8549ac",
+    "controller_binding_attestation_sha256": "f11beabbbd55b9f36ab924fcd767e985eee3e218d70a5520047997b4e3cb6f57",
+    "controller_sha256": "2b9e0026ed756468432c8d07edca9ebc49ef3b727defbc39f3b55cb9319d9661",
+    "governed_main": "ecdf3a21bf857e67fb47a5f70a8463bc967a67c9",
+    "permit": {
+      "immutable": true,
+      "path": "protocols/entity-resolution-ambiguity-one-shot-execution-permit-v1.json",
+      "sha256": "7cef4548b571940a2fe34e3a4025afe8fe632a90c4af38b9fbd00b1b5794a8d3"
+    },
+    "portable_plan_sha256": "df1fbeab0a2c89c16fb9530aaf4f5545d62a4dab3f44f160dacdc231a3463ac7",
+    "process_launcher_sha256": "d8d028d95adb463f27b5df6a5ec44ae9049b6799aae46c4b0176ca2adfd07f90"
+  },
+  "effectuation_firewall": {
+    "controller_mutation_performed": false,
+    "execution_bridge_created": false,
+    "execution_bridge_required": true,
+    "launcher_mutation_performed": false,
+    "process_launch_on_artifact_creation": false,
+    "process_launch_on_commit": false,
+    "process_launch_on_merge": false,
+    "self_executing": false,
+    "subprocess_invocation": false
+  },
+  "family": 2,
+  "governance_gate": {
+    "activation_not_effective_before_gate_completion": true,
+    "exact_head_review_required": true,
+    "independent_review_required": true,
+    "mainline_merge_required": true
+  },
+  "one_shot_semantics": {
+    "activation_reusable": false,
+    "all_nine_runs_required": true,
+    "partial_execution_reauthorization_allowed": false,
+    "permit_reusable": false,
+    "second_activation_requires_new_artifact": true
+  },
+  "preexecution_state": {
+    "activation_consumed": false,
+    "permit_consumed": false,
+    "quality_result_available": false,
+    "raw_runs_produced": 0,
+    "system_execution": false,
+    "truth_scoring": false
+  },
+  "schema": "qvra-family-2-execution-activation/v1",
+  "scope": {
+    "run_numbers": [
+      1,
+      2,
+      3
+    ],
+    "runs_per_system": 3,
+    "systems": [
+      "qvra-native-er-v1",
+      "splink-4.0.17",
+      "dedupe-3.0.3"
+    ],
+    "total_required_raw_runs": 9
+  }
+}
