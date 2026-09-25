@@ -1,0 +1,77 @@
+{
+  "benchmark_family": "entity-resolution-ambiguity-v1",
+  "benchmark_main": "5b949a195f1433d53e66969ef7167a628a4e7588",
+  "claim_boundary": {
+    "cross_suite_generalization": false,
+    "global_superiority_claim": false,
+    "suite_specific_only": true
+  },
+  "corpus_binding": {
+    "files": {
+      "manifest.json": "27c5e7bcd3d3f75f87b095cedd4c996bf02575299c1ed1412eec9571676e3708",
+      "records.csv": "06651e82991cc8e2a6c23a8e05eaa79ba56474f61060d8b0b7dc2d3b249e43df",
+      "split.json": "7c1871b414aad1b7612c758b704a968a19d7dd13ea64bc06f59f9cd486fd5d86",
+      "test.csv": "6e98690c2ee302bc16f7deda59a3e332e872f076925d0380c926d8f74e20fadb",
+      "train.csv": "9ea26585df5fe663c5a5cbcaf261a5e063d021d10b9a3795a672ea624c881815",
+      "truth.json": "d412e2705d556b7e8196d02290d6f7d15678381353baae5dbd30935a96e33e7d"
+    },
+    "records": 2323,
+    "selected_seed": 20260926,
+    "test_records": 1614,
+    "train_records": 709,
+    "truth_records": 1614
+  },
+  "evaluation": {
+    "metrics": [
+      "pair_precision",
+      "pair_recall",
+      "pair_f1",
+      "cluster_exact_match_rate"
+    ],
+    "primary_aggregation": "mean",
+    "same_evaluator_contract_for_all_systems": true,
+    "score_only_after_all_raw_runs_frozen": true,
+    "secondary_aggregation": "median",
+    "truth": "truth.json",
+    "unsupported_metrics_must_not_be_invented": true
+  },
+  "execution": {
+    "all_system_raw_runs_before_any_truth_scoring": true,
+    "configuration_may_depend_on_other_system_output": false,
+    "configuration_may_depend_on_quality_result": false,
+    "configuration_may_depend_on_system_order": false,
+    "dedupe_retuning": false,
+    "failed_run_retention": true,
+    "qvra_retuning": false,
+    "raw_output_retention": true,
+    "raw_outputs_hash_bound_before_truth_reveal": true,
+    "runs_per_system": 3,
+    "splink_retuning": false,
+    "stderr_retention": true,
+    "stdout_retention": true,
+    "system_inputs": {
+      "test": "test.csv",
+      "train": "train.csv"
+    },
+    "system_truth_access": false,
+    "truth_available_only_to_evaluator": true
+  },
+  "pre_execution_state": {
+    "comparison_performed": false,
+    "quality_result_available": false,
+    "system_execution": false,
+    "truth_scoring": false
+  },
+  "schema": "qvra-entity-resolution-ambiguity-execution/v1",
+  "source_binding": {
+    "generator_sha256": "b34a05b1ccacd109f4b1fd98daf3a4eb48d04cb6262f555ac8ff9fd72d865e13",
+    "materialization_receipt_sha256": "d734721fa8f40b779c4fa297a5be4c0e5d1287b8836a8b1d56899f121137ef94",
+    "materializer_sha256": "1d54f8f444cf5517986338f4d9ce7f6b9e6bb24bb5d6b4b204bf1696b5c8a15d",
+    "projected_corpus_sha256": "a113df4a08d57ec522cbf47682d3d23aefe9da58fedebb555faedd82d74d9c2d"
+  },
+  "systems": [
+    "qvra-native-er-v1",
+    "splink",
+    "dedupe"
+  ]
+}
