@@ -1,0 +1,98 @@
+{
+  "benchmark": "entity-resolution-ambiguity-v1",
+  "bindings": {
+    "activation": {
+      "immutable": true,
+      "merged_main": "8f58bf509cc7e9ad138b088a8c92af54a09e4a36",
+      "path": "protocols/entity-resolution-ambiguity-execution-activation-v1.json",
+      "reviewed_head": "6aef28b98e1c5fe7d6935ce01366b5197a08737f",
+      "sha256": "d418c4d21865f50c7a1d949777d22dca793eb51a79965bfa941017f892f2f2ea"
+    },
+    "authorization_sha256": "30890b1ac027caf4c3175e6c602581ad3c9e544d932435bff045884b795e5728",
+    "command_descriptor_sha256": "817d3e1eae8babb26eb49792b5778898793235042020c9f904cad0057e8549ac",
+    "controller_binding_attestation_sha256": "f11beabbbd55b9f36ab924fcd767e985eee3e218d70a5520047997b4e3cb6f57",
+    "controller_sha256": "2b9e0026ed756468432c8d07edca9ebc49ef3b727defbc39f3b55cb9319d9661",
+    "governed_main": "8f58bf509cc7e9ad138b088a8c92af54a09e4a36",
+    "permit_sha256": "7cef4548b571940a2fe34e3a4025afe8fe632a90c4af38b9fbd00b1b5794a8d3",
+    "portable_plan_sha256": "df1fbeab0a2c89c16fb9530aaf4f5545d62a4dab3f44f160dacdc231a3463ac7",
+    "process_launcher_sha256": "d8d028d95adb463f27b5df6a5ec44ae9049b6799aae46c4b0176ca2adfd07f90"
+  },
+  "bridge_kind": "exact-one-shot-nine-run-execution-bridge",
+  "execution_order_contract": {
+    "launches_must_match_portable_plan": true,
+    "run_order": [
+      1,
+      2,
+      3
+    ],
+    "system_order": [
+      "qvra-native-er-v1",
+      "splink-4.0.17",
+      "dedupe-3.0.3"
+    ],
+    "total_launches": 9
+  },
+  "family": 2,
+  "future_implementation_contract": {
+    "module_path": "suites/entity-resolution-ambiguity-v1/execution_bridge.py",
+    "must_capture_stderr": true,
+    "must_capture_stdout": true,
+    "must_complete_all_raw_runs_before_scoring": true,
+    "must_forbid_retuning": true,
+    "must_forbid_runtime_mutation": true,
+    "must_forbid_truth_input": true,
+    "must_hash_raw_outputs_before_truth_reveal": true,
+    "must_refuse_partial_execution": true,
+    "must_refuse_second_execution": true,
+    "must_require_exact_nine_run_topology": true,
+    "must_require_network_disabled": true,
+    "must_retain_failed_runs": true,
+    "must_retain_raw_outputs": true,
+    "must_verify_activation_identity": true,
+    "must_verify_controller_identity": true,
+    "must_verify_launcher_identity": true,
+    "must_verify_permit_identity": true,
+    "must_verify_portable_plan_identity": true
+  },
+  "governance_gate": {
+    "execution_requires_separate_explicit_run_step": true,
+    "implementation_requires_exact_head_review": true,
+    "implementation_requires_independent_review": true,
+    "implementation_requires_mainline_merge": true,
+    "implementation_requires_separate_commit": true
+  },
+  "implementation_boundary": {
+    "bridge_design_created": true,
+    "bridge_execution_capability_present": false,
+    "bridge_implementation_created": false,
+    "controller_mutation_performed": false,
+    "launcher_execution_authorized": false,
+    "launcher_mutation_performed": false,
+    "process_launch_enabled": false,
+    "subprocess_invocation": false
+  },
+  "preexecution_state": {
+    "activation_consumed": false,
+    "permit_consumed": false,
+    "quality_result_available": false,
+    "raw_runs_produced": 0,
+    "system_execution": false,
+    "truth_scoring": false
+  },
+  "schema": "qvra-family-2-execution-bridge-design/v1",
+  "scope": {
+    "all_nine_runs_required": true,
+    "run_numbers": [
+      1,
+      2,
+      3
+    ],
+    "runs_per_system": 3,
+    "systems": [
+      "qvra-native-er-v1",
+      "splink-4.0.17",
+      "dedupe-3.0.3"
+    ],
+    "total_required_raw_runs": 9
+  }
+}
