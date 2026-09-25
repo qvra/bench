@@ -1,0 +1,33 @@
+{
+  "authorization": {
+    "immutable_input": true,
+    "path": "protocols/entity-resolution-ambiguity-execution-authorization-v1.json",
+    "sha256": "30890b1ac027caf4c3175e6c602581ad3c9e544d932435bff045884b795e5728"
+  },
+  "binding_semantics": {
+    "authorization_mutated": false,
+    "controller_binding_recorded": true,
+    "controller_mutated": false,
+    "direction": "authorization_and_controller_to_attestation"
+  },
+  "controller": {
+    "path": "suites/entity-resolution-ambiguity-v1/execution_controller.py",
+    "reviewed": true,
+    "sha256": "2b9e0026ed756468432c8d07edca9ebc49ef3b727defbc39f3b55cb9319d9661"
+  },
+  "execution_firewall": {
+    "authorization_consumable": false,
+    "authorization_consumed": false,
+    "execution_authorized": false,
+    "quality_result_available": false,
+    "raw_runs_produced": 0,
+    "system_execution": false,
+    "truth_scoring": false
+  },
+  "plan": {
+    "portable_identity": true,
+    "schema": "qvra-family-2-execution-controller-plan/v1",
+    "sha256": "df1fbeab0a2c89c16fb9530aaf4f5545d62a4dab3f44f160dacdc231a3463ac7"
+  },
+  "schema": "qvra-family-2-controller-binding-attestation/v1"
+}

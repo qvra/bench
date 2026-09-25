@@ -1,0 +1,139 @@
+{
+  "$id": "qvra-family-2-controller-binding-attestation.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "authorization": {
+      "additionalProperties": false,
+      "properties": {
+        "immutable_input": {
+          "const": true
+        },
+        "path": {
+          "const": "protocols/entity-resolution-ambiguity-execution-authorization-v1.json"
+        },
+        "sha256": {
+          "const": "30890b1ac027caf4c3175e6c602581ad3c9e544d932435bff045884b795e5728"
+        }
+      },
+      "required": [
+        "path",
+        "sha256",
+        "immutable_input"
+      ],
+      "type": "object"
+    },
+    "binding_semantics": {
+      "additionalProperties": false,
+      "properties": {
+        "authorization_mutated": {
+          "const": false
+        },
+        "controller_binding_recorded": {
+          "const": true
+        },
+        "controller_mutated": {
+          "const": false
+        },
+        "direction": {
+          "const": "authorization_and_controller_to_attestation"
+        }
+      },
+      "required": [
+        "direction",
+        "authorization_mutated",
+        "controller_mutated",
+        "controller_binding_recorded"
+      ],
+      "type": "object"
+    },
+    "controller": {
+      "additionalProperties": false,
+      "properties": {
+        "path": {
+          "const": "suites/entity-resolution-ambiguity-v1/execution_controller.py"
+        },
+        "reviewed": {
+          "const": true
+        },
+        "sha256": {
+          "const": "2b9e0026ed756468432c8d07edca9ebc49ef3b727defbc39f3b55cb9319d9661"
+        }
+      },
+      "required": [
+        "path",
+        "sha256",
+        "reviewed"
+      ],
+      "type": "object"
+    },
+    "execution_firewall": {
+      "additionalProperties": false,
+      "properties": {
+        "authorization_consumable": {
+          "const": false
+        },
+        "authorization_consumed": {
+          "const": false
+        },
+        "execution_authorized": {
+          "const": false
+        },
+        "quality_result_available": {
+          "const": false
+        },
+        "raw_runs_produced": {
+          "const": 0
+        },
+        "system_execution": {
+          "const": false
+        },
+        "truth_scoring": {
+          "const": false
+        }
+      },
+      "required": [
+        "authorization_consumable",
+        "execution_authorized",
+        "authorization_consumed",
+        "raw_runs_produced",
+        "system_execution",
+        "truth_scoring",
+        "quality_result_available"
+      ],
+      "type": "object"
+    },
+    "plan": {
+      "additionalProperties": false,
+      "properties": {
+        "portable_identity": {
+          "const": true
+        },
+        "schema": {
+          "const": "qvra-family-2-execution-controller-plan/v1"
+        },
+        "sha256": {
+          "const": "df1fbeab0a2c89c16fb9530aaf4f5545d62a4dab3f44f160dacdc231a3463ac7"
+        }
+      },
+      "required": [
+        "schema",
+        "sha256",
+        "portable_identity"
+      ],
+      "type": "object"
+    },
+    "schema": {
+      "const": "qvra-family-2-controller-binding-attestation/v1"
+    }
+  },
+  "required": [
+    "schema",
+    "authorization",
+    "controller",
+    "plan",
+    "binding_semantics",
+    "execution_firewall"
+  ],
+  "type": "object"
+}
