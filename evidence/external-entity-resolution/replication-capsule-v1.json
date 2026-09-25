@@ -1,0 +1,20 @@
+{
+  "benchmark_commit": "d5c70a572f895e562ad96b2d14f437b097f8013f",
+  "capsule_sha256": "5103b577150d845f3d1e3aa913774546c6d5e1e0af9d29fd29d4ef58340d0c8d",
+  "claim_level": "REPLICATED_RESULT",
+  "cross_machine_replication": false,
+  "dedupe_environment_sha256": "4cea9da6ce58080824eef9b54987cdb2477afc999851c0f67619c72d7bfdc891",
+  "global_superiority_claim": false,
+  "governed_result_capsule_main": "cf04658f9b8905dbbd39f77a55e6d7ac9b72e99e",
+  "original_result_capsule_sha256": "460fc01ec7eb82403b1309ecf3d48debfdf1ba06a548977a67b5a8f9e82e9c48",
+  "publication_status": "UNPUBLISHED",
+  "quality_replication_sha256": "a99fcabdccb336a58b221a0e635993b254f93555626bd675f91b45c7d4868cb3",
+  "quality_tolerance": 0.01,
+  "qvra_system_compared": false,
+  "raw_replication_receipt_sha256": "8bdc06a230e004d7dbc81009baf2e55a40e95c6247bdd6e87d147149f6d5b630",
+  "replication_scope": "clean-environment-same-machine",
+  "runs_per_system": 3,
+  "schema": "qvra-external-replication-capsule/v1",
+  "splink_environment_sha256": "688dd08f754a28077a4885282bc1e8bdd45c4e01ddf41e723316f254ae9a503e",
+  "timing_is_replication_gate": false
+}
