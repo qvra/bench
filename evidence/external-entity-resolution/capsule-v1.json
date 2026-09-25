@@ -1,0 +1,14 @@
+{
+  "benchmark_commit": "d5c70a572f895e562ad96b2d14f437b097f8013f",
+  "capsule_sha256": "460fc01ec7eb82403b1309ecf3d48debfdf1ba06a548977a67b5a8f9e82e9c48",
+  "claim_level": "COMPARATIVE_RESULT_VERIFIED",
+  "corpus_receipt_sha256": "6761f7f05bf68566ce6ff408a806b81419efd32da237365eb4eca02f53a04c48",
+  "dedupe_environment_sha256": "4cea9da6ce58080824eef9b54987cdb2477afc999851c0f67619c72d7bfdc891",
+  "global_superiority_claim": false,
+  "observation_sha256": "749fc76db8648a3d7ba2fd9afd0a0993e01b1776e67b3c930be0560650b3b3e3",
+  "publication_status": "UNPUBLISHED",
+  "qvra_system_compared": false,
+  "raw_receipt_sha256": "fcacb1f197d2247fc01cd7c759429bf42b5803f71e914ebe8eb2b57d74f7489f",
+  "schema": "qvra-external-result-capsule/v1",
+  "splink_environment_sha256": "688dd08f754a28077a4885282bc1e8bdd45c4e01ddf41e723316f254ae9a503e"
+}
