@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "QVRA external replication capsule",
+  "type": "object",
+  "required": [
+    "schema",
+    "benchmark_commit",
+    "governed_result_capsule_main",
+    "original_result_capsule_sha256",
+    "quality_replication_sha256",
+    "raw_replication_receipt_sha256",
+    "splink_environment_sha256",
+    "dedupe_environment_sha256",
+    "replication_scope",
+    "runs_per_system",
+    "quality_tolerance",
+    "timing_is_replication_gate",
+    "claim_level",
+    "qvra_system_compared",
+    "cross_machine_replication",
+    "global_superiority_claim",
+    "publication_status",
+    "capsule_sha256"
+  ]
+}
