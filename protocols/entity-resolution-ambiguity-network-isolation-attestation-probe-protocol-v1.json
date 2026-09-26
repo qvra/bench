@@ -1,0 +1,270 @@
+{
+  "benchmark": "entity-resolution-ambiguity-v1",
+  "bindings": {
+    "explicit_run_transaction_design_sha256": "9d3f25f267e935588d96c796f78fb0841493ea7275f7d34d8b5b60e085b9a77f",
+    "governed_main": "15b9dc8a114ecf914c9c4b694a29851d82c8ec8a",
+    "network_isolation_design_merged_main": "15b9dc8a114ecf914c9c4b694a29851d82c8ec8a",
+    "network_isolation_design_reviewed_head": "e8c81697105c0d3686aa7723e1759ecfb26db37b",
+    "network_isolation_design_schema_sha256": "2610c4512cf7f12635651af88a7c9c23df05499d960ddf6bc43220a94f1cad07",
+    "network_isolation_design_sha256": "67949db7523dafebb0e6b6c9b876580c7457196c4f41adef8d97c498d54393d0",
+    "network_isolation_design_verifier_sha256": "cf931f5afb03efae5394cbae613c2653baf08192de81cc86c02516a93536d922",
+    "probe_python_path": "/opt/homebrew/opt/python@3.12/bin/python3.12",
+    "probe_python_sha256": "fe46716a94d8efa4514feb3c39ba3e270deee2187556986f6ddcff54aba7bb9a",
+    "profile_sha256": "5c358b8d847211333e7ba22df82d84f796b5f30a41a2682209a949d783adbd08",
+    "profile_text": "(version 1)\n(allow default)\n(deny network*)\n",
+    "sandbox_exec_path": "/usr/bin/sandbox-exec",
+    "sandbox_exec_sha256": "8290e4be7387a0df83cd1559e86afd880464f269450573d012795761fe298f16"
+  },
+  "current_state": {
+    "execution_runner_created": false,
+    "execution_transaction_issued": false,
+    "network_isolation_attestation_created": false,
+    "network_isolation_attested": false,
+    "network_probe_count": 0,
+    "network_probe_performed": false,
+    "probe_harness_created": false,
+    "probe_protocol_created": true,
+    "profile_syntax_validated": false,
+    "raw_runs_produced": 0,
+    "sandbox_exec_invocation_count": 0,
+    "sandbox_exec_invoked": false,
+    "system_execution": false,
+    "transaction_currently_executable": false,
+    "truth_scoring": false
+  },
+  "denial_semantics": {
+    "accepted_errno_names": [
+      "EPERM",
+      "EACCES"
+    ],
+    "accepted_errno_values": [
+      1,
+      13
+    ],
+    "connection_refused_counts_as_denial": false,
+    "dns_failure_counts_as_denial": false,
+    "host_unreachable_counts_as_denial": false,
+    "network_unreachable_counts_as_denial": false,
+    "observer_absence_alone_counts_as_denial": false,
+    "permission_denial_required": true,
+    "positive_unsandboxed_control_required": true,
+    "sandbox_success_for_network_operation_allowed": false,
+    "timeout_counts_as_denial": false
+  },
+  "evidence_contract": {
+    "preserve_failed_probe_evidence": true,
+    "record_control_result": true,
+    "record_denial_stage": true,
+    "record_errno_name": true,
+    "record_errno_value": true,
+    "record_exact_command_argv": true,
+    "record_host_build": true,
+    "record_host_observer_result": true,
+    "record_host_platform": true,
+    "record_probe_end_timestamp": true,
+    "record_probe_python_sha256": true,
+    "record_probe_start_timestamp": true,
+    "record_process_exit_code": true,
+    "record_profile_sha256": true,
+    "record_sandbox_exec_sha256": true,
+    "record_sandbox_result": true,
+    "record_stderr_sha256": true,
+    "record_stderr_text": true,
+    "record_stdout_sha256": true,
+    "record_stdout_text": true
+  },
+  "execution_cardinality": {
+    "all_probe_evidence_must_be_retained": true,
+    "continue_after_probe_failure": true,
+    "expected_sandbox_exec_invocations": 7,
+    "mandatory_probe_count": 7,
+    "partial_attestation_allowed": false,
+    "probe_reordering_allowed": false,
+    "retry_allowed": false
+  },
+  "failure_policy": {
+    "observer_detects_sandbox_network_activity": "FAIL_ISOLATION_MECHANISM",
+    "positive_control_failure": "FAIL_INVALID_PROBE_NO_ATTESTATION",
+    "profile_acceptance_failure": "FAIL_STOP_ATTESTATION",
+    "sandbox_network_success": "FAIL_ISOLATION_MECHANISM",
+    "timeout": "FAIL_NOT_PROOF_OF_ISOLATION",
+    "unexpected_errno": "FAIL_ISOLATION_MECHANISM",
+    "unix_domain_operation_allowed": "FAIL_ISOLATION_MECHANISM_REDESIGN_REQUIRED"
+  },
+  "family": 2,
+  "future_attestation_contract": {
+    "all_seven_probes_must_pass": true,
+    "any_probe_failure_forces_attestation_false": true,
+    "attested": false,
+    "created": false,
+    "independent_review_required": true,
+    "mainline_merge_required": true,
+    "may_be_created_only_after_probe_harness_mainline": true,
+    "must_bind_exact_design_sha256": true,
+    "must_bind_exact_probe_harness_sha256": true,
+    "must_bind_exact_probe_python_sha256": true,
+    "must_bind_exact_profile_sha256": true,
+    "must_bind_exact_protocol_sha256": true,
+    "must_bind_exact_sandbox_exec_sha256": true,
+    "must_include_all_seven_probe_records": true,
+    "path": "protocols/entity-resolution-ambiguity-network-isolation-attestation-v1.json"
+  },
+  "future_probe_harness_contract": {
+    "created": false,
+    "may_access_external_network": false,
+    "may_access_truth": false,
+    "may_invoke_sandbox_exec": true,
+    "may_mutate_host_network_configuration": false,
+    "may_resolve_dns": false,
+    "may_touch_benchmark_raw_root": false,
+    "may_use_benchmark_adapters": false,
+    "must_bind_exact_design_sha256": true,
+    "must_bind_exact_probe_python_sha256": true,
+    "must_bind_exact_profile_sha256": true,
+    "must_bind_exact_protocol_sha256": true,
+    "must_bind_exact_sandbox_exec_sha256": true,
+    "must_not_retry_failed_probe": true,
+    "must_retain_failed_probe_evidence": true,
+    "must_run_all_probes_once": true,
+    "must_use_only_controlled_local_endpoints": true,
+    "path": "tests/attest_entity_resolution_ambiguity_network_isolation.py"
+  },
+  "governance_gate": {
+    "attestation_forbidden_before_completed_probe_execution": true,
+    "benchmark_execution_forbidden_before_attestation_mainline": true,
+    "execution_runner_forbidden_before_attestation_mainline": true,
+    "network_probe_forbidden_before_probe_harness_mainline": true,
+    "probe_harness_forbidden_before_protocol_mainline": true,
+    "protocol_requires_independent_exact_head_review": true,
+    "protocol_requires_mainline_merge": true,
+    "protocol_requires_schema": true,
+    "protocol_requires_semantic_verifier": true,
+    "sandbox_invocation_forbidden_before_probe_harness_mainline": true
+  },
+  "probe_execution_order": [
+    "profile_acceptance",
+    "tcp_loopback_connect",
+    "udp_loopback_send",
+    "tcp_inbound_bind_listen",
+    "child_process_tcp_connect",
+    "unix_stream_connect",
+    "unix_stream_bind"
+  ],
+  "probe_scope": {
+    "allowed_ip_endpoint": "127.0.0.1",
+    "allowed_unix_socket_location": "unique-temporary-directory-outside-repository",
+    "benchmark_adapter_use_allowed": false,
+    "benchmark_raw_root_access_allowed": false,
+    "control_execution_required": true,
+    "dns_lookup_allowed": false,
+    "external_network_allowed": false,
+    "host_firewall_mutation_allowed": false,
+    "internet_endpoint_allowed": false,
+    "root_privilege_allowed": false,
+    "sandbox_execution_required": true,
+    "sandbox_profile_delivery": "sandbox-exec--p-inline-exact-profile-text",
+    "truth_access_allowed": false
+  },
+  "probes": [
+    {
+      "control_required": false,
+      "expected_exit_code": 0,
+      "id": "profile_acceptance",
+      "network_operation": false,
+      "objective": "prove exact profile text is accepted by exact sandbox-exec binary",
+      "pass_requirements": [
+        "sandbox-exec exits zero",
+        "stderr contains no profile parse failure",
+        "exact profile text is supplied with -p"
+      ],
+      "sandbox_invocation_required": true,
+      "sandbox_target": "/usr/bin/true",
+      "satisfies": [
+        "profile_syntax_validated"
+      ]
+    },
+    {
+      "control_operation": "connect to host-owned TCP listener on 127.0.0.1 ephemeral port",
+      "control_pass": "control connection accepted",
+      "control_required": true,
+      "host_observer": "host-owned TCP listener",
+      "id": "tcp_loopback_connect",
+      "objective": "prove sandboxed outbound TCP and loopback TCP are denied",
+      "sandbox_operation": "same TCP connect operation under exact sandbox profile",
+      "sandbox_pass": "permission denial EPERM/EACCES and no sandbox connection accepted",
+      "satisfies": [
+        "outbound_tcp_denied",
+        "loopback_tcp_denied"
+      ]
+    },
+    {
+      "control_operation": "send fixed datagram to host-owned UDP receiver on 127.0.0.1 ephemeral port",
+      "control_pass": "exact control datagram received",
+      "control_required": true,
+      "host_observer": "host-owned UDP receiver",
+      "id": "udp_loopback_send",
+      "objective": "prove sandboxed outbound UDP is denied",
+      "sandbox_operation": "same UDP send operation under exact sandbox profile",
+      "sandbox_pass": "permission denial EPERM/EACCES and no sandbox datagram received",
+      "satisfies": [
+        "outbound_udp_denied"
+      ]
+    },
+    {
+      "control_operation": "bind and listen on 127.0.0.1 ephemeral port then close",
+      "control_pass": "bind and listen succeeds",
+      "control_required": true,
+      "host_observer": "child probe result only",
+      "id": "tcp_inbound_bind_listen",
+      "objective": "prove sandboxed TCP bind/listen is denied",
+      "sandbox_operation": "same bind/listen sequence under exact sandbox profile",
+      "sandbox_pass": "permission denial EPERM/EACCES at socket/bind/listen",
+      "satisfies": [
+        "inbound_listen_denied"
+      ]
+    },
+    {
+      "control_operation": "unsandboxed parent spawns child that connects to host TCP listener",
+      "control_pass": "control child connection accepted",
+      "control_required": true,
+      "host_observer": "host-owned TCP listener",
+      "id": "child_process_tcp_connect",
+      "objective": "prove sandbox restrictions are inherited by a spawned child process",
+      "sandbox_operation": "sandboxed parent spawns same child and child attempts same TCP connect",
+      "sandbox_pass": "sandbox child receives EPERM/EACCES and no sandbox child connection accepted",
+      "satisfies": [
+        "child_process_network_denied"
+      ]
+    },
+    {
+      "control_operation": "connect to host-owned AF_UNIX stream listener in temporary directory",
+      "control_pass": "control Unix-domain connection accepted",
+      "control_required": true,
+      "host_observer": "host-owned AF_UNIX listener",
+      "id": "unix_stream_connect",
+      "objective": "explicitly determine and require denial of Unix-domain stream connect",
+      "sandbox_operation": "same AF_UNIX connect under exact sandbox profile",
+      "sandbox_pass": "permission denial EPERM/EACCES and no sandbox Unix-domain connection accepted",
+      "satisfies": [
+        "unix_domain_socket_policy_tested",
+        "unix_domain_connect_denied"
+      ]
+    },
+    {
+      "control_operation": "bind AF_UNIX stream socket at temporary control path then close and unlink",
+      "control_pass": "control bind succeeds",
+      "control_required": true,
+      "host_observer": "filesystem path existence plus child probe result",
+      "id": "unix_stream_bind",
+      "objective": "explicitly determine and require denial of Unix-domain stream bind",
+      "sandbox_operation": "bind AF_UNIX stream socket at separate temporary sandbox path",
+      "sandbox_pass": "permission denial EPERM/EACCES and sandbox socket path is not created",
+      "satisfies": [
+        "unix_domain_socket_policy_tested",
+        "unix_domain_bind_denied"
+      ]
+    }
+  ],
+  "protocol_kind": "pre-attestation-exact-network-denial-probe-plan",
+  "schema": "qvra-family-2-network-isolation-attestation-probe-protocol/v1"
+}
