@@ -1,0 +1,631 @@
+{
+  "attestation_claim": {
+    "all_seven_required_probes_passed": true,
+    "benchmark_execution_occurred": false,
+    "external_network_access_occurred": false,
+    "network_isolation_attested_by_frozen_probe_evidence": true,
+    "permission_denial_semantics_satisfied": true,
+    "positive_controls_satisfied": true,
+    "result": "PASS",
+    "truth_access_occurred": false,
+    "zero_retry_requirement_satisfied": true
+  },
+  "attestation_kind": "exact-host-reviewed-network-isolation-probe-attestation",
+  "attested_requirements": {
+    "all_required_probes_passed": true,
+    "child_process_network_denied": true,
+    "inbound_tcp_bind_listen_denied": true,
+    "loopback_tcp_denied": true,
+    "outbound_tcp_denied": true,
+    "outbound_udp_denied": true,
+    "profile_syntax_validated": true,
+    "unix_domain_bind_denied": true,
+    "unix_domain_connect_denied": true,
+    "unix_domain_policy_explicitly_tested": true
+  },
+  "benchmark": "entity-resolution-ambiguity-v1",
+  "bindings": {
+    "governed_main_at_probe_execution": "209a7806258e6b6bfb933f3663f6598fdc8129e4",
+    "harness_merged_main": "209a7806258e6b6bfb933f3663f6598fdc8129e4",
+    "harness_reviewed_head": "d232cbe59cf665b1fa8a91fcf64e40c06bf7a80e",
+    "independent_harness_reviewer": "verifrax-systems",
+    "network_isolation_design_sha256": "67949db7523dafebb0e6b6c9b876580c7457196c4f41adef8d97c498d54393d0",
+    "probe_evidence_relative_path": ".qvra-local-evidence/network-isolation/entity-resolution-ambiguity-v1-probe-evidence-209a7806258e6b6bfb933f3663f6598fdc8129e4.json",
+    "probe_evidence_sha256": "5ee527f4a90686ffbacb5b054439cbe15acad2b0766aea52deab2fed04846ec9",
+    "probe_harness_design_sha256": "d2413019f7dd414fca6caad9e7fe074fa7b2325a50dd69bf09364d2fc3aa7ea4",
+    "probe_harness_sha256": "bf5ae02328cb665cae1956105b40bd83d4e49430a24441e735972c22366737e4",
+    "probe_harness_verifier_sha256": "75787895ceab9b0267b779d1e51ffde73e4e966b6c06624538516dd26205e2a0",
+    "probe_protocol_sha256": "35d997ea115bbc3e6622c5e0f5b9f52053fc30d0249200439f33bc372cf224fa",
+    "probe_python_path": "/opt/homebrew/opt/python@3.12/bin/python3.12",
+    "probe_python_sha256": "fe46716a94d8efa4514feb3c39ba3e270deee2187556986f6ddcff54aba7bb9a",
+    "profile_sha256": "5c358b8d847211333e7ba22df82d84f796b5f30a41a2682209a949d783adbd08",
+    "profile_text": "(version 1)\n(allow default)\n(deny network*)\n",
+    "sandbox_exec_path": "/usr/bin/sandbox-exec",
+    "sandbox_exec_sha256": "8290e4be7387a0df83cd1559e86afd880464f269450573d012795761fe298f16"
+  },
+  "creation_state": {
+    "execution_runner_created": false,
+    "execution_transaction_issued": false,
+    "network_isolation_attestation_created": true,
+    "network_isolation_attestation_mainline": false,
+    "network_isolation_attestation_reviewed": false,
+    "probe_evidence_created": true,
+    "probe_execution_completed": true,
+    "probe_execution_retried": false,
+    "raw_runs_produced": 0,
+    "system_execution": false,
+    "transaction_currently_executable": false,
+    "truth_scoring": false
+  },
+  "execution_summary": {
+    "attestation_ready_from_probe_evidence": true,
+    "completion_state": "COMPLETE_PASS",
+    "network_probe_count": 6,
+    "positive_control_count": 6,
+    "probe_end_timestamp": "2026-09-26T10:08:06.135476Z",
+    "probe_record_count": 7,
+    "probe_start_timestamp": "2026-09-26T10:08:03.002560Z",
+    "retry_count": 0,
+    "sandbox_exec_invocation_count": 7
+  },
+  "family": 2,
+  "governance": {
+    "attestation_candidate_created": true,
+    "attestation_candidate_independently_reviewed": false,
+    "attestation_candidate_mainline": false,
+    "benchmark_execution_forbidden_before_attestation_mainline": true,
+    "execution_runner_forbidden_before_attestation_mainline": true,
+    "governed_execution_effect_activates_on_mainline_merge": true,
+    "governed_execution_effect_active_before_mainline": false,
+    "independent_exact_head_review_required": true,
+    "mainline_merge_required": true
+  },
+  "host_identity": {
+    "machine": "arm64",
+    "macos_build_version": "25F84",
+    "macos_product_version": "26.5.2",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "system": "Darwin"
+  },
+  "probe_records": [
+    {
+      "control": null,
+      "ended_at_utc": "2026-09-26T10:08:03.011878Z",
+      "failure_code": null,
+      "observer": {
+        "network_activity_observed": false,
+        "type": "not-applicable"
+      },
+      "passed": true,
+      "probe_id": "profile_acceptance",
+      "sandbox": {
+        "argv": [
+          "/usr/bin/sandbox-exec",
+          "-p",
+          "(version 1)\n(allow default)\n(deny network*)\n",
+          "/usr/bin/true"
+        ],
+        "exit_code": 0,
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_text": "",
+        "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stdout_text": "",
+        "timed_out": false
+      },
+      "sequence": 1,
+      "started_at_utc": "2026-09-26T10:08:03.003213Z"
+    },
+    {
+      "control": {
+        "argv": [
+          "/opt/homebrew/opt/python@3.12/bin/python3.12",
+          "/Users/midiakiasat/Downloads/Apps/midiakiasat/qvra/bench/tests/attest_entity_resolution_ambiguity_network_isolation.py",
+          "--worker",
+          "tcp-connect",
+          "127.0.0.1",
+          "49538"
+        ],
+        "exit_code": 0,
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_text": "",
+        "stdout_sha256": "c0eca440576d1e0cb381929b14f83ab458d1f57c765f635ba6585aea8a41d6c2",
+        "stdout_text": "{\"denial_stage\":null,\"denied\":false,\"detail\":{\"host\":\"127.0.0.1\",\"port\":49538},\"errno_name\":null,\"errno_value\":null,\"exception_type\":null,\"operation\":\"tcp-connect\",\"success\":true}\n",
+        "timed_out": false,
+        "worker_result": {
+          "denial_stage": null,
+          "denied": false,
+          "detail": {
+            "host": "127.0.0.1",
+            "port": 49538
+          },
+          "errno_name": null,
+          "errno_value": null,
+          "exception_type": null,
+          "operation": "tcp-connect",
+          "success": true
+        }
+      },
+      "ended_at_utc": "2026-09-26T10:08:03.627697Z",
+      "failure_code": null,
+      "observer": {
+        "accepted_connection_count": 1,
+        "control_activity_detected": true,
+        "host": "127.0.0.1",
+        "port": 49538,
+        "sandbox_activity_detected": false,
+        "type": "host-owned-tcp-listener"
+      },
+      "passed": true,
+      "probe_id": "tcp_loopback_connect",
+      "sandbox": {
+        "argv": [
+          "/usr/bin/sandbox-exec",
+          "-p",
+          "(version 1)\n(allow default)\n(deny network*)\n",
+          "/opt/homebrew/opt/python@3.12/bin/python3.12",
+          "/Users/midiakiasat/Downloads/Apps/midiakiasat/qvra/bench/tests/attest_entity_resolution_ambiguity_network_isolation.py",
+          "--worker",
+          "tcp-connect",
+          "127.0.0.1",
+          "49538"
+        ],
+        "exit_code": 0,
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_text": "",
+        "stdout_sha256": "6d3cfdb99c0032f47c294f8ced780de5f4942980cd587b3081b581c5022db3ab",
+        "stdout_text": "{\"denial_stage\":\"connect\",\"denied\":true,\"detail\":\"[Errno 1] Operation not permitted\",\"errno_name\":\"EPERM\",\"errno_value\":1,\"exception_type\":\"PermissionError\",\"operation\":\"tcp-connect\",\"success\":false}\n",
+        "timed_out": false,
+        "worker_result": {
+          "denial_stage": "connect",
+          "denied": true,
+          "detail": "[Errno 1] Operation not permitted",
+          "errno_name": "EPERM",
+          "errno_value": 1,
+          "exception_type": "PermissionError",
+          "operation": "tcp-connect",
+          "success": false
+        }
+      },
+      "sequence": 2,
+      "started_at_utc": "2026-09-26T10:08:03.012318Z"
+    },
+    {
+      "control": {
+        "argv": [
+          "/opt/homebrew/opt/python@3.12/bin/python3.12",
+          "/Users/midiakiasat/Downloads/Apps/midiakiasat/qvra/bench/tests/attest_entity_resolution_ambiguity_network_isolation.py",
+          "--worker",
+          "udp-send",
+          "127.0.0.1",
+          "60190",
+          "QVRA-NETWORK-ISOLATION-PROBE-V1"
+        ],
+        "exit_code": 0,
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_text": "",
+        "stdout_sha256": "01a3561e6673e1cf5b68aa3c81c9111a58e2450127507c430bbd179d663e9261",
+        "stdout_text": "{\"denial_stage\":null,\"denied\":false,\"detail\":{\"bytes_sent\":31,\"host\":\"127.0.0.1\",\"port\":60190},\"errno_name\":null,\"errno_value\":null,\"exception_type\":null,\"operation\":\"udp-send\",\"success\":true}\n",
+        "timed_out": false,
+        "worker_result": {
+          "denial_stage": null,
+          "denied": false,
+          "detail": {
+            "bytes_sent": 31,
+            "host": "127.0.0.1",
+            "port": 60190
+          },
+          "errno_name": null,
+          "errno_value": null,
+          "exception_type": null,
+          "operation": "udp-send",
+          "success": true
+        }
+      },
+      "ended_at_utc": "2026-09-26T10:08:04.329449Z",
+      "failure_code": null,
+      "observer": {
+        "control_activity_detected": true,
+        "host": "127.0.0.1",
+        "matching_datagram_count": 1,
+        "payload_sha256": "532a16e99838bac0216b53e9d8332bf6cc704363328f6d0cf5221d580e572a3d",
+        "port": 60190,
+        "sandbox_activity_detected": false,
+        "type": "host-owned-udp-receiver"
+      },
+      "passed": true,
+      "probe_id": "udp_loopback_send",
+      "sandbox": {
+        "argv": [
+          "/usr/bin/sandbox-exec",
+          "-p",
+          "(version 1)\n(allow default)\n(deny network*)\n",
+          "/opt/homebrew/opt/python@3.12/bin/python3.12",
+          "/Users/midiakiasat/Downloads/Apps/midiakiasat/qvra/bench/tests/attest_entity_resolution_ambiguity_network_isolation.py",
+          "--worker",
+          "udp-send",
+          "127.0.0.1",
+          "60190",
+          "QVRA-NETWORK-ISOLATION-PROBE-V1"
+        ],
+        "exit_code": 0,
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_text": "",
+        "stdout_sha256": "1787e2e355b4bfb4568eae1798f388f0fdaaa5a6a88af83ea367f1f34362dc15",
+        "stdout_text": "{\"denial_stage\":\"sendto\",\"denied\":true,\"detail\":\"[Errno 1] Operation not permitted\",\"errno_name\":\"EPERM\",\"errno_value\":1,\"exception_type\":\"PermissionError\",\"operation\":\"udp-send\",\"success\":false}\n",
+        "timed_out": false,
+        "worker_result": {
+          "denial_stage": "sendto",
+          "denied": true,
+          "detail": "[Errno 1] Operation not permitted",
+          "errno_name": "EPERM",
+          "errno_value": 1,
+          "exception_type": "PermissionError",
+          "operation": "udp-send",
+          "success": false
+        }
+      },
+      "sequence": 3,
+      "started_at_utc": "2026-09-26T10:08:03.664777Z"
+    },
+    {
+      "control": {
+        "argv": [
+          "/opt/homebrew/opt/python@3.12/bin/python3.12",
+          "/Users/midiakiasat/Downloads/Apps/midiakiasat/qvra/bench/tests/attest_entity_resolution_ambiguity_network_isolation.py",
+          "--worker",
+          "tcp-bind-listen"
+        ],
+        "exit_code": 0,
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_text": "",
+        "stdout_sha256": "9f50f39fb623e269024758daca83a2a5883ae74f0fd7d2add80aae3b2ad7422a",
+        "stdout_text": "{\"denial_stage\":null,\"denied\":false,\"detail\":{\"host\":\"127.0.0.1\",\"port\":49541},\"errno_name\":null,\"errno_value\":null,\"exception_type\":null,\"operation\":\"tcp-bind-listen\",\"success\":true}\n",
+        "timed_out": false,
+        "worker_result": {
+          "denial_stage": null,
+          "denied": false,
+          "detail": {
+            "host": "127.0.0.1",
+            "port": 49541
+          },
+          "errno_name": null,
+          "errno_value": null,
+          "exception_type": null,
+          "operation": "tcp-bind-listen",
+          "success": true
+        }
+      },
+      "ended_at_utc": "2026-09-26T10:08:04.497552Z",
+      "failure_code": null,
+      "observer": {
+        "sandbox_activity_detected": false,
+        "type": "child-probe-result-only"
+      },
+      "passed": true,
+      "probe_id": "tcp_inbound_bind_listen",
+      "sandbox": {
+        "argv": [
+          "/usr/bin/sandbox-exec",
+          "-p",
+          "(version 1)\n(allow default)\n(deny network*)\n",
+          "/opt/homebrew/opt/python@3.12/bin/python3.12",
+          "/Users/midiakiasat/Downloads/Apps/midiakiasat/qvra/bench/tests/attest_entity_resolution_ambiguity_network_isolation.py",
+          "--worker",
+          "tcp-bind-listen"
+        ],
+        "exit_code": 0,
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_text": "",
+        "stdout_sha256": "0d10a896d47d91e9a109e90be3c2e11e4acd269cf240986875cb5d9936b40c13",
+        "stdout_text": "{\"denial_stage\":\"bind\",\"denied\":true,\"detail\":\"[Errno 1] Operation not permitted\",\"errno_name\":\"EPERM\",\"errno_value\":1,\"exception_type\":\"PermissionError\",\"operation\":\"tcp-bind-listen\",\"success\":false}\n",
+        "timed_out": false,
+        "worker_result": {
+          "denial_stage": "bind",
+          "denied": true,
+          "detail": "[Errno 1] Operation not permitted",
+          "errno_name": "EPERM",
+          "errno_value": 1,
+          "exception_type": "PermissionError",
+          "operation": "tcp-bind-listen",
+          "success": false
+        }
+      },
+      "sequence": 4,
+      "started_at_utc": "2026-09-26T10:08:04.357860Z"
+    },
+    {
+      "control": {
+        "argv": [
+          "/opt/homebrew/opt/python@3.12/bin/python3.12",
+          "/Users/midiakiasat/Downloads/Apps/midiakiasat/qvra/bench/tests/attest_entity_resolution_ambiguity_network_isolation.py",
+          "--worker",
+          "child-process-tcp-connect",
+          "127.0.0.1",
+          "49542"
+        ],
+        "exit_code": 0,
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_text": "",
+        "stdout_sha256": "89e345bea2380befcc9b74bcf6c56ff1185a1dd123fb3f6e98ea814b080d8025",
+        "stdout_text": "{\"denial_stage\":null,\"denied\":false,\"detail\":{\"nested_process\":{\"argv\":[\"/opt/homebrew/opt/python@3.12/bin/python3.12\",\"/Users/midiakiasat/Downloads/Apps/midiakiasat/qvra/bench/tests/attest_entity_resolution_ambiguity_network_isolation.py\",\"--nested-child\",\"tcp-connect\",\"127.0.0.1\",\"49542\"],\"exit_code\":0,\"stderr_sha256\":\"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\",\"stderr_text\":\"\",\"stdout_sha256\":\"2cd646c02f327c6bc8971963919aca14084bfbb65980f9d7eb72d1c914216cd7\",\"stdout_text\":\"{\\\"denial_stage\\\":null,\\\"denied\\\":false,\\\"detail\\\":{\\\"host\\\":\\\"127.0.0.1\\\",\\\"port\\\":49542},\\\"errno_name\\\":null,\\\"errno_value\\\":null,\\\"exception_type\\\":null,\\\"operation\\\":\\\"tcp-connect\\\",\\\"success\\\":true}\\n\",\"timed_out\":false},\"nested_result\":{\"denial_stage\":null,\"denied\":false,\"detail\":{\"host\":\"127.0.0.1\",\"port\":49542},\"errno_name\":null,\"errno_value\":null,\"exception_type\":null,\"operation\":\"tcp-connect\",\"success\":true}},\"errno_name\":null,\"errno_value\":null,\"exception_type\":null,\"operation\":\"child-process-tcp-connect\",\"success\":true}\n",
+        "timed_out": false,
+        "worker_result": {
+          "denial_stage": null,
+          "denied": false,
+          "detail": {
+            "nested_process": {
+              "argv": [
+                "/opt/homebrew/opt/python@3.12/bin/python3.12",
+                "/Users/midiakiasat/Downloads/Apps/midiakiasat/qvra/bench/tests/attest_entity_resolution_ambiguity_network_isolation.py",
+                "--nested-child",
+                "tcp-connect",
+                "127.0.0.1",
+                "49542"
+              ],
+              "exit_code": 0,
+              "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "stderr_text": "",
+              "stdout_sha256": "2cd646c02f327c6bc8971963919aca14084bfbb65980f9d7eb72d1c914216cd7",
+              "stdout_text": "{\"denial_stage\":null,\"denied\":false,\"detail\":{\"host\":\"127.0.0.1\",\"port\":49542},\"errno_name\":null,\"errno_value\":null,\"exception_type\":null,\"operation\":\"tcp-connect\",\"success\":true}\n",
+              "timed_out": false
+            },
+            "nested_result": {
+              "denial_stage": null,
+              "denied": false,
+              "detail": {
+                "host": "127.0.0.1",
+                "port": 49542
+              },
+              "errno_name": null,
+              "errno_value": null,
+              "exception_type": null,
+              "operation": "tcp-connect",
+              "success": true
+            }
+          },
+          "errno_name": null,
+          "errno_value": null,
+          "exception_type": null,
+          "operation": "child-process-tcp-connect",
+          "success": true
+        }
+      },
+      "ended_at_utc": "2026-09-26T10:08:05.220770Z",
+      "failure_code": null,
+      "observer": {
+        "accepted_connection_count": 1,
+        "control_activity_detected": true,
+        "host": "127.0.0.1",
+        "port": 49542,
+        "sandbox_activity_detected": false,
+        "type": "host-owned-tcp-listener"
+      },
+      "passed": true,
+      "probe_id": "child_process_tcp_connect",
+      "sandbox": {
+        "argv": [
+          "/usr/bin/sandbox-exec",
+          "-p",
+          "(version 1)\n(allow default)\n(deny network*)\n",
+          "/opt/homebrew/opt/python@3.12/bin/python3.12",
+          "/Users/midiakiasat/Downloads/Apps/midiakiasat/qvra/bench/tests/attest_entity_resolution_ambiguity_network_isolation.py",
+          "--worker",
+          "child-process-tcp-connect",
+          "127.0.0.1",
+          "49542"
+        ],
+        "exit_code": 0,
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_text": "",
+        "stdout_sha256": "ab670856966f0110e2584e840caf07a6c819689e8d5d385ced71d7be4abcf3a6",
+        "stdout_text": "{\"denial_stage\":\"connect\",\"denied\":true,\"detail\":{\"nested_process\":{\"argv\":[\"/opt/homebrew/opt/python@3.12/bin/python3.12\",\"/Users/midiakiasat/Downloads/Apps/midiakiasat/qvra/bench/tests/attest_entity_resolution_ambiguity_network_isolation.py\",\"--nested-child\",\"tcp-connect\",\"127.0.0.1\",\"49542\"],\"exit_code\":0,\"stderr_sha256\":\"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\",\"stderr_text\":\"\",\"stdout_sha256\":\"6d3cfdb99c0032f47c294f8ced780de5f4942980cd587b3081b581c5022db3ab\",\"stdout_text\":\"{\\\"denial_stage\\\":\\\"connect\\\",\\\"denied\\\":true,\\\"detail\\\":\\\"[Errno 1] Operation not permitted\\\",\\\"errno_name\\\":\\\"EPERM\\\",\\\"errno_value\\\":1,\\\"exception_type\\\":\\\"PermissionError\\\",\\\"operation\\\":\\\"tcp-connect\\\",\\\"success\\\":false}\\n\",\"timed_out\":false},\"nested_result\":{\"denial_stage\":\"connect\",\"denied\":true,\"detail\":\"[Errno 1] Operation not permitted\",\"errno_name\":\"EPERM\",\"errno_value\":1,\"exception_type\":\"PermissionError\",\"operation\":\"tcp-connect\",\"success\":false}},\"errno_name\":\"EPERM\",\"errno_value\":1,\"exception_type\":\"PermissionError\",\"operation\":\"child-process-tcp-connect\",\"success\":false}\n",
+        "timed_out": false,
+        "worker_result": {
+          "denial_stage": "connect",
+          "denied": true,
+          "detail": {
+            "nested_process": {
+              "argv": [
+                "/opt/homebrew/opt/python@3.12/bin/python3.12",
+                "/Users/midiakiasat/Downloads/Apps/midiakiasat/qvra/bench/tests/attest_entity_resolution_ambiguity_network_isolation.py",
+                "--nested-child",
+                "tcp-connect",
+                "127.0.0.1",
+                "49542"
+              ],
+              "exit_code": 0,
+              "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "stderr_text": "",
+              "stdout_sha256": "6d3cfdb99c0032f47c294f8ced780de5f4942980cd587b3081b581c5022db3ab",
+              "stdout_text": "{\"denial_stage\":\"connect\",\"denied\":true,\"detail\":\"[Errno 1] Operation not permitted\",\"errno_name\":\"EPERM\",\"errno_value\":1,\"exception_type\":\"PermissionError\",\"operation\":\"tcp-connect\",\"success\":false}\n",
+              "timed_out": false
+            },
+            "nested_result": {
+              "denial_stage": "connect",
+              "denied": true,
+              "detail": "[Errno 1] Operation not permitted",
+              "errno_name": "EPERM",
+              "errno_value": 1,
+              "exception_type": "PermissionError",
+              "operation": "tcp-connect",
+              "success": false
+            }
+          },
+          "errno_name": "EPERM",
+          "errno_value": 1,
+          "exception_type": "PermissionError",
+          "operation": "child-process-tcp-connect",
+          "success": false
+        }
+      },
+      "sequence": 5,
+      "started_at_utc": "2026-09-26T10:08:04.498555Z"
+    },
+    {
+      "control": {
+        "argv": [
+          "/opt/homebrew/opt/python@3.12/bin/python3.12",
+          "/Users/midiakiasat/Downloads/Apps/midiakiasat/qvra/bench/tests/attest_entity_resolution_ambiguity_network_isolation.py",
+          "--worker",
+          "unix-stream-connect",
+          "/private/tmp/qvra-unix-connect-upr3ef9k/listener.sock"
+        ],
+        "exit_code": 0,
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_text": "",
+        "stdout_sha256": "e9a91f7ad739d765afa4b0d6ce47ff9a7118bc931a6abe2830d90a2547b2d235",
+        "stdout_text": "{\"denial_stage\":null,\"denied\":false,\"detail\":{\"path\":\"/private/tmp/qvra-unix-connect-upr3ef9k/listener.sock\"},\"errno_name\":null,\"errno_value\":null,\"exception_type\":null,\"operation\":\"unix-stream-connect\",\"success\":true}\n",
+        "timed_out": false,
+        "worker_result": {
+          "denial_stage": null,
+          "denied": false,
+          "detail": {
+            "path": "/private/tmp/qvra-unix-connect-upr3ef9k/listener.sock"
+          },
+          "errno_name": null,
+          "errno_value": null,
+          "exception_type": null,
+          "operation": "unix-stream-connect",
+          "success": true
+        }
+      },
+      "ended_at_utc": "2026-09-26T10:08:05.953894Z",
+      "failure_code": null,
+      "observer": {
+        "accepted_connection_count": 1,
+        "control_activity_detected": true,
+        "path": "/private/tmp/qvra-unix-connect-upr3ef9k/listener.sock",
+        "sandbox_activity_detected": false,
+        "type": "host-owned-af-unix-listener"
+      },
+      "passed": true,
+      "probe_id": "unix_stream_connect",
+      "sandbox": {
+        "argv": [
+          "/usr/bin/sandbox-exec",
+          "-p",
+          "(version 1)\n(allow default)\n(deny network*)\n",
+          "/opt/homebrew/opt/python@3.12/bin/python3.12",
+          "/Users/midiakiasat/Downloads/Apps/midiakiasat/qvra/bench/tests/attest_entity_resolution_ambiguity_network_isolation.py",
+          "--worker",
+          "unix-stream-connect",
+          "/private/tmp/qvra-unix-connect-upr3ef9k/listener.sock"
+        ],
+        "exit_code": 0,
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_text": "",
+        "stdout_sha256": "562c958a64d7407df98f2878fc028600f4c4718bb5d82bd0b6b2a37240f3e9ad",
+        "stdout_text": "{\"denial_stage\":\"connect\",\"denied\":true,\"detail\":\"[Errno 1] Operation not permitted\",\"errno_name\":\"EPERM\",\"errno_value\":1,\"exception_type\":\"PermissionError\",\"operation\":\"unix-stream-connect\",\"success\":false}\n",
+        "timed_out": false,
+        "worker_result": {
+          "denial_stage": "connect",
+          "denied": true,
+          "detail": "[Errno 1] Operation not permitted",
+          "errno_name": "EPERM",
+          "errno_value": 1,
+          "exception_type": "PermissionError",
+          "operation": "unix-stream-connect",
+          "success": false
+        }
+      },
+      "sequence": 6,
+      "started_at_utc": "2026-09-26T10:08:05.304260Z"
+    },
+    {
+      "control": {
+        "argv": [
+          "/opt/homebrew/opt/python@3.12/bin/python3.12",
+          "/Users/midiakiasat/Downloads/Apps/midiakiasat/qvra/bench/tests/attest_entity_resolution_ambiguity_network_isolation.py",
+          "--worker",
+          "unix-stream-bind",
+          "/private/tmp/qvra-unix-bind-s_o1t0zf/control.sock"
+        ],
+        "exit_code": 0,
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_text": "",
+        "stdout_sha256": "daf98afd1d42e0edd7ef11db30f9b3eb7113b7a9e4c933afe13c9eddad53b492",
+        "stdout_text": "{\"denial_stage\":null,\"denied\":false,\"detail\":{\"path\":\"/private/tmp/qvra-unix-bind-s_o1t0zf/control.sock\"},\"errno_name\":null,\"errno_value\":null,\"exception_type\":null,\"operation\":\"unix-stream-bind\",\"success\":true}\n",
+        "timed_out": false,
+        "worker_result": {
+          "denial_stage": null,
+          "denied": false,
+          "detail": {
+            "path": "/private/tmp/qvra-unix-bind-s_o1t0zf/control.sock"
+          },
+          "errno_name": null,
+          "errno_value": null,
+          "exception_type": null,
+          "operation": "unix-stream-bind",
+          "success": true
+        }
+      },
+      "ended_at_utc": "2026-09-26T10:08:06.134289Z",
+      "failure_code": null,
+      "observer": {
+        "control_path": "/private/tmp/qvra-unix-bind-s_o1t0zf/control.sock",
+        "control_path_created": true,
+        "sandbox_activity_detected": false,
+        "sandbox_path": "/private/tmp/qvra-unix-bind-s_o1t0zf/sandbox.sock",
+        "sandbox_path_created": false,
+        "type": "filesystem-path-existence-plus-child-result"
+      },
+      "passed": true,
+      "probe_id": "unix_stream_bind",
+      "sandbox": {
+        "argv": [
+          "/usr/bin/sandbox-exec",
+          "-p",
+          "(version 1)\n(allow default)\n(deny network*)\n",
+          "/opt/homebrew/opt/python@3.12/bin/python3.12",
+          "/Users/midiakiasat/Downloads/Apps/midiakiasat/qvra/bench/tests/attest_entity_resolution_ambiguity_network_isolation.py",
+          "--worker",
+          "unix-stream-bind",
+          "/private/tmp/qvra-unix-bind-s_o1t0zf/sandbox.sock"
+        ],
+        "exit_code": 0,
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_text": "",
+        "stdout_sha256": "80f3e39d85d1bfee711e7d2d02648297533c0e29e943b2da2e6d593e9b423f5b",
+        "stdout_text": "{\"denial_stage\":\"bind\",\"denied\":true,\"detail\":\"[Errno 1] Operation not permitted\",\"errno_name\":\"EPERM\",\"errno_value\":1,\"exception_type\":\"PermissionError\",\"operation\":\"unix-stream-bind\",\"success\":false}\n",
+        "timed_out": false,
+        "worker_result": {
+          "denial_stage": "bind",
+          "denied": true,
+          "detail": "[Errno 1] Operation not permitted",
+          "errno_name": "EPERM",
+          "errno_value": 1,
+          "exception_type": "PermissionError",
+          "operation": "unix-stream-bind",
+          "success": false
+        }
+      },
+      "sequence": 7,
+      "started_at_utc": "2026-09-26T10:08:05.993079Z"
+    }
+  ],
+  "safety_state": {
+    "benchmark_adapter_used": false,
+    "benchmark_raw_root_touched": false,
+    "dns_resolution_used": false,
+    "execution_runner_created": false,
+    "execution_transaction_issued": false,
+    "external_network_used": false,
+    "host_network_configuration_mutated": false,
+    "network_isolation_attestation_created": false,
+    "raw_runs_produced": 0,
+    "root_privilege_used": false,
+    "system_execution": false,
+    "truth_accessed": false,
+    "truth_scoring": false
+  },
+  "schema": "qvra-family-2-network-isolation-attestation/v1",
+  "scope": {
+    "benchmark_quality_claim": false,
+    "benchmark_system_execution_claim": false,
+    "cross_host_generalization": false,
+    "exact_host_only": true,
+    "exact_profile_only": true,
+    "exact_sandbox_binary_only": true,
+    "future_macos_version_generalization": false
+  }
+}
