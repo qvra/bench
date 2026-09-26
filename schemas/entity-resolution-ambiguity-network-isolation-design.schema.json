@@ -1,0 +1,447 @@
+{
+  "$id": "qvra-family-2-network-isolation-design.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "benchmark": {
+      "const": "entity-resolution-ambiguity-v1"
+    },
+    "bindings": {
+      "additionalProperties": false,
+      "properties": {
+        "command_descriptor_sha256": {
+          "const": "817d3e1eae8babb26eb49792b5778898793235042020c9f904cad0057e8549ac"
+        },
+        "execution_bridge_sha256": {
+          "const": "f0aaa7706f92d99ee80f152a199b2e8f31dd12cf0c6494c8733e51a962b807be"
+        },
+        "explicit_run_transaction_design_sha256": {
+          "const": "9d3f25f267e935588d96c796f78fb0841493ea7275f7d34d8b5b60e085b9a77f"
+        },
+        "explicit_run_transaction_design_verifier_sha256": {
+          "const": "06ac62ae771abe090dc41e46f570728512126ce5a6d9e840bf7f927b6d2e6cf3"
+        },
+        "governed_main": {
+          "const": "e0bbaf72f2c944e810b93146ad16e2c8935aed5a"
+        },
+        "portable_plan_sha256": {
+          "const": "df1fbeab0a2c89c16fb9530aaf4f5545d62a4dab3f44f160dacdc231a3463ac7"
+        },
+        "process_launcher_sha256": {
+          "const": "d8d028d95adb463f27b5df6a5ec44ae9049b6799aae46c4b0176ca2adfd07f90"
+        },
+        "runtime_policy_sha256": {
+          "const": "0ae9913e36bc3109ea36f7da93219852760a8f347bc5d802aaacde313ddefced"
+        }
+      },
+      "required": [
+        "command_descriptor_sha256",
+        "execution_bridge_sha256",
+        "explicit_run_transaction_design_sha256",
+        "explicit_run_transaction_design_verifier_sha256",
+        "governed_main",
+        "portable_plan_sha256",
+        "process_launcher_sha256",
+        "runtime_policy_sha256"
+      ],
+      "type": "object"
+    },
+    "design_boundary": {
+      "additionalProperties": false,
+      "properties": {
+        "benchmark_system_execution": {
+          "const": false
+        },
+        "execution_runner_created": {
+          "const": false
+        },
+        "execution_transaction_issued": {
+          "const": false
+        },
+        "network_denial_probe_performed": {
+          "const": false
+        },
+        "network_isolation_attestation_created": {
+          "const": false
+        },
+        "network_isolation_attested": {
+          "const": false
+        },
+        "process_launch_capability_present": {
+          "const": false
+        },
+        "profile_materialized": {
+          "const": false
+        },
+        "profile_syntax_validated": {
+          "const": false
+        },
+        "sandbox_exec_discovered": {
+          "const": true
+        },
+        "sandbox_exec_invoked": {
+          "const": false
+        }
+      },
+      "required": [
+        "benchmark_system_execution",
+        "execution_runner_created",
+        "execution_transaction_issued",
+        "network_denial_probe_performed",
+        "network_isolation_attestation_created",
+        "network_isolation_attested",
+        "process_launch_capability_present",
+        "profile_materialized",
+        "profile_syntax_validated",
+        "sandbox_exec_discovered",
+        "sandbox_exec_invoked"
+      ],
+      "type": "object"
+    },
+    "design_kind": {
+      "const": "macos-process-network-isolation"
+    },
+    "family": {
+      "const": 2
+    },
+    "future_attestation_contract": {
+      "additionalProperties": false,
+      "properties": {
+        "attestation_path": {
+          "const": "protocols/entity-resolution-ambiguity-network-isolation-attestation-v1.json"
+        },
+        "benchmark_adapters_may_not_be_used_as_network_probes": {
+          "const": true
+        },
+        "benchmark_raw_root_may_not_be_touched": {
+          "const": true
+        },
+        "must_bind_exact_design_sha256": {
+          "const": true
+        },
+        "must_bind_exact_profile_sha256": {
+          "const": true
+        },
+        "must_bind_exact_sandbox_exec_sha256": {
+          "const": true
+        },
+        "must_bind_host_platform_and_build": {
+          "const": true
+        },
+        "must_prove_child_process_network_denied": {
+          "const": true
+        },
+        "must_prove_inbound_listen_denied": {
+          "const": true
+        },
+        "must_prove_loopback_tcp_denied": {
+          "const": true
+        },
+        "must_prove_outbound_tcp_denied": {
+          "const": true
+        },
+        "must_prove_outbound_udp_denied": {
+          "const": true
+        },
+        "must_record_probe_commands": {
+          "const": true
+        },
+        "must_record_probe_exit_codes": {
+          "const": true
+        },
+        "must_record_probe_stderr": {
+          "const": true
+        },
+        "must_record_probe_stdout": {
+          "const": true
+        },
+        "must_validate_profile_syntax": {
+          "const": true
+        }
+      },
+      "required": [
+        "attestation_path",
+        "benchmark_adapters_may_not_be_used_as_network_probes",
+        "benchmark_raw_root_may_not_be_touched",
+        "must_bind_exact_design_sha256",
+        "must_bind_exact_profile_sha256",
+        "must_bind_exact_sandbox_exec_sha256",
+        "must_bind_host_platform_and_build",
+        "must_prove_child_process_network_denied",
+        "must_prove_inbound_listen_denied",
+        "must_prove_loopback_tcp_denied",
+        "must_prove_outbound_tcp_denied",
+        "must_prove_outbound_udp_denied",
+        "must_record_probe_commands",
+        "must_record_probe_exit_codes",
+        "must_record_probe_stderr",
+        "must_record_probe_stdout",
+        "must_validate_profile_syntax"
+      ],
+      "type": "object"
+    },
+    "future_runner_contract": {
+      "additionalProperties": false,
+      "properties": {
+        "must_not_mutate_host_firewall": {
+          "const": true
+        },
+        "must_not_offer_unsandboxed_fallback": {
+          "const": true
+        },
+        "must_not_require_root": {
+          "const": true
+        },
+        "must_refuse_without_mainline_attestation": {
+          "const": true
+        },
+        "must_verify_attestation_identity": {
+          "const": true
+        },
+        "must_verify_profile_identity": {
+          "const": true
+        },
+        "must_verify_sandbox_exec_identity": {
+          "const": true
+        },
+        "must_wrap_every_system_process_in_exact_isolation_mechanism": {
+          "const": true
+        },
+        "runner_created": {
+          "const": false
+        },
+        "runner_path": {
+          "const": "suites/entity-resolution-ambiguity-v1/execution_runner.py"
+        }
+      },
+      "required": [
+        "must_not_mutate_host_firewall",
+        "must_not_offer_unsandboxed_fallback",
+        "must_not_require_root",
+        "must_refuse_without_mainline_attestation",
+        "must_verify_attestation_identity",
+        "must_verify_profile_identity",
+        "must_verify_sandbox_exec_identity",
+        "must_wrap_every_system_process_in_exact_isolation_mechanism",
+        "runner_created",
+        "runner_path"
+      ],
+      "type": "object"
+    },
+    "governance_gate": {
+      "additionalProperties": false,
+      "properties": {
+        "attestation_requires_independent_review": {
+          "const": true
+        },
+        "attestation_requires_mainline_merge": {
+          "const": true
+        },
+        "attestation_requires_separate_commit": {
+          "const": true
+        },
+        "design_requires_exact_head_review": {
+          "const": true
+        },
+        "design_requires_independent_review": {
+          "const": true
+        },
+        "design_requires_mainline_merge": {
+          "const": true
+        },
+        "execution_forbidden_before_attestation_mainline": {
+          "const": true
+        },
+        "runner_forbidden_before_attestation_mainline": {
+          "const": true
+        }
+      },
+      "required": [
+        "attestation_requires_independent_review",
+        "attestation_requires_mainline_merge",
+        "attestation_requires_separate_commit",
+        "design_requires_exact_head_review",
+        "design_requires_independent_review",
+        "design_requires_mainline_merge",
+        "execution_forbidden_before_attestation_mainline",
+        "runner_forbidden_before_attestation_mainline"
+      ],
+      "type": "object"
+    },
+    "host_mutation_policy": {
+      "additionalProperties": false,
+      "properties": {
+        "dns_configuration_mutation_allowed": {
+          "const": false
+        },
+        "interface_disable_allowed": {
+          "const": false
+        },
+        "network_service_mutation_allowed": {
+          "const": false
+        },
+        "pf_firewall_mutation_allowed": {
+          "const": false
+        },
+        "root_privilege_required": {
+          "const": false
+        },
+        "route_table_mutation_allowed": {
+          "const": false
+        }
+      },
+      "required": [
+        "dns_configuration_mutation_allowed",
+        "interface_disable_allowed",
+        "network_service_mutation_allowed",
+        "pf_firewall_mutation_allowed",
+        "root_privilege_required",
+        "route_table_mutation_allowed"
+      ],
+      "type": "object"
+    },
+    "host_observation": {
+      "additionalProperties": false,
+      "properties": {
+        "architecture": {
+          "const": "arm64"
+        },
+        "macos_build_version": {
+          "const": "25F84"
+        },
+        "macos_product_version": {
+          "const": "26.5.2"
+        },
+        "observation_read_only": {
+          "const": true
+        },
+        "platform": {
+          "const": "Darwin"
+        }
+      },
+      "required": [
+        "architecture",
+        "macos_build_version",
+        "macos_product_version",
+        "observation_read_only",
+        "platform"
+      ],
+      "type": "object"
+    },
+    "pre_attestation_state": {
+      "additionalProperties": false,
+      "properties": {
+        "execution_runner_created": {
+          "const": false
+        },
+        "execution_transaction_issued": {
+          "const": false
+        },
+        "network_isolation_attestation_created": {
+          "const": false
+        },
+        "network_isolation_attested": {
+          "const": false
+        },
+        "network_isolation_mechanism_selected": {
+          "const": true
+        },
+        "raw_runs_produced": {
+          "const": 0
+        },
+        "system_execution": {
+          "const": false
+        },
+        "transaction_currently_executable": {
+          "const": false
+        },
+        "truth_scoring": {
+          "const": false
+        }
+      },
+      "required": [
+        "execution_runner_created",
+        "execution_transaction_issued",
+        "network_isolation_attestation_created",
+        "network_isolation_attested",
+        "network_isolation_mechanism_selected",
+        "raw_runs_produced",
+        "system_execution",
+        "transaction_currently_executable",
+        "truth_scoring"
+      ],
+      "type": "object"
+    },
+    "schema": {
+      "const": "qvra-family-2-network-isolation-design/v1"
+    },
+    "selected_mechanism": {
+      "additionalProperties": false,
+      "properties": {
+        "all_network_operations_denied_required": {
+          "const": true
+        },
+        "child_processes_must_remain_inside_sandbox": {
+          "const": true
+        },
+        "loopback_network_denied_required": {
+          "const": true
+        },
+        "mechanism_kind": {
+          "const": "macos-sandbox-exec-seatbelt-profile"
+        },
+        "mechanism_selected": {
+          "const": true
+        },
+        "profile_intent": {
+          "const": "allow-default-deny-all-network"
+        },
+        "profile_sha256": {
+          "const": "5c358b8d847211333e7ba22df82d84f796b5f30a41a2682209a949d783adbd08"
+        },
+        "profile_text": {
+          "const": "(version 1)\n(allow default)\n(deny network*)\n"
+        },
+        "sandbox_exec_path": {
+          "const": "/usr/bin/sandbox-exec"
+        },
+        "sandbox_exec_sha256": {
+          "const": "8290e4be7387a0df83cd1559e86afd880464f269450573d012795761fe298f16"
+        },
+        "unix_domain_socket_policy": {
+          "const": "must-be-explicitly-tested-before-attestation"
+        }
+      },
+      "required": [
+        "all_network_operations_denied_required",
+        "child_processes_must_remain_inside_sandbox",
+        "loopback_network_denied_required",
+        "mechanism_kind",
+        "mechanism_selected",
+        "profile_intent",
+        "profile_sha256",
+        "profile_text",
+        "sandbox_exec_path",
+        "sandbox_exec_sha256",
+        "unix_domain_socket_policy"
+      ],
+      "type": "object"
+    }
+  },
+  "required": [
+    "benchmark",
+    "bindings",
+    "design_boundary",
+    "design_kind",
+    "family",
+    "future_attestation_contract",
+    "future_runner_contract",
+    "governance_gate",
+    "host_mutation_policy",
+    "host_observation",
+    "pre_attestation_state",
+    "schema",
+    "selected_mechanism"
+  ],
+  "type": "object"
+}
