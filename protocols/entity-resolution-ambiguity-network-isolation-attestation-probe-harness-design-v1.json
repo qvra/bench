@@ -1,0 +1,333 @@
+{
+  "benchmark": "entity-resolution-ambiguity-v1",
+  "bindings": {
+    "governed_main": "05c01c18b976a7cc5cd8e4fab0753a877b400df4",
+    "network_isolation_design_sha256": "67949db7523dafebb0e6b6c9b876580c7457196c4f41adef8d97c498d54393d0",
+    "probe_protocol_merged_main": "05c01c18b976a7cc5cd8e4fab0753a877b400df4",
+    "probe_protocol_reviewed_head": "bd8d06bf7c2db8ef46ec60761d214a3f2ddac0c3",
+    "probe_protocol_schema_sha256": "4b522e9a0df8ea85cca6948d91f5187300092d0348b2b5f0f23fa94193146af2",
+    "probe_protocol_sha256": "35d997ea115bbc3e6622c5e0f5b9f52053fc30d0249200439f33bc372cf224fa",
+    "probe_protocol_verifier_sha256": "7eff4371946a735975da6c54cad4f66516e12832aa29c832fadf891e83ecb729",
+    "probe_python_path": "/opt/homebrew/opt/python@3.12/bin/python3.12",
+    "probe_python_sha256": "fe46716a94d8efa4514feb3c39ba3e270deee2187556986f6ddcff54aba7bb9a",
+    "profile_sha256": "5c358b8d847211333e7ba22df82d84f796b5f30a41a2682209a949d783adbd08",
+    "profile_text": "(version 1)\n(allow default)\n(deny network*)\n",
+    "sandbox_exec_path": "/usr/bin/sandbox-exec",
+    "sandbox_exec_sha256": "8290e4be7387a0df83cd1559e86afd880464f269450573d012795761fe298f16"
+  },
+  "current_state": {
+    "execution_runner_created": false,
+    "execution_transaction_issued": false,
+    "harness_design_created": true,
+    "harness_implementation_created": false,
+    "harness_verifier_created": false,
+    "network_isolation_attestation_created": false,
+    "network_isolation_attested": false,
+    "network_probe_count": 0,
+    "network_probe_performed": false,
+    "probe_evidence_created": false,
+    "profile_syntax_validated": false,
+    "raw_runs_produced": 0,
+    "sandbox_exec_invocation_count": 0,
+    "sandbox_exec_invoked": false,
+    "system_execution": false,
+    "transaction_currently_executable": false,
+    "truth_scoring": false
+  },
+  "denial_evaluation": {
+    "accepted_errno_names": [
+      "EPERM",
+      "EACCES"
+    ],
+    "accepted_errno_values": [
+      1,
+      13
+    ],
+    "connection_refused_counts_as_denial": false,
+    "dns_failure_counts_as_denial": false,
+    "host_observer_must_show_no_sandbox_activity": true,
+    "host_unreachable_counts_as_denial": false,
+    "network_unreachable_counts_as_denial": false,
+    "observer_absence_alone_counts_as_denial": false,
+    "permission_denial_required": true,
+    "successful_sandbox_network_operation_is_failure": true,
+    "timeout_counts_as_denial": false,
+    "unexpected_errno_is_failure": true
+  },
+  "design_kind": "review-before-implementation-local-network-probe-harness",
+  "evidence_output_contract": {
+    "allowed_root": ".qvra-local-evidence/network-isolation",
+    "attestation_ready_only_for_state": "COMPLETE_PASS",
+    "benchmark_raw_root_may_be_touched": false,
+    "completion_states": [
+      "COMPLETE_PASS",
+      "COMPLETE_FAIL",
+      "INCOMPLETE_HARNESS_FAILURE"
+    ],
+    "evidence_file_sha256_must_be_reported": true,
+    "output_must_be_inside_allowed_root": true,
+    "output_must_not_preexist": true,
+    "parent_directory_may_be_created": true,
+    "partial_execution_evidence_required": true,
+    "tracked_repository_files_may_be_modified": false,
+    "truth_may_be_accessed": false,
+    "write_strategy": "temporary-file-fsync-atomic-os-replace"
+  },
+  "exact_execution_cardinality": {
+    "all_probes_must_be_attempted_once_after_successful_preflight": true,
+    "continue_after_probe_failure": true,
+    "network_probe_count": 6,
+    "positive_control_count": 6,
+    "probe_record_count": 7,
+    "probe_reordering_allowed": false,
+    "profile_acceptance_probe_count": 1,
+    "retry_count": 0,
+    "sandbox_exec_invocation_count": 7
+  },
+  "failure_handling": {
+    "harness_internal_failure": "WRITE_INCOMPLETE_EVIDENCE_IF_EXECUTION_ALREADY_STARTED",
+    "positive_control_failure": "COMPLETE_REMAINING_PROBES_BUT_ATTESTATION_FORBIDDEN",
+    "preflight_failure": "REFUSE_WITH_ZERO_SANDBOX_INVOCATIONS",
+    "profile_acceptance_failure": "COMPLETE_REMAINING_PROBES_BUT_ATTESTATION_FORBIDDEN",
+    "sandbox_network_success": "COMPLETE_REMAINING_PROBES_BUT_ISOLATION_FAIL",
+    "timeout": "COMPLETE_REMAINING_PROBES_BUT_NOT_ISOLATION_PROOF",
+    "unexpected_errno": "COMPLETE_REMAINING_PROBES_BUT_ISOLATION_FAIL"
+  },
+  "family": 2,
+  "future_harness_review_contract": {
+    "implementation_must_match_this_design": true,
+    "implementation_requires_independent_exact_head_review": true,
+    "implementation_requires_mainline_merge_before_execution": true,
+    "implementation_requires_semantic_verifier": true,
+    "review_must_not_execute_harness": true,
+    "review_must_not_invoke_sandbox_exec": true,
+    "review_must_not_perform_network_probe": true,
+    "review_must_prove_default_invocation_refuses": true,
+    "review_must_static_check_no_external_endpoint_literals": true,
+    "review_must_static_check_process_launch_sites": true,
+    "review_must_static_check_socket_sites": true
+  },
+  "implementation_target": {
+    "absolute_executable_paths_required": true,
+    "attestation_creation_allowed": false,
+    "benchmark_execution_allowed": false,
+    "central_process_runner_required": true,
+    "created": false,
+    "default_invocation_must_refuse": true,
+    "execution_flag": "--execute-attestation-probes",
+    "execution_requires_explicit_flag": true,
+    "import_side_effects_allowed": false,
+    "language": "python-3.12",
+    "network_operations_must_exist_only_in_worker_modes": true,
+    "path": "tests/attest_entity_resolution_ambiguity_network_isolation.py",
+    "sandbox_exec_invocations_must_use_central_runner": true,
+    "shell_execution_allowed": false,
+    "shell_true_allowed": false
+  },
+  "observer_model": {
+    "observer_timeout_may_count_as_isolation_proof": false,
+    "observer_timeout_may_detect_activity_absence": true,
+    "observers_use_background_threads_not_processes": true,
+    "sandbox_permission_denial_still_required": true,
+    "tcp_listener_owned_by_unsandboxed_parent": true,
+    "udp_receiver_owned_by_unsandboxed_parent": true,
+    "unix_listener_owned_by_unsandboxed_parent": true
+  },
+  "operator_cli_contract": {
+    "default_no_argument_invocation_must_refuse_before_probe": true,
+    "missing_required_argument_must_refuse_before_probe": true,
+    "no_default_evidence_output": true,
+    "required_evidence_output_argument": "--evidence-output",
+    "required_execute_flag": "--execute-attestation-probes",
+    "required_expected_harness_hash_argument": "--expect-harness-sha256",
+    "required_expected_main_argument": "--expect-main-commit",
+    "unknown_arguments_must_refuse": true
+  },
+  "post_mainline_operator_contract": {
+    "attestation_creation_is_separate_after_probe_execution": true,
+    "benchmark_execution_remains_forbidden": true,
+    "execution_may_begin_only_after_harness_independent_review": true,
+    "execution_runner_remains_forbidden": true,
+    "operator_must_supply_evidence_output": true,
+    "operator_must_supply_exact_harness_sha256": true,
+    "operator_must_supply_exact_main_commit": true,
+    "probe_execution_is_separate_explicit_operator_step": true
+  },
+  "preflight_contract": {
+    "all_preflight_checks_before_first_sandbox_invocation": true,
+    "git_fetch_during_probe_run_allowed": false,
+    "must_verify_current_git_head_against_operator_argument": true,
+    "must_verify_current_git_head_is_local_origin_main": true,
+    "must_verify_evidence_output_absent": true,
+    "must_verify_network_design_sha256": true,
+    "must_verify_no_existing_attestation": true,
+    "must_verify_own_harness_sha256_against_operator_argument": true,
+    "must_verify_probe_python_sha256": true,
+    "must_verify_profile_sha256": true,
+    "must_verify_protocol_sha256": true,
+    "must_verify_raw_root_absent_or_empty": true,
+    "must_verify_sandbox_exec_sha256": true,
+    "must_verify_source_clean_except_local_evidence": true,
+    "must_verify_truth_not_accessed": true,
+    "preflight_failure_allows_network_probe": false,
+    "preflight_failure_allows_sandbox_invocation": false
+  },
+  "probe_mapping": [
+    {
+      "network_probe": false,
+      "positive_control": false,
+      "probe_id": "profile_acceptance",
+      "sandbox_exec_invocations": 1,
+      "sandbox_target": "/usr/bin/true"
+    },
+    {
+      "network_probe": true,
+      "positive_control": true,
+      "probe_id": "tcp_loopback_connect",
+      "sandbox_exec_invocations": 1,
+      "worker_mode": "tcp-connect"
+    },
+    {
+      "network_probe": true,
+      "positive_control": true,
+      "probe_id": "udp_loopback_send",
+      "sandbox_exec_invocations": 1,
+      "worker_mode": "udp-send"
+    },
+    {
+      "network_probe": true,
+      "positive_control": true,
+      "probe_id": "tcp_inbound_bind_listen",
+      "sandbox_exec_invocations": 1,
+      "worker_mode": "tcp-bind-listen"
+    },
+    {
+      "network_probe": true,
+      "positive_control": true,
+      "probe_id": "child_process_tcp_connect",
+      "sandbox_exec_invocations": 1,
+      "sandbox_worker_must_spawn_nested_child": true,
+      "worker_mode": "child-process-tcp-connect"
+    },
+    {
+      "network_probe": true,
+      "positive_control": true,
+      "probe_id": "unix_stream_connect",
+      "sandbox_exec_invocations": 1,
+      "worker_mode": "unix-stream-connect"
+    },
+    {
+      "network_probe": true,
+      "positive_control": true,
+      "probe_id": "unix_stream_bind",
+      "sandbox_exec_invocations": 1,
+      "worker_mode": "unix-stream-bind"
+    }
+  ],
+  "probe_record_contract": {
+    "control_record_required_for_six_network_probes": true,
+    "failed_probe_record_must_be_retained": true,
+    "required_fields": [
+      "probe_id",
+      "sequence",
+      "started_at_utc",
+      "ended_at_utc",
+      "control",
+      "sandbox",
+      "observer",
+      "passed",
+      "failure_code"
+    ],
+    "sandbox_record_required_for_all_seven_probes": true
+  },
+  "process_model": {
+    "command_paths_must_be_absolute": true,
+    "controller_role": "unsandboxed-harness-parent",
+    "environment_policy": "minimal-explicit-environment",
+    "nested_child_entry_argument": "--nested-child",
+    "proxy_environment_variables_must_be_removed": true,
+    "required_environment": {
+      "LANG": "C",
+      "LC_ALL": "C",
+      "PYTHONDONTWRITEBYTECODE": "1",
+      "PYTHONNOUSERSITE": "1"
+    },
+    "sandbox_target_role": "same-file-worker-mode",
+    "shell": false,
+    "worker_entry_argument": "--worker",
+    "worker_executable": "/opt/homebrew/opt/python@3.12/bin/python3.12",
+    "worker_script": "tests/attest_entity_resolution_ambiguity_network_isolation.py"
+  },
+  "safety_firewall": {
+    "benchmark_adapter_execution_allowed": false,
+    "benchmark_adapter_import_allowed": false,
+    "benchmark_raw_root_access_allowed": false,
+    "dns_configuration_mutation_allowed": false,
+    "dns_resolution_allowed": false,
+    "external_network_allowed": false,
+    "host_firewall_mutation_allowed": false,
+    "hostname_endpoint_allowed": false,
+    "interface_mutation_allowed": false,
+    "network_service_mutation_allowed": false,
+    "non_loopback_ip_allowed": false,
+    "root_privilege_allowed": false,
+    "route_table_mutation_allowed": false,
+    "truth_access_allowed": false
+  },
+  "schema": "qvra-family-2-network-isolation-attestation-probe-harness-design/v1",
+  "worker_modes": [
+    {
+      "endpoint_policy": "127.0.0.1-only",
+      "mode": "tcp-connect",
+      "socket_family": "AF_INET",
+      "socket_type": "SOCK_STREAM"
+    },
+    {
+      "endpoint_policy": "127.0.0.1-only",
+      "mode": "udp-send",
+      "socket_family": "AF_INET",
+      "socket_type": "SOCK_DGRAM"
+    },
+    {
+      "endpoint_policy": "127.0.0.1-only",
+      "mode": "tcp-bind-listen",
+      "socket_family": "AF_INET",
+      "socket_type": "SOCK_STREAM"
+    },
+    {
+      "endpoint_policy": "127.0.0.1-only",
+      "mode": "child-process-tcp-connect",
+      "must_spawn_nested_child": true,
+      "socket_family": "AF_INET",
+      "socket_type": "SOCK_STREAM"
+    },
+    {
+      "mode": "unix-stream-connect",
+      "path_policy": "operator-created-unique-temp-directory-outside-repository",
+      "socket_family": "AF_UNIX",
+      "socket_type": "SOCK_STREAM"
+    },
+    {
+      "mode": "unix-stream-bind",
+      "path_policy": "operator-created-unique-temp-directory-outside-repository",
+      "socket_family": "AF_UNIX",
+      "socket_type": "SOCK_STREAM"
+    }
+  ],
+  "worker_result_contract": {
+    "network_worker_success_under_sandbox_must_fail_probe": true,
+    "permission_denial_requires_errno_field": true,
+    "required_fields": [
+      "operation",
+      "success",
+      "denied",
+      "denial_stage",
+      "errno_name",
+      "errno_value",
+      "exception_type",
+      "detail"
+    ],
+    "serialization": "single-json-object-to-stdout",
+    "stderr_reserved_for_runtime_diagnostics": true
+  }
+}
