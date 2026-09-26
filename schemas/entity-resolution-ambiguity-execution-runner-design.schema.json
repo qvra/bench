@@ -1,0 +1,1454 @@
+{
+  "$id": "qvra-family-2-execution-runner-design.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "benchmark": {
+      "const": "entity-resolution-ambiguity-v1"
+    },
+    "bindings": {
+      "additionalProperties": false,
+      "properties": {
+        "activation_sha256": {
+          "const": "d418c4d21865f50c7a1d949777d22dca793eb51a79965bfa941017f892f2f2ea"
+        },
+        "authorization_sha256": {
+          "const": "30890b1ac027caf4c3175e6c602581ad3c9e544d932435bff045884b795e5728"
+        },
+        "bridge_design_sha256": {
+          "const": "2d4875b94cf7467f591201436c6fbd9eab19e879282c4d03d7500720699c5afe"
+        },
+        "command_descriptors_sha256": {
+          "const": "817d3e1eae8babb26eb49792b5778898793235042020c9f904cad0057e8549ac"
+        },
+        "execution_bridge": {
+          "additionalProperties": false,
+          "properties": {
+            "effectuation_authorized": {
+              "const": false
+            },
+            "must_remain_unmodified": {
+              "const": true
+            },
+            "path": {
+              "const": "suites/entity-resolution-ambiguity-v1/execution_bridge.py"
+            },
+            "process_launch_capability_present": {
+              "const": false
+            },
+            "sha256": {
+              "const": "f0aaa7706f92d99ee80f152a199b2e8f31dd12cf0c6494c8733e51a962b807be"
+            }
+          },
+          "required": [
+            "effectuation_authorized",
+            "must_remain_unmodified",
+            "path",
+            "process_launch_capability_present",
+            "sha256"
+          ],
+          "type": "object"
+        },
+        "execution_controller": {
+          "additionalProperties": false,
+          "properties": {
+            "must_remain_unmodified": {
+              "const": true
+            },
+            "path": {
+              "const": "suites/entity-resolution-ambiguity-v1/execution_controller.py"
+            },
+            "sha256": {
+              "const": "2b9e0026ed756468432c8d07edca9ebc49ef3b727defbc39f3b55cb9319d9661"
+            }
+          },
+          "required": [
+            "must_remain_unmodified",
+            "path",
+            "sha256"
+          ],
+          "type": "object"
+        },
+        "execution_protocol_sha256": {
+          "const": "5d44ee19992fdd71a25c19ca0bb9f276ba07ea809f016068d6db6cb338610fe7"
+        },
+        "explicit_run_transaction_design_sha256": {
+          "const": "9d3f25f267e935588d96c796f78fb0841493ea7275f7d34d8b5b60e085b9a77f"
+        },
+        "governed_main": {
+          "const": "e79523d4a43f0c4efff38637beee5898796d76b3"
+        },
+        "network_isolation_attestation": {
+          "additionalProperties": false,
+          "properties": {
+            "exact_host_only": {
+              "const": true
+            },
+            "merged_main": {
+              "const": "e79523d4a43f0c4efff38637beee5898796d76b3"
+            },
+            "path": {
+              "const": "protocols/entity-resolution-ambiguity-network-isolation-attestation-v1.json"
+            },
+            "result": {
+              "const": "PASS"
+            },
+            "reviewed_head": {
+              "const": "9fef0bee13d397487effe31b28fd8339432a6421"
+            },
+            "schema_sha256": {
+              "const": "de564da8692aa22cbfee005c04dffcde2e09f25a392e561862f97c4e5dd44051"
+            },
+            "sha256": {
+              "const": "fb7240a55c46363b118e6da54ac6ef393ff40979215bc99d9fc5d75f863d0208"
+            },
+            "verifier_sha256": {
+              "const": "35cd6b79f161ea4f98548b6f1e0b4923d65a94fbfd9e0d4013c4c698531b2bc1"
+            }
+          },
+          "required": [
+            "exact_host_only",
+            "merged_main",
+            "path",
+            "result",
+            "reviewed_head",
+            "schema_sha256",
+            "sha256",
+            "verifier_sha256"
+          ],
+          "type": "object"
+        },
+        "permit_sha256": {
+          "const": "7cef4548b571940a2fe34e3a4025afe8fe632a90c4af38b9fbd00b1b5794a8d3"
+        },
+        "process_launcher": {
+          "additionalProperties": false,
+          "properties": {
+            "execution_authorized": {
+              "const": false
+            },
+            "must_remain_unmodified": {
+              "const": true
+            },
+            "path": {
+              "const": "suites/entity-resolution-ambiguity-v1/process_launcher.py"
+            },
+            "sha256": {
+              "const": "d8d028d95adb463f27b5df6a5ec44ae9049b6799aae46c4b0176ca2adfd07f90"
+            }
+          },
+          "required": [
+            "execution_authorized",
+            "must_remain_unmodified",
+            "path",
+            "sha256"
+          ],
+          "type": "object"
+        },
+        "runtime_policy_sha256": {
+          "const": "0ae9913e36bc3109ea36f7da93219852760a8f347bc5d802aaacde313ddefced"
+        },
+        "sandbox_exec": {
+          "additionalProperties": false,
+          "properties": {
+            "path": {
+              "const": "/usr/bin/sandbox-exec"
+            },
+            "sha256": {
+              "const": "8290e4be7387a0df83cd1559e86afd880464f269450573d012795761fe298f16"
+            }
+          },
+          "required": [
+            "path",
+            "sha256"
+          ],
+          "type": "object"
+        },
+        "sandbox_profile": {
+          "additionalProperties": false,
+          "properties": {
+            "sha256": {
+              "const": "5c358b8d847211333e7ba22df82d84f796b5f30a41a2682209a949d783adbd08"
+            },
+            "text": {
+              "const": "(version 1)\n(allow default)\n(deny network*)\n"
+            }
+          },
+          "required": [
+            "sha256",
+            "text"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "activation_sha256",
+        "authorization_sha256",
+        "bridge_design_sha256",
+        "command_descriptors_sha256",
+        "execution_bridge",
+        "execution_controller",
+        "execution_protocol_sha256",
+        "explicit_run_transaction_design_sha256",
+        "governed_main",
+        "network_isolation_attestation",
+        "permit_sha256",
+        "process_launcher",
+        "runtime_policy_sha256",
+        "sandbox_exec",
+        "sandbox_profile"
+      ],
+      "type": "object"
+    },
+    "bridge_consumption_contract": {
+      "additionalProperties": false,
+      "properties": {
+        "must_call": {
+          "const": "execution_bridge.prepare_transaction"
+        },
+        "must_import_exact_execution_bridge": {
+          "const": true
+        },
+        "must_not_call": {
+          "const": [
+            "execution_bridge.effectuate",
+            "process_launcher.launch"
+          ]
+        },
+        "prepared_bridge_transaction_must_remain_nonexecuting_snapshot": {
+          "const": true
+        },
+        "required_bridge_transaction_flags": {
+          "additionalProperties": false,
+          "properties": {
+            "all_raw_before_scoring_required": {
+              "const": true
+            },
+            "bridge_effectuation_authorized": {
+              "const": false
+            },
+            "network_disabled_required": {
+              "const": true
+            },
+            "process_launch_capability_present": {
+              "const": false
+            },
+            "raw_outputs_hash_before_truth_required": {
+              "const": true
+            },
+            "retuning_allowed": {
+              "const": false
+            },
+            "runtime_mutation_allowed": {
+              "const": false
+            },
+            "total_required_raw_runs": {
+              "const": 9
+            }
+          },
+          "required": [
+            "all_raw_before_scoring_required",
+            "bridge_effectuation_authorized",
+            "network_disabled_required",
+            "process_launch_capability_present",
+            "raw_outputs_hash_before_truth_required",
+            "retuning_allowed",
+            "runtime_mutation_allowed",
+            "total_required_raw_runs"
+          ],
+          "type": "object"
+        },
+        "runner_is_separate_execution_capability": {
+          "const": true
+        },
+        "runner_may_launch_only_after_all_runner_and_transaction_gates": {
+          "const": true
+        }
+      },
+      "required": [
+        "must_call",
+        "must_import_exact_execution_bridge",
+        "must_not_call",
+        "prepared_bridge_transaction_must_remain_nonexecuting_snapshot",
+        "required_bridge_transaction_flags",
+        "runner_is_separate_execution_capability",
+        "runner_may_launch_only_after_all_runner_and_transaction_gates"
+      ],
+      "type": "object"
+    },
+    "claim_boundary": {
+      "additionalProperties": false,
+      "properties": {
+        "cross_suite_generalization": {
+          "const": false
+        },
+        "global_superiority_claim": {
+          "const": false
+        },
+        "runner_design_is_not_quality_evidence": {
+          "const": true
+        },
+        "suite_specific_only": {
+          "const": true
+        }
+      },
+      "required": [
+        "cross_suite_generalization",
+        "global_superiority_claim",
+        "runner_design_is_not_quality_evidence",
+        "suite_specific_only"
+      ],
+      "type": "object"
+    },
+    "corpus_contract": {
+      "additionalProperties": false,
+      "properties": {
+        "concrete_root_bound_at_runner_design_time": {
+          "const": false
+        },
+        "future_transaction_full_corpus_hashes": {
+          "additionalProperties": false,
+          "properties": {
+            "manifest.json": {
+              "const": "27c5e7bcd3d3f75f87b095cedd4c996bf02575299c1ed1412eec9571676e3708"
+            },
+            "records.csv": {
+              "const": "06651e82991cc8e2a6c23a8e05eaa79ba56474f61060d8b0b7dc2d3b249e43df"
+            },
+            "split.json": {
+              "const": "7c1871b414aad1b7612c758b704a968a19d7dd13ea64bc06f59f9cd486fd5d86"
+            },
+            "test.csv": {
+              "const": "6e98690c2ee302bc16f7deda59a3e332e872f076925d0380c926d8f74e20fadb"
+            },
+            "train.csv": {
+              "const": "9ea26585df5fe663c5a5cbcaf261a5e063d021d10b9a3795a672ea624c881815"
+            },
+            "truth.json": {
+              "const": "d412e2705d556b7e8196d02290d6f7d15678381353baae5dbd30935a96e33e7d"
+            }
+          },
+          "required": [
+            "manifest.json",
+            "records.csv",
+            "split.json",
+            "test.csv",
+            "train.csv",
+            "truth.json"
+          ],
+          "type": "object"
+        },
+        "future_transaction_must_include_full_corpus_audit": {
+          "const": true
+        },
+        "materialization_receipt_sha256": {
+          "const": "d734721fa8f40b779c4fa297a5be4c0e5d1287b8836a8b1d56899f121137ef94"
+        },
+        "operator_supplies_concrete_root": {
+          "const": true
+        },
+        "runner_direct_hash_checks": {
+          "additionalProperties": false,
+          "properties": {
+            "manifest.json": {
+              "const": "27c5e7bcd3d3f75f87b095cedd4c996bf02575299c1ed1412eec9571676e3708"
+            },
+            "test.csv": {
+              "const": "6e98690c2ee302bc16f7deda59a3e332e872f076925d0380c926d8f74e20fadb"
+            },
+            "train.csv": {
+              "const": "9ea26585df5fe663c5a5cbcaf261a5e063d021d10b9a3795a672ea624c881815"
+            }
+          },
+          "required": [
+            "manifest.json",
+            "test.csv",
+            "train.csv"
+          ],
+          "type": "object"
+        },
+        "runner_must_not_open_truth_json": {
+          "const": true
+        },
+        "runner_truth_input_allowed": {
+          "const": false
+        },
+        "system_truth_input_allowed": {
+          "const": false
+        },
+        "truth_role": {
+          "const": "evaluator-only"
+        },
+        "truth_scoring_during_runner_execution_allowed": {
+          "const": false
+        }
+      },
+      "required": [
+        "concrete_root_bound_at_runner_design_time",
+        "future_transaction_full_corpus_hashes",
+        "future_transaction_must_include_full_corpus_audit",
+        "materialization_receipt_sha256",
+        "operator_supplies_concrete_root",
+        "runner_direct_hash_checks",
+        "runner_must_not_open_truth_json",
+        "runner_truth_input_allowed",
+        "system_truth_input_allowed",
+        "truth_role",
+        "truth_scoring_during_runner_execution_allowed"
+      ],
+      "type": "object"
+    },
+    "current_state": {
+      "additionalProperties": false,
+      "properties": {
+        "execution_runner_created": {
+          "const": false
+        },
+        "execution_runner_mainline": {
+          "const": false
+        },
+        "execution_runner_reviewed": {
+          "const": false
+        },
+        "execution_transaction_created": {
+          "const": false
+        },
+        "execution_transaction_issued": {
+          "const": false
+        },
+        "execution_transaction_mainline": {
+          "const": false
+        },
+        "execution_transaction_reviewed": {
+          "const": false
+        },
+        "network_isolation_attestation_mainline": {
+          "const": true
+        },
+        "network_isolation_effect_active": {
+          "const": true
+        },
+        "quality_result_available": {
+          "const": false
+        },
+        "raw_artifacts_produced": {
+          "const": 0
+        },
+        "raw_execution_receipt_created": {
+          "const": false
+        },
+        "raw_runs_produced": {
+          "const": 0
+        },
+        "runner_design_created": {
+          "const": true
+        },
+        "system_execution": {
+          "const": false
+        },
+        "transaction_currently_executable": {
+          "const": false
+        },
+        "truth_scoring": {
+          "const": false
+        }
+      },
+      "required": [
+        "execution_runner_created",
+        "execution_runner_mainline",
+        "execution_runner_reviewed",
+        "execution_transaction_created",
+        "execution_transaction_issued",
+        "execution_transaction_mainline",
+        "execution_transaction_reviewed",
+        "network_isolation_attestation_mainline",
+        "network_isolation_effect_active",
+        "quality_result_available",
+        "raw_artifacts_produced",
+        "raw_execution_receipt_created",
+        "raw_runs_produced",
+        "runner_design_created",
+        "system_execution",
+        "transaction_currently_executable",
+        "truth_scoring"
+      ],
+      "type": "object"
+    },
+    "design_kind": {
+      "const": "review-before-implementation-exact-nine-run-sandboxed-runner"
+    },
+    "execution_topology": {
+      "additionalProperties": false,
+      "properties": {
+        "all_nine_runs_attempted_after_successful_preflight": {
+          "const": true
+        },
+        "configuration_may_depend_on_prior_run_output": {
+          "const": false
+        },
+        "configuration_may_depend_on_quality_result": {
+          "const": false
+        },
+        "configuration_may_depend_on_system_order": {
+          "const": false
+        },
+        "continue_after_system_nonzero_exit": {
+          "const": true
+        },
+        "execution_order_must_equal_bridge_transaction_order": {
+          "const": true
+        },
+        "failed_run_retention_required": {
+          "const": true
+        },
+        "raw_artifacts_per_run": {
+          "const": 3
+        },
+        "raw_root_relative_path": {
+          "const": "family-2-raw-runs"
+        },
+        "required_raw_artifact_names": {
+          "const": [
+            "output.json",
+            "stdout.txt",
+            "stderr.txt"
+          ]
+        },
+        "retry_within_transaction_allowed": {
+          "const": false
+        },
+        "retuning_allowed": {
+          "const": false
+        },
+        "run_directory_template": {
+          "const": "family-2-raw-runs/{system_id}/run-{run_number}"
+        },
+        "run_numbers": {
+          "const": [
+            1,
+            2,
+            3
+          ]
+        },
+        "runs_per_system": {
+          "const": 3
+        },
+        "runtime_mutation_allowed": {
+          "const": false
+        },
+        "system_order": {
+          "const": [
+            "qvra-native-er-v1",
+            "splink-4.0.17",
+            "dedupe-3.0.3"
+          ]
+        },
+        "systems": {
+          "const": [
+            "qvra-native-er-v1",
+            "splink-4.0.17",
+            "dedupe-3.0.3"
+          ]
+        },
+        "total_required_raw_artifact_slots": {
+          "const": 27
+        },
+        "total_required_raw_runs": {
+          "const": 9
+        }
+      },
+      "required": [
+        "all_nine_runs_attempted_after_successful_preflight",
+        "configuration_may_depend_on_prior_run_output",
+        "configuration_may_depend_on_quality_result",
+        "configuration_may_depend_on_system_order",
+        "continue_after_system_nonzero_exit",
+        "execution_order_must_equal_bridge_transaction_order",
+        "failed_run_retention_required",
+        "raw_artifacts_per_run",
+        "raw_root_relative_path",
+        "required_raw_artifact_names",
+        "retry_within_transaction_allowed",
+        "retuning_allowed",
+        "run_directory_template",
+        "run_numbers",
+        "runs_per_system",
+        "runtime_mutation_allowed",
+        "system_order",
+        "systems",
+        "total_required_raw_artifact_slots",
+        "total_required_raw_runs"
+      ],
+      "type": "object"
+    },
+    "family": {
+      "const": 2
+    },
+    "future_transaction_contract": {
+      "additionalProperties": false,
+      "properties": {
+        "consumable": {
+          "const": false
+        },
+        "consumed": {
+          "const": false
+        },
+        "created": {
+          "const": false
+        },
+        "independent_exact_head_review_required": {
+          "const": true
+        },
+        "issued": {
+          "const": false
+        },
+        "mainline": {
+          "const": false
+        },
+        "mainline_merge_required": {
+          "const": true
+        },
+        "must_assert_raw_execution_receipt_absent": {
+          "const": true
+        },
+        "must_assert_truth_scoring_false": {
+          "const": true
+        },
+        "must_assert_zero_existing_raw_runs": {
+          "const": true
+        },
+        "must_bind_corpus_audit_receipt": {
+          "const": true
+        },
+        "must_bind_exact_corpus_hashes": {
+          "const": true
+        },
+        "must_bind_exact_run_numbers": {
+          "const": true
+        },
+        "must_bind_exact_runner_sha256": {
+          "const": true
+        },
+        "must_bind_exact_system_order": {
+          "const": true
+        },
+        "must_bind_maximum_execution_batches_one": {
+          "const": true
+        },
+        "must_bind_network_isolation_attestation_mainline": {
+          "const": true
+        },
+        "must_bind_network_isolation_attestation_sha256": {
+          "const": true
+        },
+        "must_bind_raw_root_relative_path": {
+          "const": true
+        },
+        "must_bind_runner_merged_main": {
+          "const": true
+        },
+        "must_bind_runner_reviewed_head": {
+          "const": true
+        },
+        "path": {
+          "const": "protocols/entity-resolution-ambiguity-explicit-execution-run-transaction-v1.json"
+        },
+        "reviewed": {
+          "const": false
+        },
+        "runner_mainline_alone_must_not_make_execution_possible": {
+          "const": true
+        },
+        "schema_path": {
+          "const": "schemas/entity-resolution-ambiguity-explicit-execution-run-transaction.schema.json"
+        },
+        "separate_artifact_required_after_runner_mainline": {
+          "const": true
+        },
+        "verifier_path": {
+          "const": "tests/verify_entity_resolution_ambiguity_explicit_execution_run_transaction.py"
+        }
+      },
+      "required": [
+        "consumable",
+        "consumed",
+        "created",
+        "independent_exact_head_review_required",
+        "issued",
+        "mainline",
+        "mainline_merge_required",
+        "must_assert_raw_execution_receipt_absent",
+        "must_assert_truth_scoring_false",
+        "must_assert_zero_existing_raw_runs",
+        "must_bind_corpus_audit_receipt",
+        "must_bind_exact_corpus_hashes",
+        "must_bind_exact_run_numbers",
+        "must_bind_exact_runner_sha256",
+        "must_bind_exact_system_order",
+        "must_bind_maximum_execution_batches_one",
+        "must_bind_network_isolation_attestation_mainline",
+        "must_bind_network_isolation_attestation_sha256",
+        "must_bind_raw_root_relative_path",
+        "must_bind_runner_merged_main",
+        "must_bind_runner_reviewed_head",
+        "path",
+        "reviewed",
+        "runner_mainline_alone_must_not_make_execution_possible",
+        "schema_path",
+        "separate_artifact_required_after_runner_mainline",
+        "verifier_path"
+      ],
+      "type": "object"
+    },
+    "implementation_target": {
+      "additionalProperties": false,
+      "properties": {
+        "bridge_mutation_allowed": {
+          "const": false
+        },
+        "central_subprocess_run_site_required": {
+          "const": true
+        },
+        "controller_mutation_allowed": {
+          "const": false
+        },
+        "created": {
+          "const": false
+        },
+        "default_invocation_must_refuse": {
+          "const": true
+        },
+        "direct_adapter_execution_outside_central_runner_allowed": {
+          "const": false
+        },
+        "execution_flag": {
+          "const": "--execute-nine-run-transaction"
+        },
+        "execution_requires_explicit_operator_flag": {
+          "const": true
+        },
+        "historical_activation_mutation_allowed": {
+          "const": false
+        },
+        "historical_authorization_mutation_allowed": {
+          "const": false
+        },
+        "historical_permit_mutation_allowed": {
+          "const": false
+        },
+        "import_side_effects_allowed": {
+          "const": false
+        },
+        "language": {
+          "const": "python-3.12"
+        },
+        "launcher_mutation_allowed": {
+          "const": false
+        },
+        "network_access_allowed": {
+          "const": false
+        },
+        "path": {
+          "const": "suites/entity-resolution-ambiguity-v1/execution_runner.py"
+        },
+        "retuning_allowed": {
+          "const": false
+        },
+        "runtime_mutation_allowed": {
+          "const": false
+        },
+        "scoring_allowed": {
+          "const": false
+        },
+        "shell_execution_allowed": {
+          "const": false
+        },
+        "truth_access_allowed": {
+          "const": false
+        }
+      },
+      "required": [
+        "bridge_mutation_allowed",
+        "central_subprocess_run_site_required",
+        "controller_mutation_allowed",
+        "created",
+        "default_invocation_must_refuse",
+        "direct_adapter_execution_outside_central_runner_allowed",
+        "execution_flag",
+        "execution_requires_explicit_operator_flag",
+        "historical_activation_mutation_allowed",
+        "historical_authorization_mutation_allowed",
+        "historical_permit_mutation_allowed",
+        "import_side_effects_allowed",
+        "language",
+        "launcher_mutation_allowed",
+        "network_access_allowed",
+        "path",
+        "retuning_allowed",
+        "runtime_mutation_allowed",
+        "scoring_allowed",
+        "shell_execution_allowed",
+        "truth_access_allowed"
+      ],
+      "type": "object"
+    },
+    "interruption_and_failure_contract": {
+      "additionalProperties": false,
+      "properties": {
+        "new_transaction_required_after_incomplete_attempt": {
+          "const": true
+        },
+        "operator_interrupt_after_first_raw_write": {
+          "const": "transaction-consumed-no-retry-without-new-transaction"
+        },
+        "partial_existing_transaction_recovery_by_retry": {
+          "const": false
+        },
+        "raw_root_nonempty_after_any_attempt": {
+          "const": "same-transaction-rerun-forbidden"
+        },
+        "receipt_exists_after_any_attempt": {
+          "const": "same-transaction-rerun-forbidden"
+        },
+        "runner_internal_failure_after_raw_write": {
+          "const": "write-incomplete-receipt-if-possible-and-consume-transaction"
+        },
+        "system_nonzero_exit": {
+          "const": "retain-run-and-continue"
+        }
+      },
+      "required": [
+        "new_transaction_required_after_incomplete_attempt",
+        "operator_interrupt_after_first_raw_write",
+        "partial_existing_transaction_recovery_by_retry",
+        "raw_root_nonempty_after_any_attempt",
+        "receipt_exists_after_any_attempt",
+        "runner_internal_failure_after_raw_write",
+        "system_nonzero_exit"
+      ],
+      "type": "object"
+    },
+    "operator_cli_contract": {
+      "additionalProperties": false,
+      "properties": {
+        "default_invocation_must_refuse_before_any_raw_write": {
+          "const": true
+        },
+        "missing_required_argument_must_refuse_before_any_raw_write": {
+          "const": true
+        },
+        "no_raw_root_override": {
+          "const": true
+        },
+        "raw_root_relative_path": {
+          "const": "family-2-raw-runs"
+        },
+        "required_corpus_root_argument": {
+          "const": "--corpus-root"
+        },
+        "required_execute_flag": {
+          "const": "--execute-nine-run-transaction"
+        },
+        "required_main_argument": {
+          "const": "--expect-main-commit"
+        },
+        "required_runner_sha_argument": {
+          "const": "--expect-runner-sha256"
+        },
+        "required_transaction_argument": {
+          "const": "--transaction"
+        },
+        "required_transaction_sha_argument": {
+          "const": "--expect-transaction-sha256"
+        },
+        "unknown_arguments_must_refuse": {
+          "const": true
+        }
+      },
+      "required": [
+        "default_invocation_must_refuse_before_any_raw_write",
+        "missing_required_argument_must_refuse_before_any_raw_write",
+        "no_raw_root_override",
+        "raw_root_relative_path",
+        "required_corpus_root_argument",
+        "required_execute_flag",
+        "required_main_argument",
+        "required_runner_sha_argument",
+        "required_transaction_argument",
+        "required_transaction_sha_argument",
+        "unknown_arguments_must_refuse"
+      ],
+      "type": "object"
+    },
+    "post_runner_mainline_contract": {
+      "additionalProperties": false,
+      "properties": {
+        "benchmark_execution_before_transaction_mainline_forbidden": {
+          "const": true
+        },
+        "future_execution_requires_separate_explicit_operator_step": {
+          "const": true
+        },
+        "future_transaction_artifact_is_next_gate": {
+          "const": true
+        },
+        "future_transaction_requires_mainline": {
+          "const": true
+        },
+        "future_transaction_requires_separate_review": {
+          "const": true
+        },
+        "runner_mainline_does_not_issue_transaction": {
+          "const": true
+        },
+        "runner_mainline_does_not_make_transaction_executable": {
+          "const": true
+        }
+      },
+      "required": [
+        "benchmark_execution_before_transaction_mainline_forbidden",
+        "future_execution_requires_separate_explicit_operator_step",
+        "future_transaction_artifact_is_next_gate",
+        "future_transaction_requires_mainline",
+        "future_transaction_requires_separate_review",
+        "runner_mainline_does_not_issue_transaction",
+        "runner_mainline_does_not_make_transaction_executable"
+      ],
+      "type": "object"
+    },
+    "preflight_contract": {
+      "additionalProperties": false,
+      "properties": {
+        "all_preflight_before_first_adapter_process": {
+          "const": true
+        },
+        "all_preflight_before_raw_root_creation": {
+          "const": true
+        },
+        "git_fetch_during_execution_allowed": {
+          "const": false
+        },
+        "must_verify_activation_sha256": {
+          "const": true
+        },
+        "must_verify_attestation_is_ancestor_mainline": {
+          "const": true
+        },
+        "must_verify_attestation_sha256": {
+          "const": true
+        },
+        "must_verify_authorization_sha256": {
+          "const": true
+        },
+        "must_verify_bridge_hard_disabled": {
+          "const": true
+        },
+        "must_verify_bridge_sha256": {
+          "const": true
+        },
+        "must_verify_command_descriptor_sha256": {
+          "const": true
+        },
+        "must_verify_controller_sha256": {
+          "const": true
+        },
+        "must_verify_current_git_head_against_operator_argument": {
+          "const": true
+        },
+        "must_verify_current_git_head_is_local_origin_main": {
+          "const": true
+        },
+        "must_verify_launcher_hard_disabled": {
+          "const": true
+        },
+        "must_verify_launcher_sha256": {
+          "const": true
+        },
+        "must_verify_permit_sha256": {
+          "const": true
+        },
+        "must_verify_raw_execution_receipt_absent": {
+          "const": true
+        },
+        "must_verify_raw_root_absent_or_empty": {
+          "const": true
+        },
+        "must_verify_runner_sha256": {
+          "const": true
+        },
+        "must_verify_runtime_policy_sha256": {
+          "const": true
+        },
+        "must_verify_source_clean_except_local_evidence": {
+          "const": true
+        },
+        "must_verify_transaction_mainline": {
+          "const": true
+        },
+        "must_verify_transaction_not_consumed": {
+          "const": true
+        },
+        "must_verify_transaction_sha256": {
+          "const": true
+        },
+        "must_verify_truth_scoring_false": {
+          "const": true
+        },
+        "preflight_failure_consumes_transaction": {
+          "const": false
+        },
+        "preflight_failure_may_create_raw_root": {
+          "const": false
+        },
+        "preflight_failure_may_launch_adapter": {
+          "const": false
+        }
+      },
+      "required": [
+        "all_preflight_before_first_adapter_process",
+        "all_preflight_before_raw_root_creation",
+        "git_fetch_during_execution_allowed",
+        "must_verify_activation_sha256",
+        "must_verify_attestation_is_ancestor_mainline",
+        "must_verify_attestation_sha256",
+        "must_verify_authorization_sha256",
+        "must_verify_bridge_hard_disabled",
+        "must_verify_bridge_sha256",
+        "must_verify_command_descriptor_sha256",
+        "must_verify_controller_sha256",
+        "must_verify_current_git_head_against_operator_argument",
+        "must_verify_current_git_head_is_local_origin_main",
+        "must_verify_launcher_hard_disabled",
+        "must_verify_launcher_sha256",
+        "must_verify_permit_sha256",
+        "must_verify_raw_execution_receipt_absent",
+        "must_verify_raw_root_absent_or_empty",
+        "must_verify_runner_sha256",
+        "must_verify_runtime_policy_sha256",
+        "must_verify_source_clean_except_local_evidence",
+        "must_verify_transaction_mainline",
+        "must_verify_transaction_not_consumed",
+        "must_verify_transaction_sha256",
+        "must_verify_truth_scoring_false",
+        "preflight_failure_consumes_transaction",
+        "preflight_failure_may_create_raw_root",
+        "preflight_failure_may_launch_adapter"
+      ],
+      "type": "object"
+    },
+    "process_result_contract": {
+      "additionalProperties": false,
+      "properties": {
+        "nonzero_exit_is_retained_not_retried": {
+          "const": true
+        },
+        "output_origin_values": {
+          "const": [
+            "adapter",
+            "runner_failure_envelope"
+          ]
+        },
+        "per_run_record_must_include": {
+          "const": [
+            "ordinal",
+            "system_id",
+            "run_number",
+            "sandbox_argv",
+            "cwd",
+            "environment",
+            "started_at_utc",
+            "ended_at_utc",
+            "exit_code",
+            "stdout_sha256",
+            "stderr_sha256",
+            "output_sha256",
+            "output_origin",
+            "nonzero_exit"
+          ]
+        },
+        "system_nonzero_exit_does_not_abort_remaining_runs": {
+          "const": true
+        }
+      },
+      "required": [
+        "nonzero_exit_is_retained_not_retried",
+        "output_origin_values",
+        "per_run_record_must_include",
+        "system_nonzero_exit_does_not_abort_remaining_runs"
+      ],
+      "type": "object"
+    },
+    "raw_artifact_contract": {
+      "additionalProperties": false,
+      "properties": {
+        "adapter_created_output_bytes_must_be_retained_exactly": {
+          "const": true
+        },
+        "all_27_artifact_slots_must_exist_before_receipt": {
+          "const": true
+        },
+        "all_raw_artifact_hashes_before_truth_scoring": {
+          "const": true
+        },
+        "existing_adapter_output_must_never_be_overwritten": {
+          "const": true
+        },
+        "failure_envelope_must_record": {
+          "const": [
+            "system_id",
+            "run_number",
+            "ordinal",
+            "process_exit_code",
+            "system_output_missing",
+            "runner_generated"
+          ]
+        },
+        "failure_envelope_runner_generated": {
+          "const": true
+        },
+        "failure_envelope_schema": {
+          "const": "qvra-family-2-missing-system-output/v1"
+        },
+        "failure_envelope_system_output_missing": {
+          "const": true
+        },
+        "failure_envelope_written_to": {
+          "const": "output.json"
+        },
+        "missing_output_after_failed_process_requires_failure_envelope": {
+          "const": true
+        },
+        "output_path_must_equal_bridge_output_path": {
+          "const": true
+        },
+        "output_path_must_not_preexist_before_launch": {
+          "const": true
+        },
+        "runner_must_create_run_directory_before_each_launch": {
+          "const": true
+        },
+        "stderr_bytes_must_be_retained_exactly": {
+          "const": true
+        },
+        "stderr_path_must_equal_bridge_stderr_path": {
+          "const": true
+        },
+        "stderr_path_must_not_preexist_before_launch": {
+          "const": true
+        },
+        "stdout_bytes_must_be_retained_exactly": {
+          "const": true
+        },
+        "stdout_path_must_equal_bridge_stdout_path": {
+          "const": true
+        },
+        "stdout_path_must_not_preexist_before_launch": {
+          "const": true
+        }
+      },
+      "required": [
+        "adapter_created_output_bytes_must_be_retained_exactly",
+        "all_27_artifact_slots_must_exist_before_receipt",
+        "all_raw_artifact_hashes_before_truth_scoring",
+        "existing_adapter_output_must_never_be_overwritten",
+        "failure_envelope_must_record",
+        "failure_envelope_runner_generated",
+        "failure_envelope_schema",
+        "failure_envelope_system_output_missing",
+        "failure_envelope_written_to",
+        "missing_output_after_failed_process_requires_failure_envelope",
+        "output_path_must_equal_bridge_output_path",
+        "output_path_must_not_preexist_before_launch",
+        "runner_must_create_run_directory_before_each_launch",
+        "stderr_bytes_must_be_retained_exactly",
+        "stderr_path_must_equal_bridge_stderr_path",
+        "stderr_path_must_not_preexist_before_launch",
+        "stdout_bytes_must_be_retained_exactly",
+        "stdout_path_must_equal_bridge_stdout_path",
+        "stdout_path_must_not_preexist_before_launch"
+      ],
+      "type": "object"
+    },
+    "raw_execution_receipt_contract": {
+      "additionalProperties": false,
+      "properties": {
+        "created_by_runner_after_raw_execution": {
+          "const": true
+        },
+        "must_bind_corpus_audit": {
+          "const": true
+        },
+        "must_bind_main_commit": {
+          "const": true
+        },
+        "must_bind_network_isolation_attestation_sha256": {
+          "const": true
+        },
+        "must_bind_runner_sha256": {
+          "const": true
+        },
+        "must_bind_transaction_sha256": {
+          "const": true
+        },
+        "must_include_all_27_raw_artifact_hashes": {
+          "const": true
+        },
+        "must_include_all_run_records": {
+          "const": true
+        },
+        "must_not_preexist": {
+          "const": true
+        },
+        "must_record_all_nine_runs_attempted": {
+          "const": true
+        },
+        "must_record_complete_or_incomplete_execution": {
+          "const": true
+        },
+        "must_record_transaction_consumed": {
+          "const": true
+        },
+        "path": {
+          "const": "evidence/entity-resolution-ambiguity-v1/raw-execution-receipt-v1.json"
+        },
+        "quality_result_available": {
+          "const": false
+        },
+        "receipt_requires_independent_review_before_scoring": {
+          "const": true
+        },
+        "receipt_requires_later_freeze_before_scoring": {
+          "const": true
+        },
+        "receipt_requires_mainline_merge_before_scoring": {
+          "const": true
+        },
+        "transaction_consumed_value": {
+          "const": true
+        },
+        "truth_scoring": {
+          "const": false
+        },
+        "written_only_after_raw_artifacts_hashed": {
+          "const": true
+        }
+      },
+      "required": [
+        "created_by_runner_after_raw_execution",
+        "must_bind_corpus_audit",
+        "must_bind_main_commit",
+        "must_bind_network_isolation_attestation_sha256",
+        "must_bind_runner_sha256",
+        "must_bind_transaction_sha256",
+        "must_include_all_27_raw_artifact_hashes",
+        "must_include_all_run_records",
+        "must_not_preexist",
+        "must_record_all_nine_runs_attempted",
+        "must_record_complete_or_incomplete_execution",
+        "must_record_transaction_consumed",
+        "path",
+        "quality_result_available",
+        "receipt_requires_independent_review_before_scoring",
+        "receipt_requires_later_freeze_before_scoring",
+        "receipt_requires_mainline_merge_before_scoring",
+        "transaction_consumed_value",
+        "truth_scoring",
+        "written_only_after_raw_artifacts_hashed"
+      ],
+      "type": "object"
+    },
+    "review_contract": {
+      "additionalProperties": false,
+      "properties": {
+        "runner_design_requires_independent_exact_head_review": {
+          "const": true
+        },
+        "runner_design_requires_mainline_merge": {
+          "const": true
+        },
+        "runner_design_requires_nonexecuting_verifier": {
+          "const": true
+        },
+        "runner_design_requires_strict_schema": {
+          "const": true
+        },
+        "runner_implementation_requires_independent_exact_head_review": {
+          "const": true
+        },
+        "runner_implementation_requires_mainline_merge": {
+          "const": true
+        },
+        "runner_implementation_requires_static_semantic_verifier": {
+          "const": true
+        },
+        "runner_review_must_not_execute_adapter": {
+          "const": true
+        },
+        "runner_review_must_not_execute_runner": {
+          "const": true
+        },
+        "runner_review_must_not_invoke_sandbox_exec": {
+          "const": true
+        },
+        "runner_review_must_static_check_every_adapter_launch_wrapped": {
+          "const": true
+        },
+        "runner_review_must_static_check_no_retry": {
+          "const": true
+        },
+        "runner_review_must_static_check_single_process_launch_site": {
+          "const": true
+        },
+        "runner_review_must_static_check_truth_firewall": {
+          "const": true
+        }
+      },
+      "required": [
+        "runner_design_requires_independent_exact_head_review",
+        "runner_design_requires_mainline_merge",
+        "runner_design_requires_nonexecuting_verifier",
+        "runner_design_requires_strict_schema",
+        "runner_implementation_requires_independent_exact_head_review",
+        "runner_implementation_requires_mainline_merge",
+        "runner_implementation_requires_static_semantic_verifier",
+        "runner_review_must_not_execute_adapter",
+        "runner_review_must_not_execute_runner",
+        "runner_review_must_not_invoke_sandbox_exec",
+        "runner_review_must_static_check_every_adapter_launch_wrapped",
+        "runner_review_must_static_check_no_retry",
+        "runner_review_must_static_check_single_process_launch_site",
+        "runner_review_must_static_check_truth_firewall"
+      ],
+      "type": "object"
+    },
+    "sandbox_execution_contract": {
+      "additionalProperties": false,
+      "properties": {
+        "child_cwd_source": {
+          "const": "exact_bridge_run_cwd"
+        },
+        "child_environment_source": {
+          "const": "exact_bridge_run_env"
+        },
+        "every_adapter_process_must_be_sandboxed": {
+          "const": true
+        },
+        "exact_adapter_launch_shape": {
+          "const": [
+            "/usr/bin/sandbox-exec",
+            "-p",
+            "<EXACT_PROFILE_TEXT>",
+            "<BRIDGE_RUN_ARGV...>"
+          ]
+        },
+        "external_network_allowed": {
+          "const": false
+        },
+        "profile_sha256": {
+          "const": "5c358b8d847211333e7ba22df82d84f796b5f30a41a2682209a949d783adbd08"
+        },
+        "profile_text": {
+          "const": "(version 1)\n(allow default)\n(deny network*)\n"
+        },
+        "sandbox_exec_invocations_for_complete_transaction": {
+          "const": 9
+        },
+        "sandbox_exec_path": {
+          "const": "/usr/bin/sandbox-exec"
+        },
+        "sandbox_exec_sha256": {
+          "const": "8290e4be7387a0df83cd1559e86afd880464f269450573d012795761fe298f16"
+        },
+        "sandbox_inheritance_required_for_adapter_children": {
+          "const": true
+        },
+        "shell": {
+          "const": false
+        },
+        "timeout_policy": {
+          "const": "no_runner_imposed_timeout"
+        },
+        "unsandboxed_adapter_fallback_allowed": {
+          "const": false
+        }
+      },
+      "required": [
+        "child_cwd_source",
+        "child_environment_source",
+        "every_adapter_process_must_be_sandboxed",
+        "exact_adapter_launch_shape",
+        "external_network_allowed",
+        "profile_sha256",
+        "profile_text",
+        "sandbox_exec_invocations_for_complete_transaction",
+        "sandbox_exec_path",
+        "sandbox_exec_sha256",
+        "sandbox_inheritance_required_for_adapter_children",
+        "shell",
+        "timeout_policy",
+        "unsandboxed_adapter_fallback_allowed"
+      ],
+      "type": "object"
+    },
+    "schema": {
+      "const": "qvra-family-2-execution-runner-design/v1"
+    },
+    "truth_firewall": {
+      "additionalProperties": false,
+      "properties": {
+        "runner_may_import_evaluator": {
+          "const": false
+        },
+        "runner_may_open_truth_json": {
+          "const": false
+        },
+        "runner_may_pass_truth_path_to_adapter": {
+          "const": false
+        },
+        "runner_may_read_quality_result": {
+          "const": false
+        },
+        "runner_may_score": {
+          "const": false
+        },
+        "truth_scoring_locked_until_raw_receipt_mainline": {
+          "const": true
+        }
+      },
+      "required": [
+        "runner_may_import_evaluator",
+        "runner_may_open_truth_json",
+        "runner_may_pass_truth_path_to_adapter",
+        "runner_may_read_quality_result",
+        "runner_may_score",
+        "truth_scoring_locked_until_raw_receipt_mainline"
+      ],
+      "type": "object"
+    }
+  },
+  "required": [
+    "benchmark",
+    "bindings",
+    "bridge_consumption_contract",
+    "claim_boundary",
+    "corpus_contract",
+    "current_state",
+    "design_kind",
+    "execution_topology",
+    "family",
+    "future_transaction_contract",
+    "implementation_target",
+    "interruption_and_failure_contract",
+    "operator_cli_contract",
+    "post_runner_mainline_contract",
+    "preflight_contract",
+    "process_result_contract",
+    "raw_artifact_contract",
+    "raw_execution_receipt_contract",
+    "review_contract",
+    "sandbox_execution_contract",
+    "schema",
+    "truth_firewall"
+  ],
+  "type": "object"
+}
